@@ -103,10 +103,10 @@
         <!-- SECTION -->
         <section class="content" style="padding-top: 80px;">
             <!-- MAIN VIDEO BACKGROUND -->
-            <div class="main-video" id="hero" style="position: relative; overflow: hidden;">
+            <div class="main-video" id="hero" style="position: relative; overflow: hidden; min-height: 600px;">
                 <div class="image-background" id="heroImage"></div>
-                <div class="video-background" id="heroVideo">
-                    <video autoplay muted loop playsinline id="myVideo">
+                <div class="video-background" id="heroVideo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
+                    <video autoplay muted loop playsinline id="myVideo" style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); object-fit: cover;">
                         <source src="img/concert-loop.mp4" type="video/mp4">
                     </video>
                 </div>
@@ -116,6 +116,36 @@
                     <p>experiencia visual única</p>
                     <a href="#contacto" class="button-basic-1" data-aos="fade-up" style="position: relative; z-index: 101; margin-top: 20px; display: inline-block;">Cotizar Ahora</a>
                 </div>
+                
+                <style>
+                    /* Asegurar que el video se vea en mobile */
+                    @media (max-width: 768px) {
+                        .main-video {
+                            min-height: 100vh !important;
+                        }
+                        
+                        .video-background {
+                            position: absolute !important;
+                            top: 0 !important;
+                            left: 0 !important;
+                            width: 100% !important;
+                            height: 100% !important;
+                            z-index: 0 !important;
+                        }
+                        
+                        #myVideo {
+                            position: absolute !important;
+                            top: 50% !important;
+                            left: 50% !important;
+                            min-width: 100% !important;
+                            min-height: 100% !important;
+                            width: auto !important;
+                            height: auto !important;
+                            transform: translate(-50%, -50%) !important;
+                            object-fit: cover !important;
+                        }
+                    }
+                </style>
             </div>
 
             <!-- SERVICIOS DESTACADOS -->
