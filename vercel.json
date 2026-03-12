@@ -1,12 +1,10 @@
 {
   "version": 2,
   "public": true,
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/public/dugem-style.html"
-    }
-  ],
+  "buildCommand": null,
+  "outputDirectory": "public",
+  "cleanUrls": true,
+  "trailingSlash": false,
   "headers": [
     {
       "source": "/(.*)",

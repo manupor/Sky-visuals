@@ -1,0 +1,16 @@
+# Ignorar archivos de Next.js y desarrollo
+app/
+components/
+node_modules/
+.next/
+.git/
+*.log
+package.json
+package-lock.json
+tailwind.config.ts
+tsconfig.json
+next.config.ts
+postcss.config.mjs
+README.md
+.gitignore
+.eslintrc.json
