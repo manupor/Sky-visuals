@@ -2,6 +2,12 @@
   publish = "public"
   command = "echo 'No build needed - static site'"
 
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+  
+  [plugins.inputs]
+  disable = true
+
 [[redirects]]
   from = "/*"
   to = "/dugem-style.html"
