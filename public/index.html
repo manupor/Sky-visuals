@@ -185,18 +185,27 @@
                         }
                     }
                     
-                    /* Mobile: Mostrar video en lugar de imagen */
+                    /* Mobile: Mostrar video E imagen juntos */
                     @media (max-width: 768px) {
                         .main-video {
                             min-height: 100vh !important;
                         }
                         
-                        /* Ocultar imagen de fondo en mobile */
+                        /* Mostrar imagen de fondo en mobile con tamaño adecuado */
                         .image-background {
-                            display: none !important;
+                            position: absolute !important;
+                            top: 0 !important;
+                            left: 0 !important;
+                            width: 100% !important;
+                            height: 100% !important;
+                            z-index: 1 !important;
+                            background-image: url('img/we-can-dance-forever2.png') !important;
+                            background-size: contain !important;
+                            background-position: center !important;
+                            background-repeat: no-repeat !important;
                         }
                         
-                        /* Mostrar video en mobile */
+                        /* Mostrar video detrás de la imagen en mobile */
                         .video-background {
                             position: absolute !important;
                             top: 0 !important;
@@ -216,6 +225,7 @@
                             height: auto !important;
                             transform: translate(-50%, -50%) !important;
                             object-fit: cover !important;
+                            display: block !important;
                         }
                         
                         .image-title {
@@ -234,6 +244,10 @@
                     @media (max-width: 480px) {
                         .main-video {
                             min-height: 100vh !important;
+                        }
+                        
+                        .image-background {
+                            background-size: contain !important;
                         }
                         
                         .image-title {
