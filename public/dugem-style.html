@@ -118,7 +118,61 @@
                 </div>
                 
                 <style>
-                    /* Asegurar que el video se vea en mobile */
+                    /* Hero 100% Responsive para todos los dispositivos */
+                    .main-video {
+                        width: 100%;
+                        position: relative;
+                    }
+                    
+                    .video-background,
+                    .image-background {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 0;
+                    }
+                    
+                    #myVideo {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        min-width: 100%;
+                        min-height: 100%;
+                        width: auto;
+                        height: auto;
+                        transform: translate(-50%, -50%);
+                        object-fit: cover;
+                    }
+                    
+                    .image-title {
+                        width: 100%;
+                        padding: 0 20px;
+                        box-sizing: border-box;
+                    }
+                    
+                    .image-title p {
+                        font-size: clamp(1.5rem, 4vw, 3rem);
+                        line-height: 1.2;
+                    }
+                    
+                    .image-title .button-basic-1 {
+                        font-size: clamp(0.9rem, 2vw, 1.1rem);
+                        padding: 12px 30px;
+                    }
+                    
+                    /* Tablet y Mobile */
+                    @media (max-width: 1024px) {
+                        .main-video {
+                            min-height: 80vh !important;
+                        }
+                        
+                        .image-title {
+                            top: 85% !important;
+                        }
+                    }
+                    
                     @media (max-width: 768px) {
                         .main-video {
                             min-height: 100vh !important;
@@ -133,6 +187,17 @@
                             z-index: 0 !important;
                         }
                         
+                        .image-background {
+                            position: absolute !important;
+                            top: 0 !important;
+                            left: 0 !important;
+                            width: 100% !important;
+                            height: 100% !important;
+                            z-index: 1 !important;
+                            background-size: cover !important;
+                            background-position: center !important;
+                        }
+                        
                         #myVideo {
                             position: absolute !important;
                             top: 50% !important;
@@ -143,6 +208,49 @@
                             height: auto !important;
                             transform: translate(-50%, -50%) !important;
                             object-fit: cover !important;
+                        }
+                        
+                        .image-title {
+                            top: 80% !important;
+                            text-align: center !important;
+                            padding: 0 15px !important;
+                        }
+                        
+                        .image-title p {
+                            font-size: clamp(1.2rem, 5vw, 2rem) !important;
+                            margin-bottom: 10px !important;
+                        }
+                    }
+                    
+                    @media (max-width: 480px) {
+                        .main-video {
+                            min-height: 100vh !important;
+                        }
+                        
+                        .image-title {
+                            top: 75% !important;
+                            padding: 0 10px !important;
+                        }
+                        
+                        .image-title p {
+                            font-size: 1.3rem !important;
+                            line-height: 1.3 !important;
+                        }
+                        
+                        .image-title .button-basic-1 {
+                            font-size: 0.9rem !important;
+                            padding: 10px 25px !important;
+                        }
+                    }
+                    
+                    /* Landscape mobile */
+                    @media (max-width: 768px) and (orientation: landscape) {
+                        .main-video {
+                            min-height: 100vh !important;
+                        }
+                        
+                        .image-title {
+                            top: 70% !important;
                         }
                     }
                 </style>
@@ -314,6 +422,151 @@
                         </ul>
                     </div>
                 </div>
+            </div>
+
+            <!-- CATÁLOGO DE PRODUCTOS -->
+            <div class="products-catalog" id="productos" style="padding: 100px 0; background: linear-gradient(180deg, #0a0a0a 0%, #1a0a1a 50%, #0a0a0a 100%); position: relative;">
+                <div class="container">
+                    <div class="the-title text-center" data-aos="fade-up" style="margin-bottom: 60px;">
+                        <h5 class="head-title-2"> / CATÁLOGO </h5>
+                        <h2 class="head-title-1"> Nuestros Productos
+                            <span class="title-end">.</span></h2>
+                        <p class="dugem-text" style="color: #aaa; margin-top: 15px;">Equipos profesionales de iluminación para todo tipo de eventos</p>
+                    </div>
+
+                    <!-- Grid de Productos -->
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; max-width: 1400px; margin: 0 auto;">
+                        
+                        <!-- Producto 1: Cabezas Móviles -->
+                        <div class="product-card" data-aos="fade-up" data-aos-delay="100" style="background: rgba(255,255,255,0.03); border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,44,85,0.2); transition: all 0.3s ease;">
+                            <div style="position: relative; height: 250px; overflow: hidden; background: linear-gradient(135deg, rgba(255,44,85,0.1) 0%, rgba(157,78,221,0.1) 100%);">
+                                <img src="img/cabeza-luz.png" alt="Cabezas Móviles" style="width: 100%; height: 100%; object-fit: contain; padding: 20px;">
+                                <div style="position: absolute; top: 15px; right: 15px; background: linear-gradient(135deg, #ff2c55 0%, #9d4edd 100%); padding: 8px 16px; border-radius: 20px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #fff; font-weight: 700;">PROFESIONAL</div>
+                            </div>
+                            <div style="padding: 30px;">
+                                <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 700; margin-bottom: 10px;">Cabezas Móviles</h3>
+                                <p style="color: #aaa; font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Equipos DMX de última generación con efectos gobo, strobo y beam. Potencia de 295W para iluminación profesional.</p>
+                                <ul style="color: #aaa; font-size: 13px; margin-bottom: 25px; list-style: none; padding: 0;">
+                                    <li style="margin-bottom: 8px;">✓ Control DMX 512</li>
+                                    <li style="margin-bottom: 8px;">✓ Efectos Gobo y Prisma</li>
+                                    <li style="margin-bottom: 8px;">✓ Beam 295W</li>
+                                    <li style="margin-bottom: 8px;">✓ Movimiento Pan/Tilt</li>
+                                </ul>
+                                <a href="#contacto" class="button-basic-1" style="width: 100%; text-align: center; display: block;">Cotizar</a>
+                            </div>
+                        </div>
+
+                        <!-- Producto 2: Pares LED -->
+                        <div class="product-card" data-aos="fade-up" data-aos-delay="200" style="background: rgba(255,255,255,0.03); border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,44,85,0.2); transition: all 0.3s ease;">
+                            <div style="position: relative; height: 250px; overflow: hidden; background: linear-gradient(135deg, rgba(0,240,255,0.1) 0%, rgba(157,78,221,0.1) 100%);">
+                                <img src="img/stage-lighting-equipment.jpg" alt="Pares LED" style="width: 100%; height: 100%; object-fit: cover;">
+                                <div style="position: absolute; top: 15px; right: 15px; background: linear-gradient(135deg, #00f0ff 0%, #9d4edd 100%); padding: 8px 16px; border-radius: 20px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #fff; font-weight: 700;">POPULAR</div>
+                            </div>
+                            <div style="padding: 30px;">
+                                <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 700; margin-bottom: 10px;">Pares LED RGBW</h3>
+                                <p style="color: #aaa; font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Iluminación LED de alta intensidad con control de color RGBW. Perfectos para crear ambientes únicos.</p>
+                                <ul style="color: #aaa; font-size: 13px; margin-bottom: 25px; list-style: none; padding: 0;">
+                                    <li style="margin-bottom: 8px;">✓ LED RGBW 4 en 1</li>
+                                    <li style="margin-bottom: 8px;">✓ Alta Intensidad</li>
+                                    <li style="margin-bottom: 8px;">✓ Bajo Consumo</li>
+                                    <li style="margin-bottom: 8px;">✓ Sin Calor Excesivo</li>
+                                </ul>
+                                <a href="#contacto" class="button-basic-1" style="width: 100%; text-align: center; display: block;">Cotizar</a>
+                            </div>
+                        </div>
+
+                        <!-- Producto 3: Láser Show -->
+                        <div class="product-card" data-aos="fade-up" data-aos-delay="300" style="background: rgba(255,255,255,0.03); border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,44,85,0.2); transition: all 0.3s ease;">
+                            <div style="position: relative; height: 250px; overflow: hidden; background: linear-gradient(135deg, rgba(0,255,0,0.1) 0%, rgba(255,0,255,0.1) 100%);">
+                                <img src="img/stage-lighting-equipment.jpg" alt="Láser Show" style="width: 100%; height: 100%; object-fit: cover;">
+                                <div style="position: absolute; top: 15px; right: 15px; background: linear-gradient(135deg, #00ff00 0%, #ff00ff 100%); padding: 8px 16px; border-radius: 20px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #fff; font-weight: 700;">PREMIUM</div>
+                            </div>
+                            <div style="padding: 30px;">
+                                <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 700; margin-bottom: 10px;">Láser Show</h3>
+                                <p style="color: #aaa; font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Efectos láser RGB de alta potencia para shows espectaculares. Control DMX y programación personalizada.</p>
+                                <ul style="color: #aaa; font-size: 13px; margin-bottom: 25px; list-style: none; padding: 0;">
+                                    <li style="margin-bottom: 8px;">✓ Láser RGB Full Color</li>
+                                    <li style="margin-bottom: 8px;">✓ Efectos Programables</li>
+                                    <li style="margin-bottom: 8px;">✓ Control DMX/Auto</li>
+                                    <li style="margin-bottom: 8px;">✓ Seguro para Eventos</li>
+                                </ul>
+                                <a href="#contacto" class="button-basic-1" style="width: 100%; text-align: center; display: block;">Cotizar</a>
+                            </div>
+                        </div>
+
+                        <!-- Producto 4: Máquinas de Humo -->
+                        <div class="product-card" data-aos="fade-up" data-aos-delay="100" style="background: rgba(255,255,255,0.03); border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,44,85,0.2); transition: all 0.3s ease;">
+                            <div style="position: relative; height: 250px; overflow: hidden; background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(100,100,100,0.1) 100%);">
+                                <img src="img/stage-lighting-equipment.jpg" alt="Máquinas de Humo" style="width: 100%; height: 100%; object-fit: cover;">
+                                <div style="position: absolute; top: 15px; right: 15px; background: linear-gradient(135deg, #666 0%, #333 100%); padding: 8px 16px; border-radius: 20px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #fff; font-weight: 700;">EFECTOS</div>
+                            </div>
+                            <div style="padding: 30px;">
+                                <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 700; margin-bottom: 10px;">Máquinas de Humo</h3>
+                                <p style="color: #aaa; font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Efectos de humo profesional para realzar la iluminación. Alta capacidad y control remoto.</p>
+                                <ul style="color: #aaa; font-size: 13px; margin-bottom: 25px; list-style: none; padding: 0;">
+                                    <li style="margin-bottom: 8px;">✓ Alta Capacidad</li>
+                                    <li style="margin-bottom: 8px;">✓ Control Remoto DMX</li>
+                                    <li style="margin-bottom: 8px;">✓ Calentamiento Rápido</li>
+                                    <li style="margin-bottom: 8px;">✓ Fluido Profesional</li>
+                                </ul>
+                                <a href="#contacto" class="button-basic-1" style="width: 100%; text-align: center; display: block;">Cotizar</a>
+                            </div>
+                        </div>
+
+                        <!-- Producto 5: Strobo LED -->
+                        <div class="product-card" data-aos="fade-up" data-aos-delay="200" style="background: rgba(255,255,255,0.03); border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,44,85,0.2); transition: all 0.3s ease;">
+                            <div style="position: relative; height: 250px; overflow: hidden; background: linear-gradient(135deg, rgba(255,255,0,0.1) 0%, rgba(255,255,255,0.1) 100%);">
+                                <img src="img/stage-lighting-equipment.jpg" alt="Strobo LED" style="width: 100%; height: 100%; object-fit: cover;">
+                                <div style="position: absolute; top: 15px; right: 15px; background: linear-gradient(135deg, #ffff00 0%, #ffffff 100%); padding: 8px 16px; border-radius: 20px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #000; font-weight: 700;">IMPACTO</div>
+                            </div>
+                            <div style="padding: 30px;">
+                                <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 700; margin-bottom: 10px;">Strobo LED</h3>
+                                <p style="color: #aaa; font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Efectos estroboscópicos de alta intensidad. Perfectos para momentos de máxima energía.</p>
+                                <ul style="color: #aaa; font-size: 13px; margin-bottom: 25px; list-style: none; padding: 0;">
+                                    <li style="margin-bottom: 8px;">✓ LED de Alta Potencia</li>
+                                    <li style="margin-bottom: 8px;">✓ Velocidad Variable</li>
+                                    <li style="margin-bottom: 8px;">✓ Control DMX</li>
+                                    <li style="margin-bottom: 8px;">✓ Bajo Consumo</li>
+                                </ul>
+                                <a href="#contacto" class="button-basic-1" style="width: 100%; text-align: center; display: block;">Cotizar</a>
+                            </div>
+                        </div>
+
+                        <!-- Producto 6: Paquete Completo -->
+                        <div class="product-card" data-aos="fade-up" data-aos-delay="300" style="background: linear-gradient(135deg, rgba(255,44,85,0.1) 0%, rgba(157,78,221,0.1) 100%); border-radius: 20px; overflow: hidden; border: 2px solid rgba(255,44,85,0.5); transition: all 0.3s ease;">
+                            <div style="position: relative; height: 250px; overflow: hidden; background: linear-gradient(135deg, rgba(255,44,85,0.2) 0%, rgba(157,78,221,0.2) 100%);">
+                                <img src="img/stage-lighting-equipment.jpg" alt="Paquete Completo" style="width: 100%; height: 100%; object-fit: cover;">
+                                <div style="position: absolute; top: 15px; right: 15px; background: linear-gradient(135deg, #ff2c55 0%, #9d4edd 100%); padding: 8px 16px; border-radius: 20px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #fff; font-weight: 700;">BEST VALUE</div>
+                            </div>
+                            <div style="padding: 30px;">
+                                <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 700; margin-bottom: 10px;">Paquete Completo</h3>
+                                <p style="color: #aaa; font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Solución integral para tu evento. Incluye diseño, instalación y operación profesional.</p>
+                                <ul style="color: #aaa; font-size: 13px; margin-bottom: 25px; list-style: none; padding: 0;">
+                                    <li style="margin-bottom: 8px;">✓ Diseño Personalizado</li>
+                                    <li style="margin-bottom: 8px;">✓ Todos los Equipos</li>
+                                    <li style="margin-bottom: 8px;">✓ Instalación Incluida</li>
+                                    <li style="margin-bottom: 8px;">✓ Operador Profesional</li>
+                                </ul>
+                                <a href="#contacto" class="button-basic-1" style="width: 100%; text-align: center; display: block;">Cotizar Paquete</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <style>
+                    .product-card:hover {
+                        transform: translateY(-10px);
+                        border-color: rgba(255,44,85,0.6);
+                        box-shadow: 0 20px 40px rgba(255,44,85,0.3);
+                    }
+                    
+                    @media (max-width: 768px) {
+                        .products-catalog {
+                            padding: 60px 0 !important;
+                        }
+                    }
+                </style>
             </div>
 
             <!-- VIDEO DEMOSTRACIÓN - Nuestro trabajo en acción -->
