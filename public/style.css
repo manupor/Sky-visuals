@@ -887,46 +887,7 @@ header {
 /*-----------------------------------------------------------------------------------*/
 /*  3b.  HOME SECTION DUGEM
 /*-----------------------------------------------------------------------------------*/
-.main-video {
-  position: relative;
-}
-
-.video-background {
-  z-index: 1;
-  position: relative;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #0b0b0b;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-}
-
-.video-background .background-overlay {
-  background-color: #0b0b0b;
-}
-
-.main-video video {
-  width: 100%;
-}
-
-.image-background {
-  position: absolute;
-  background-image: url(img/we-can-dance-forever2.png);
-  left: 0;
-  right: 0;
-  top: 0;
-  opacity: 0.9;
-  bottom: 0;
-  background-size: cover;
-  width: 100%;
-  background-color: transparent;
-  height: 100%;
-  background-position: center;
-  z-index: 3;
-}
+/* Hero styles moved to inline styles in HTML for better control */
 
 .image-title {
   position: absolute;
