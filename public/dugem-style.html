@@ -285,24 +285,14 @@
                                         50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
                                     }
                                     
-                                    /* Reducir tamaño de imagen en mobile */
+                                    /* Ocultar imagen del foco y botón Profesional en mobile */
                                     @media (max-width: 768px) {
-                                        .global-img .item-content {
-                                            padding: 20px !important;
+                                        .global-img {
+                                            display: none !important;
                                         }
                                         
-                                        .global-img .img-header img {
-                                            max-width: 60% !important;
-                                        }
-                                        
-                                        .global-img .item-content > div[style*="width: 400px"] {
-                                            width: 250px !important;
-                                            height: 250px !important;
-                                        }
-                                        
-                                        .global-img .item-content > div[style*="width: 300px"] {
-                                            width: 180px !important;
-                                            height: 180px !important;
+                                        .global-counter .button-basic-1 {
+                                            display: none !important;
                                         }
                                     }
                                 </style>
