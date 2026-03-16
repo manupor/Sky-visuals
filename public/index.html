@@ -103,7 +103,7 @@
         <!-- SECTION -->
         <section class="content" style="padding-top: 80px;">
             <!-- MAIN VIDEO BACKGROUND -->
-            <div class="main-video" id="hero" style="position: relative; overflow: hidden; min-height: 600px;">
+            <div class="main-video" id="hero" style="position: relative; overflow: visible; min-height: 600px;">
                 <div class="image-background" id="heroImage"></div>
                 <div class="video-background" id="heroVideo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
                     <video autoplay muted loop playsinline id="myVideo" style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); object-fit: cover;">
@@ -111,7 +111,7 @@
                     </video>
                 </div>
                 
-                <div class="image-title" id="heroText" style="top: calc(88% - 45px) !important; position: absolute; z-index: 100;">
+                <div class="image-title" id="heroText" style="top: calc(75% + 50px) !important; position: absolute; z-index: 100;">
                     <p>Transformamos cada escenario en una</p>
                     <p>experiencia visual única</p>
                     <a href="#contacto" class="button-basic-1" data-aos="fade-up" style="position: relative; z-index: 101; margin-top: 20px; display: inline-block;">Cotizar Ahora</a>
@@ -125,7 +125,7 @@
                         min-height: 600px;
                     }
                     
-                    /* Imagen de fondo - Igual en todos los dispositivos */
+                    /* Imagen de fondo - Desktop */
                     .image-background {
                         position: absolute;
                         top: 0;
@@ -136,6 +136,7 @@
                         background-image: url('img/we-can-dance-forever2.png');
                         background-size: cover;
                         background-position: center;
+                        background-repeat: no-repeat;
                     }
                     
                     /* Video de fondo - Igual en todos los dispositivos */
@@ -176,6 +177,88 @@
                         font-size: clamp(0.9rem, 2vw, 1.1rem);
                         padding: 12px 30px;
                     }
+                    
+                    /* Mobile: Video detrás, imagen encima, texto con fondo negro debajo */
+                    @media (max-width: 768px) {
+                        .main-video {
+                            min-height: auto !important;
+                            height: auto !important;
+                            overflow: hidden !important;
+                            display: flex !important;
+                            flex-direction: column !important;
+                            position: relative !important;
+                        }
+                        
+                        .video-background {
+                            position: absolute !important;
+                            top: 0 !important;
+                            left: 0 !important;
+                            width: 100% !important;
+                            height: 250px !important;
+                            z-index: 0 !important;
+                        }
+                        
+                        #myVideo {
+                            height: 250px !important;
+                        }
+                        
+                        .image-background {
+                            background-size: 130% auto !important;
+                            background-position: center top !important;
+                            position: relative !important;
+                            width: 100% !important;
+                            height: 250px !important;
+                            z-index: 1 !important;
+                        }
+                        
+                        .image-title {
+                            position: relative !important;
+                            top: 0 !important;
+                            background: rgba(0, 0, 0, 0.95) !important;
+                            padding: 30px 20px !important;
+                            margin: 0 !important;
+                            width: 100% !important;
+                            left: 0 !important;
+                            z-index: 100 !important;
+                            text-align: center !important;
+                        }
+                        
+                        .image-title p {
+                            margin-bottom: 8px !important;
+                            font-size: 1.3rem !important;
+                            color: #fff !important;
+                        }
+                        
+                        .image-title .button-basic-1 {
+                            position: relative !important;
+                            z-index: 1000 !important;
+                            display: inline-block !important;
+                            margin-top: 20px !important;
+                        }
+                    }
+                    
+                    @media (max-width: 480px) {
+                        .video-background {
+                            height: 220px !important;
+                        }
+                        
+                        #myVideo {
+                            height: 220px !important;
+                        }
+                        
+                        .image-background {
+                            background-size: 130% auto !important;
+                            height: 220px !important;
+                        }
+                        
+                        .image-title {
+                            padding: 25px 15px !important;
+                        }
+                        
+                        .image-title p {
+                            font-size: 1.15rem !important;
+                        }
+                    }
                 </style>
             </div>
 
@@ -201,6 +284,27 @@
                                         0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
                                         50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
                                     }
+                                    
+                                    /* Reducir tamaño de imagen en mobile */
+                                    @media (max-width: 768px) {
+                                        .global-img .item-content {
+                                            padding: 20px !important;
+                                        }
+                                        
+                                        .global-img .img-header img {
+                                            max-width: 60% !important;
+                                        }
+                                        
+                                        .global-img .item-content > div[style*="width: 400px"] {
+                                            width: 250px !important;
+                                            height: 250px !important;
+                                        }
+                                        
+                                        .global-img .item-content > div[style*="width: 300px"] {
+                                            width: 180px !important;
+                                            height: 180px !important;
+                                        }
+                                    }
                                 </style>
                             </div>
                         </div>
@@ -216,133 +320,6 @@
                                 <a href="#contacto" class="button-basic-2">Cotizar Servicio</a>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- NUESTROS SERVICIOS -->
-            <div class="table-events" style="background: url('img/event-counter.png') center/cover no-repeat; position: relative;">
-                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7);"></div>
-                <div class="container" style="position: relative; z-index: 2;">
-                    <div class="the-title text-center" data-aos="fade-up">
-                        <h5 class="head-title-2"> / SERVICIOS </h5>
-                        <h2 class="head-title-1"> Nuestros Servicios
-                            <span class="title-end">.</span></h2>
-                        <p class="dugem-text">Soluciones de iluminación profesional para cada tipo de evento</p>
-                    </div>
-                    <table class="event">
-                        <tr>
-                            <td>Servicio</td>
-                            <td class="event-thumb-head"></td>
-                            <td>Descripción</td>
-                            <td>Acción</td>
-                        </tr>
-                        <tr class="space">
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td class="event-date">Cabezas Móviles</td>
-                            <td class="event-thumb">
-                                <a href="#contacto">
-                                    <img width="70" height="100" src="img/stage-lighting-equipment.jpg" alt="Cabezas Móviles"> 
-                                </a>
-                            </td>
-                            <td class="event-artist">Equipos de última generación con movimiento DMX, efectos de gobo, colores y strobo</td>
-                            <td class="event-ticket-link">
-                                <a href="#contacto" class="button button-white">COTIZAR</a>
-                            </td>
-                        </tr>
-                        <tr class="space">
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td class="event-date">Pares LED</td>
-                            <td class="event-thumb">
-                                <a href="#contacto">
-                                    <img width="70" height="100" src="img/stage-lighting-equipment.jpg" alt="Pares LED"> 
-                                </a>
-                            </td>
-                            <td class="event-artist">Iluminación LED RGBW de alta intensidad para ambientar cualquier espacio</td>
-                            <td class="event-ticket-link">
-                                <a href="#contacto" class="button button-white">COTIZAR</a>
-                            </td>
-                        </tr>
-                        <tr class="space">
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td class="event-date">Diseño de Iluminación</td>
-                            <td class="event-thumb">
-                                <a href="#contacto">
-                                    <img width="70" height="100" src="img/stage-lighting-equipment.jpg" alt="Diseño"> 
-                                </a>
-                            </td>
-                            <td class="event-artist">Concepto visual completo desde el plano técnico hasta la ejecución en vivo</td>
-                            <td class="event-ticket-link">
-                                <a href="#contacto" class="button button-white">COTIZAR</a>
-                            </td>
-                        </tr>
-                        <tr class="space">
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td class="event-date">DJs & Artistas</td>
-                            <td class="event-thumb">
-                                <a href="#contacto">
-                                    <img width="70" height="100" src="img/stage-lighting-equipment.jpg" alt="DJs"> 
-                                </a>
-                            </td>
-                            <td class="event-artist">Paquetes especiales para artistas con iluminación sincronizada</td>
-                            <td class="event-ticket-link">
-                                <a href="#contacto" class="button button-white">COTIZAR</a>
-                            </td>
-                        </tr>
-                    </table>
-
-                    <!-- Mobile version -->
-                    <div class="event-mobile">
-                        <ul class="event-list">
-                            <li>
-                                <span class="img-thumb">
-                                    <a href="#contacto">
-                                        <img width="70" height="100" src="img/stage-lighting-equipment.jpg" alt="Cabezas Móviles">
-                                    </a>
-                                </span>
-                                <p><span>Servicio:</span> <a href="#">Cabezas Móviles</a></p>
-                                <p><span>Descripción:</span> Equipos de última generación con movimiento DMX</p>
-                                <p><a href="#contacto" class="button-basic-1">COTIZAR</a></p>
-                            </li>
-                            <li>
-                                <span class="img-thumb">
-                                    <a href="#contacto">
-                                        <img width="70" height="100" src="img/stage-lighting-equipment.jpg" alt="Pares LED">
-                                    </a>
-                                </span>
-                                <p><span>Servicio:</span> <a href="#">Pares LED</a></p>
-                                <p><span>Descripción:</span> Iluminación LED RGBW de alta intensidad</p>
-                                <p><a href="#contacto" class="button-basic-1">COTIZAR</a></p>
-                            </li>
-                            <li>
-                                <span class="img-thumb">
-                                    <a href="#contacto">
-                                        <img width="70" height="100" src="img/stage-lighting-equipment.jpg" alt="Diseño">
-                                    </a>
-                                </span>
-                                <p><span>Servicio:</span> <a href="#">Diseño de Iluminación</a></p>
-                                <p><span>Descripción:</span> Concepto visual completo</p>
-                                <p><a href="#contacto" class="button-basic-1">COTIZAR</a></p>
-                            </li>
-                            <li>
-                                <span class="img-thumb">
-                                    <a href="#contacto">
-                                        <img width="70" height="100" src="img/stage-lighting-equipment.jpg" alt="DJs">
-                                    </a>
-                                </span>
-                                <p><span>Servicio:</span> <a href="#">DJs & Artistas</a></p>
-                                <p><span>Descripción:</span> Paquetes especiales para artistas</p>
-                                <p><a href="#contacto" class="button-basic-1">COTIZAR</a></p>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
