@@ -94,6 +94,17 @@
                     </video>
                 </div>
                 
+                <!-- Beam Light Effects -->
+                <div class="beam-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; overflow: hidden;">
+                    <div class="beam beam-1"></div>
+                    <div class="beam beam-2"></div>
+                    <div class="beam beam-3"></div>
+                    <div class="beam beam-4"></div>
+                </div>
+                
+                <!-- Gradiente suave en la parte inferior -->
+                <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 150px; background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 100%); z-index: 3; pointer-events: none;"></div>
+                
                 <div class="image-title" id="heroText" style="top: calc(75% + 50px) !important; position: absolute; z-index: 100;">
                     <p>Transformamos cada escenario en una</p>
                     <p>experiencia visual única</p>
@@ -159,6 +170,62 @@
                     .image-title .button-basic-1 {
                         font-size: clamp(0.9rem, 2vw, 1.1rem);
                         padding: 12px 30px;
+                    }
+                    
+                    /* Beam Light Effects */
+                    .beam {
+                        position: absolute;
+                        bottom: 0;
+                        width: 150px;
+                        height: 100%;
+                        background: linear-gradient(to top, rgba(255,44,85,0.4) 0%, transparent 100%);
+                        filter: blur(20px);
+                        transform-origin: bottom center;
+                        opacity: 0.7;
+                    }
+                    
+                    .beam-1 {
+                        left: 10%;
+                        animation: beamMove1 4s ease-in-out infinite;
+                        background: linear-gradient(to top, rgba(255,44,85,0.5) 0%, transparent 100%);
+                    }
+                    
+                    .beam-2 {
+                        left: 35%;
+                        animation: beamMove2 5s ease-in-out infinite 0.5s;
+                        background: linear-gradient(to top, rgba(157,78,221,0.5) 0%, transparent 100%);
+                    }
+                    
+                    .beam-3 {
+                        left: 60%;
+                        animation: beamMove3 6s ease-in-out infinite 1s;
+                        background: linear-gradient(to top, rgba(0,240,255,0.5) 0%, transparent 100%);
+                    }
+                    
+                    .beam-4 {
+                        left: 85%;
+                        animation: beamMove4 4.5s ease-in-out infinite 1.5s;
+                        background: linear-gradient(to top, rgba(255,44,85,0.4) 0%, transparent 100%);
+                    }
+                    
+                    @keyframes beamMove1 {
+                        0%, 100% { transform: translateX(-30px) rotate(-5deg); opacity: 0.6; }
+                        50% { transform: translateX(30px) rotate(5deg); opacity: 0.9; }
+                    }
+                    
+                    @keyframes beamMove2 {
+                        0%, 100% { transform: translateX(20px) rotate(3deg); opacity: 0.5; }
+                        50% { transform: translateX(-40px) rotate(-4deg); opacity: 0.8; }
+                    }
+                    
+                    @keyframes beamMove3 {
+                        0%, 100% { transform: translateX(-25px) rotate(-3deg); opacity: 0.7; }
+                        50% { transform: translateX(35px) rotate(6deg); opacity: 0.9; }
+                    }
+                    
+                    @keyframes beamMove4 {
+                        0%, 100% { transform: translateX(15px) rotate(4deg); opacity: 0.6; }
+                        50% { transform: translateX(-30px) rotate(-5deg); opacity: 0.8; }
                     }
                     
                     /* Mobile: Video detrás, imagen encima, texto con fondo negro debajo */
