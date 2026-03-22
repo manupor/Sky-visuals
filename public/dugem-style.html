@@ -183,16 +183,16 @@
                     
                     /* Par 1: Blancas - diagonal desde la izquierda hacia el centro */
                     .beam-1 {
-                        left: -150px;
-                        bottom: -200px;
+                        left: -500px;
+                        bottom: 300px;
                         transform-origin: bottom left;
                         animation: beamDiagonalLeft1 2.5s ease-in-out infinite;
                         background: linear-gradient(to top, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.4) 50%, transparent 100%);
                     }
                     
                     .beam-2 {
-                        left: -50px;
-                        bottom: -200px;
+                        left: -400px;
+                        bottom: 300px;
                         transform-origin: bottom left;
                         animation: beamDiagonalLeft2 2.5s ease-in-out infinite;
                         background: linear-gradient(to top, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.35) 50%, transparent 100%);
@@ -200,39 +200,39 @@
                     
                     /* Par 2: Blancas - diagonal desde la derecha hacia el centro */
                     .beam-3 {
-                        right: -150px;
-                        bottom: -200px;
+                        right: -500px;
+                        bottom: 300px;
                         transform-origin: bottom right;
                         animation: beamDiagonalRight1 2.5s ease-in-out infinite;
                         background: linear-gradient(to top, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.4) 50%, transparent 100%);
                     }
                     
                     .beam-4 {
-                        right: -50px;
-                        bottom: -200px;
+                        right: -400px;
+                        bottom: 300px;
                         transform-origin: bottom right;
                         animation: beamDiagonalRight2 2.5s ease-in-out infinite;
                         background: linear-gradient(to top, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.35) 50%, transparent 100%);
                     }
                     
                     @keyframes beamDiagonalLeft1 {
-                        0%, 100% { transform: rotate(35deg) translateX(-30px); opacity: 0.7; }
-                        50% { transform: rotate(45deg) translateX(30px); opacity: 1; }
+                        0%, 100% { transform: rotate(50deg) translateX(-30px); opacity: 0.7; }
+                        50% { transform: rotate(60deg) translateX(30px); opacity: 1; }
                     }
                     
                     @keyframes beamDiagonalLeft2 {
-                        0%, 100% { transform: rotate(40deg) translateX(30px); opacity: 0.7; }
-                        50% { transform: rotate(50deg) translateX(-30px); opacity: 1; }
+                        0%, 100% { transform: rotate(55deg) translateX(30px); opacity: 0.7; }
+                        50% { transform: rotate(65deg) translateX(-30px); opacity: 1; }
                     }
                     
                     @keyframes beamDiagonalRight1 {
-                        0%, 100% { transform: rotate(-35deg) translateX(30px); opacity: 0.7; }
-                        50% { transform: rotate(-45deg) translateX(-30px); opacity: 1; }
+                        0%, 100% { transform: rotate(-50deg) translateX(30px); opacity: 0.7; }
+                        50% { transform: rotate(-60deg) translateX(-30px); opacity: 1; }
                     }
                     
                     @keyframes beamDiagonalRight2 {
-                        0%, 100% { transform: rotate(-40deg) translateX(-30px); opacity: 0.7; }
-                        50% { transform: rotate(-50deg) translateX(30px); opacity: 1; }
+                        0%, 100% { transform: rotate(-55deg) translateX(-30px); opacity: 0.7; }
+                        50% { transform: rotate(-65deg) translateX(30px); opacity: 1; }
                     }
                     
                     /* Mobile: Video detrás, imagen encima, texto con fondo negro debajo */
