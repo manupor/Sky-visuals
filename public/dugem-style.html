@@ -84,7 +84,15 @@
         </header>
 
         <!-- SECTION -->
-        <section class="content" style="padding-top: 80px;">
+        <section class="content" style="padding-top: 80px; background: #000000;">
+            <style>
+                @media (max-width: 768px) {
+                    .content {
+                        padding-top: 80px !important;
+                        background: #000000 !important;
+                    }
+                }
+            </style>
             <!-- MAIN VIDEO BACKGROUND -->
             <div class="main-video" id="hero" style="position: relative; overflow: visible; min-height: 600px;">
                 <div class="image-background" id="heroImage"></div>
@@ -162,8 +170,8 @@
                     }
                     
                     .image-title p {
-                        font-size: clamp(1.5rem, 4vw, 3rem);
-                        line-height: 1.2;
+                        font-size: clamp(1.1rem, 3vw, 1.5rem);
+                        line-height: 1.3;
                     }
                     
                     .image-title .button-basic-1 {
@@ -184,7 +192,7 @@
                     /* Par 1: Blancas - diagonal desde la izquierda hacia el centro */
                     .beam-1 {
                         left: -500px;
-                        bottom: 300px;
+                        bottom: 200px;
                         transform-origin: bottom left;
                         animation: beamDiagonalLeft1 2.5s ease-in-out infinite;
                         background: linear-gradient(to top, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.4) 50%, transparent 100%);
@@ -192,7 +200,7 @@
                     
                     .beam-2 {
                         left: -400px;
-                        bottom: 300px;
+                        bottom: 200px;
                         transform-origin: bottom left;
                         animation: beamDiagonalLeft2 2.5s ease-in-out infinite;
                         background: linear-gradient(to top, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.35) 50%, transparent 100%);
@@ -201,7 +209,7 @@
                     /* Par 2: Blancas - diagonal desde la derecha hacia el centro */
                     .beam-3 {
                         right: -500px;
-                        bottom: 300px;
+                        bottom: 200px;
                         transform-origin: bottom right;
                         animation: beamDiagonalRight1 2.5s ease-in-out infinite;
                         background: linear-gradient(to top, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.4) 50%, transparent 100%);
@@ -209,7 +217,7 @@
                     
                     .beam-4 {
                         right: -400px;
-                        bottom: 300px;
+                        bottom: 200px;
                         transform-origin: bottom right;
                         animation: beamDiagonalRight2 2.5s ease-in-out infinite;
                         background: linear-gradient(to top, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.35) 50%, transparent 100%);
@@ -244,6 +252,7 @@
                             display: flex !important;
                             flex-direction: column !important;
                             position: relative !important;
+                            margin-bottom: 0 !important;
                         }
                         
                         .video-background {
@@ -266,6 +275,8 @@
                             width: 100% !important;
                             height: 250px !important;
                             z-index: 1 !important;
+                            margin-top: -80px !important;
+                            padding-top: 80px !important;
                         }
                         
                         .image-title {
@@ -282,7 +293,7 @@
                         
                         .image-title p {
                             margin-bottom: 8px !important;
-                            font-size: 1.3rem !important;
+                            font-size: 1.1rem !important;
                             color: #fff !important;
                         }
                         
@@ -320,28 +331,23 @@
             </div>
 
             <!-- SECCIÓN EVENTOS - Estructura exacta como referencia -->
-            <div class="eventos-section" style="padding: 100px 0; background: #000000; position: relative; overflow: hidden;">
+            <div class="eventos-section" style="padding: 100px 0; background: #000000; position: relative; overflow: hidden; margin-top: 0;">
+                <style>
+                    @media (max-width: 768px) {
+                        .eventos-section {
+                            padding: 40px 0 !important;
+                            margin-top: 0 !important;
+                        }
+                    }
+                </style>
                 <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
                     
-                    <!-- Header: Tagline + Título + Botón -->
-                    <div data-aos="fade-up" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 60px; flex-wrap: wrap; gap: 30px;">
-                        <div style="flex: 1; min-width: 300px;">
-                            <!-- Tagline en gradiente -->
-                            <p style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 15px 0; background: linear-gradient(135deg, #ff2c55 0%, #9d4edd 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
-                                ABOUT OUR EVENT
-                            </p>
-                            <!-- Título principal -->
-                            <h2 style="font-family: 'Montserrat', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #fff; margin: 0; line-height: 1.2; text-transform: uppercase;">
-                                Haz que tu evento<br>se vea como un SHOW
-                            </h2>
-                        </div>
-                        <!-- Botón gradiente con flecha -->
-                        <a href="https://wa.me/50685128383?text=Hola!%20Me%20interesa%20cotizar%20iluminaci%C3%B3n%20para%20mi%20evento" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #ff2c55 0%, #9d4edd 100%); color: #fff; padding: 15px 30px; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; text-transform: capitalize; transition: all 0.3s ease; white-space: nowrap;">
-                            Cotizar Ahora
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
+                    <!-- Header: Título centrado -->
+                    <div data-aos="fade-up" style="text-align: center; margin-bottom: 60px;">
+                        <!-- Título principal centrado -->
+                        <h2 style="font-family: 'Montserrat', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #fff; margin: 0; line-height: 1.2; text-transform: uppercase;">
+                            Haz que tu evento<br>se vea como un SHOW
+                        </h2>
                     </div>
 
                     <!-- Grid 2x2 de Eventos -->
