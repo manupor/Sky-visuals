@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="css/fontawesome.min.css" type="text/css" />
     <link rel="stylesheet" href="style.css?v=6" type="text/css" />
     <link rel="stylesheet" href="css/responsive.css" type="text/css" />
+    <!-- Preload imagen hero para carga rápida -->
+    <link rel="preload" href="img/we-can-dance-forever2.png" as="image">
     <script>
         document.documentElement.className = 'js';
     </script>
@@ -53,16 +55,8 @@
                     <div class="header-clear clearfix">
                         <div class="header-content-left clearfix">
                             <div class="logo">
-                                <a href="#"><img id="navLogo" src="img/SKY VISUALS.png" alt="Sky Visuals CR" style="height: 20px; width: auto; filter: brightness(0) invert(1); animation: colorShift 4s ease-in-out infinite;"></a>
+                                <a href="#"><img id="navLogo" src="img/SKY VISUALS.png" alt="Sky Visuals CR" style="height: 20px; width: auto; filter: brightness(0) invert(1);"></a>
                             </div>
-                            <style>
-                                @keyframes colorShift {
-                                    0%, 100% { filter: brightness(0) invert(1) drop-shadow(0 0 8px #ff2c55); }
-                                    25% { filter: brightness(0) invert(1) drop-shadow(0 0 8px #00f0ff); }
-                                    50% { filter: brightness(0) invert(1) drop-shadow(0 0 8px #9d4edd); }
-                                    75% { filter: brightness(0) invert(1) drop-shadow(0 0 8px #ff006e); }
-                                }
-                            </style>
                         </div>
                         <div class="header-content-center clearfix">
                             <nav class="main-nav">
@@ -114,7 +108,7 @@
                 <div class="image-title" id="heroText" style="top: calc(75% + 60px) !important; position: absolute; z-index: 100;">
                     <p>Transformamos cada escenario en una</p>
                     <p>experiencia visual única</p>
-                    <a href="#contacto" class="button-basic-1" data-aos="fade-up" style="position: relative; z-index: 101; margin-top: 20px; display: inline-block;">Cotizar Ahora</a>
+                    <a href="https://wa.me/50685128383?text=Hola!%20Me%20interesa%20cotizar%20iluminaci%C3%B3n%20para%20mi%20evento" target="_blank" class="button-basic-1" data-aos="fade-up" style="position: relative; z-index: 101; margin-top: 20px; display: inline-block;">Cotizar Ahora</a>
                 </div>
                 
                 <style>
@@ -138,6 +132,13 @@
                         background-size: cover;
                         background-position: center;
                         background-repeat: no-repeat;
+                        opacity: 1;
+                        animation: fadeInFast 0.3s ease-in;
+                    }
+                    
+                    @keyframes fadeInFast {
+                        from { opacity: 0; }
+                        to { opacity: 1; }
                     }
                     
                     /* Video de fondo - Igual en todos los dispositivos */
@@ -363,7 +364,7 @@
                             </div>
                             <div>
                                 <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.4rem; font-weight: 700; color: #fff; margin: 0 0 10px 0;">
-                                    <a href="#contacto" style="color: #fff; text-decoration: none;">Cumpleaños</a>
+                                    <a href="https://wa.me/50685128383?text=Hola!%20Me%20interesa%20iluminaci%C3%B3n%20para%20un%20cumplea%C3%B1os" target="_blank" style="color: #fff; text-decoration: none;">Cumpleaños</a>
                                 </h4>
                                 <p style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #aaa; margin: 0; line-height: 1.7;">
                                     Transformamos tu celebración en una experiencia inolvidable con iluminación profesional que crea el ambiente perfecto para cada momento.
@@ -381,7 +382,7 @@
                             </div>
                             <div>
                                 <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.4rem; font-weight: 700; color: #fff; margin: 0 0 10px 0;">
-                                    <a href="#contacto" style="color: #fff; text-decoration: none;">15 Años</a>
+                                    <a href="https://wa.me/50685128383?text=Hola!%20Me%20interesa%20iluminaci%C3%B3n%20para%20una%20quincea%C3%B1era" target="_blank" style="color: #fff; text-decoration: none;">15 Años</a>
                                 </h4>
                                 <p style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #aaa; margin: 0; line-height: 1.7;">
                                     Momentos mágicos con efectos de iluminación diseñados especialmente para quinceañeras. Hacemos brillar tu noche especial.
@@ -398,7 +399,7 @@
                             </div>
                             <div>
                                 <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.4rem; font-weight: 700; color: #fff; margin: 0 0 10px 0;">
-                                    <a href="#contacto" style="color: #fff; text-decoration: none;">Bodas</a>
+                                    <a href="https://wa.me/50685128383?text=Hola!%20Me%20interesa%20iluminaci%C3%B3n%20para%20una%20boda" target="_blank" style="color: #fff; text-decoration: none;">Bodas</a>
                                 </h4>
                                 <p style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #aaa; margin: 0; line-height: 1.7;">
                                     Iluminación romántica y elegante para el día más importante. Creamos la atmósfera perfecta desde la ceremonia hasta la recepción.
@@ -416,10 +417,47 @@
                             </div>
                             <div>
                                 <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.4rem; font-weight: 700; color: #fff; margin: 0 0 10px 0;">
-                                    <a href="#contacto" style="color: #fff; text-decoration: none;">Graduaciones</a>
+                                    <a href="https://wa.me/50685128383?text=Hola!%20Me%20interesa%20iluminaci%C3%B3n%20para%20una%20graduaci%C3%B3n" target="_blank" style="color: #fff; text-decoration: none;">Graduaciones</a>
                                 </h4>
                                 <p style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #aaa; margin: 0; line-height: 1.7;">
                                     Celebra tus logros con estilo. Iluminación profesional que hace brillar este momento especial de celebración y nuevos comienzos.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Eventos Corporativos -->
+                        <div data-aos="fade-up" data-aos-delay="300" style="display: flex; gap: 25px; align-items: flex-start;">
+                            <div style="width: 65px; height: 65px; background: linear-gradient(135deg, #ff2c55 0%, #9d4edd 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 10px 30px rgba(255,44,85,0.4);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.4rem; font-weight: 700; color: #fff; margin: 0 0 10px 0;">
+                                    <a href="https://wa.me/50685128383?text=Hola!%20Me%20interesa%20iluminaci%C3%B3n%20para%20un%20evento%20corporativo" target="_blank" style="color: #fff; text-decoration: none;">Eventos Corporativos</a>
+                                </h4>
+                                <p style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #aaa; margin: 0; line-height: 1.7;">
+                                    Iluminación profesional para conferencias, lanzamientos de productos y eventos empresariales. Proyecta la imagen perfecta de tu marca.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Conciertos -->
+                        <div data-aos="fade-up" data-aos-delay="350" style="display: flex; gap: 25px; align-items: flex-start;">
+                            <div style="width: 65px; height: 65px; background: linear-gradient(135deg, #ff2c55 0%, #9d4edd 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 10px 30px rgba(255,44,85,0.4);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 18V5l12-2v13"></path>
+                                    <circle cx="6" cy="18" r="3"></circle>
+                                    <circle cx="18" cy="16" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.4rem; font-weight: 700; color: #fff; margin: 0 0 10px 0;">
+                                    <a href="https://wa.me/50685128383?text=Hola!%20Me%20interesa%20iluminaci%C3%B3n%20para%20un%20concierto" target="_blank" style="color: #fff; text-decoration: none;">Conciertos</a>
+                                </h4>
+                                <p style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #aaa; margin: 0; line-height: 1.7;">
+                                    Iluminación escénica de nivel profesional para conciertos y presentaciones en vivo. Efectos espectaculares que elevan cada performance.
                                 </p>
                             </div>
                         </div>
@@ -513,14 +551,22 @@
                                         Operador incluido
                                     </li>
                                 </ul>
-                                <a href="https://wa.me/50685128383?text=Hola!%20Me%20interesa%20el%20Paquete%20B%C3%A1sico" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 100%; background: linear-gradient(135deg, #ff2c55 0%, #9d4edd 100%); color: #fff; padding: 12px 20px; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.3s ease;">
-                                    Cotizar Ahora
-                                </a>
+                                <div style="display: flex; justify-content: center; width: 100%;">
+                                    <a href="https://wa.me/50685128383?text=Hola!%20Me%20interesa%20el%20Paquete%20B%C3%A1sico" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #ff2c55 0%, #9d4edd 100%); color: #fff; padding: 12px 30px; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.3s ease;">
+                                        Cotizar Ahora
+                                    </a>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Paquete Premium -->
-                        <div data-aos="fade-up" data-aos-delay="200" style="background: linear-gradient(135deg, rgba(157,78,221,0.15) 0%, rgba(0,240,255,0.15) 100%); border-radius: 20px; padding: 30px; border: 2px solid rgba(157,78,221,0.4); transition: all 0.3s ease; position: relative; overflow: hidden; transform: scale(1.05);">
+                        <div data-aos="fade-up" data-aos-delay="200" style="background: linear-gradient(135deg, rgba(157,78,221,0.15) 0%, rgba(0,240,255,0.15) 100%); border-radius: 20px; padding: 30px; border: 2px solid rgba(157,78,221,0.4); transition: all 0.3s ease; position: relative; overflow: hidden; transform: scale(1.05); box-shadow: 0 0 30px rgba(157,78,221,0.5), 0 0 60px rgba(157,78,221,0.3); animation: glowPulse 2s ease-in-out infinite;">
+                            <style>
+                                @keyframes glowPulse {
+                                    0%, 100% { box-shadow: 0 0 30px rgba(157,78,221,0.5), 0 0 60px rgba(157,78,221,0.3); }
+                                    50% { box-shadow: 0 0 40px rgba(157,78,221,0.7), 0 0 80px rgba(157,78,221,0.5), 0 0 120px rgba(157,78,221,0.3); }
+                                }
+                            </style>
                             <div style="position: absolute; top: 10px; right: 10px; background: linear-gradient(135deg, #ff2c55 0%, #9d4edd 100%); color: #fff; padding: 5px 15px; border-radius: 20px; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700;">
                                 MÁS POPULAR
                             </div>
@@ -556,18 +602,14 @@
                                         <svg style="position: absolute; left: 0; top: 2px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9d4edd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                             <polyline points="20 6 9 17 4 12"></polyline>
                                         </svg>
-                                        Láser RGB
-                                    </li>
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #ccc; margin-bottom: 12px; padding-left: 25px; position: relative;">
-                                        <svg style="position: absolute; left: 0; top: 2px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9d4edd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
                                         Operador incluido
                                     </li>
                                 </ul>
-                                <a href="https://wa.me/50685128383?text=Hola!%20Me%20interesa%20el%20Paquete%20Premium" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 100%; background: linear-gradient(135deg, #9d4edd 0%, #00f0ff 100%); color: #fff; padding: 12px 20px; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.3s ease;">
-                                    Cotizar Ahora
-                                </a>
+                                <div style="display: flex; justify-content: center; width: 100%;">
+                                    <a href="https://wa.me/50685128383?text=Hola!%20Me%20interesa%20el%20Paquete%20Premium" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #9d4edd 0%, #00f0ff 100%); color: #fff; padding: 12px 30px; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.3s ease;">
+                                        Cotizar Ahora
+                                    </a>
+                                </div>
                             </div>
                         </div>
 
@@ -605,18 +647,14 @@
                                         <svg style="position: absolute; left: 0; top: 2px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                             <polyline points="20 6 9 17 4 12"></polyline>
                                         </svg>
-                                        Múltiples láseres
-                                    </li>
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #ccc; margin-bottom: 12px; padding-left: 25px; position: relative;">
-                                        <svg style="position: absolute; left: 0; top: 2px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
                                         Equipo técnico completo
                                     </li>
                                 </ul>
-                                <a href="https://wa.me/50685128383?text=Hola!%20Me%20interesa%20el%20Paquete%20VIP" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 100%; background: linear-gradient(135deg, #00f0ff 0%, #ff2c55 100%); color: #fff; padding: 12px 20px; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.3s ease;">
-                                    Cotizar Ahora
-                                </a>
+                                <div style="display: flex; justify-content: center; width: 100%;">
+                                    <a href="https://wa.me/50685128383?text=Hola!%20Me%20interesa%20el%20Paquete%20VIP" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #00f0ff 0%, #ff2c55 100%); color: #fff; padding: 12px 30px; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.3s ease;">
+                                        Cotizar Ahora
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -680,26 +718,26 @@
                                 <p class="dugem-text" data-aos="fade-up">Cabezas móviles DMX, pares LED RGBW y diseño de iluminación profesional para conciertos, fiestas, festivales y eventos en Costa Rica. Llevamos tu show al siguiente nivel.</p>
                             </div>
                             <div class="global-buy" data-aos="fade-up">
-                                <a href="#contacto" class="button-basic-1">Más Información</a>
-                                <a href="#contacto" class="button-basic-2">Cotizar Servicio</a>
+                                <a href="https://wa.me/50685128383?text=Hola!%20Me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios" target="_blank" class="button-basic-1">Más Información</a>
+                                <a href="https://wa.me/50685128383?text=Hola!%20Me%20interesa%20cotizar%20un%20servicio%20de%20iluminaci%C3%B3n" target="_blank" class="button-basic-2">Cotizar Servicio</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- CATÁLOGO DE PRODUCTOS -->
-            <div class="products-catalog" id="productos" style="padding: 100px 0; background: linear-gradient(180deg, #0a0a0a 0%, #1a0a1a 50%, #0a0a0a 100%); position: relative;">
+            <!-- VIDEOS DE PRODUCTOS -->
+            <div class="products-videos" id="productos" style="padding: 100px 0; background: linear-gradient(180deg, #0a0a0a 0%, #1a0a1a 50%, #0a0a0a 100%); position: relative;">
                 <div class="container">
                     <div class="the-title text-center" data-aos="fade-up" style="margin-bottom: 60px;">
-                        <h5 class="head-title-2"> / CATÁLOGO </h5>
-                        <h2 class="head-title-1"> Nuestros Productos
+                        <h5 class="head-title-2"> / PRODUCTOS </h5>
+                        <h2 class="head-title-1"> Nuestros Productos en Acción
                             <span class="title-end">.</span></h2>
                         <p class="dugem-text" style="color: #aaa; margin-top: 15px;">Equipos profesionales de iluminación para todo tipo de eventos</p>
                     </div>
 
                     <!-- Videos Demo de Productos -->
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; max-width: 1200px; margin: 0 auto 80px auto;">
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; max-width: 1200px; margin: 0 auto 60px auto;">
                         <!-- Video Demo 1 - Beam 295 W -->
                         <div data-aos="fade-up" data-aos-delay="100">
                             <div class="video-container" style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 20px 60px rgba(255,44,85,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;">
@@ -737,155 +775,201 @@
                         </div>
                     </div>
 
-                    <!-- Grid de Productos -->
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; max-width: 1400px; margin: 0 auto;">
+                    <!-- Videos Adicionales -->
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1400px; margin: 0 auto;">
+                        <!-- Video Demo 3 -->
+                        <div data-aos="fade-up" data-aos-delay="100">
+                            <div class="video-container" style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 20px 60px rgba(255,44,85,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                                <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, #ff2c55, #9d4edd, #00f0ff, #ff2c55); border-radius: 17px; z-index: -1; animation: borderRotate 3s linear infinite;"></div>
+                                <video controls style="width: 100%; display: block; background: #000;">
+                                    <source src="img/whatsapp-video-1.mp4" type="video/mp4">
+                                    Tu navegador no soporta el elemento de video.
+                                </video>
+                            </div>
+                            <div style="text-align: center; margin-top: 20px;">
+                                <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 600; margin-bottom: 8px;">Iluminación Profesional</h3>
+                                <p style="color: #aaa; font-size: 14px;">Efectos espectaculares para tu evento</p>
+                            </div>
+                        </div>
                         
-                        <!-- Producto 1: Cabezas Móviles -->
-                        <div class="product-card" data-aos="fade-up" data-aos-delay="100" style="background: rgba(255,255,255,0.03); border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,44,85,0.2); transition: all 0.3s ease;">
-                            <div style="position: relative; height: 250px; overflow: hidden; background: linear-gradient(135deg, rgba(255,44,85,0.1) 0%, rgba(157,78,221,0.1) 100%);">
-                                <img src="img/cabeza-luz.png" alt="Cabezas Móviles" style="width: 100%; height: 100%; object-fit: contain; padding: 20px;">
-                                <div style="position: absolute; top: 15px; right: 15px; background: linear-gradient(135deg, #ff2c55 0%, #9d4edd 100%); padding: 8px 16px; border-radius: 20px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #fff; font-weight: 700;">PROFESIONAL</div>
+                        <!-- Video Demo 4 -->
+                        <div data-aos="fade-up" data-aos-delay="200">
+                            <div class="video-container" style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 20px 60px rgba(255,44,85,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                                <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, #ff2c55, #9d4edd, #00f0ff, #ff2c55); border-radius: 17px; z-index: -1; animation: borderRotate 3s linear infinite;"></div>
+                                <video controls style="width: 100%; display: block; background: #000;">
+                                    <source src="img/petal-video-1.mp4" type="video/mp4">
+                                    Tu navegador no soporta el elemento de video.
+                                </video>
                             </div>
-                            <div style="padding: 30px;">
-                                <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 700; margin-bottom: 10px;">Cabezas Móviles</h3>
-                                <p style="color: #aaa; font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Equipos DMX de última generación con efectos gobo, strobo y beam. Potencia de 295W para iluminación profesional.</p>
-                                <ul style="color: #aaa; font-size: 13px; margin-bottom: 25px; list-style: none; padding: 0;">
-                                    <li style="margin-bottom: 8px;">✓ Control DMX 512</li>
-                                    <li style="margin-bottom: 8px;">✓ Efectos Gobo y Prisma</li>
-                                    <li style="margin-bottom: 8px;">✓ Beam 295W</li>
-                                    <li style="margin-bottom: 8px;">✓ Movimiento Pan/Tilt</li>
-                                </ul>
-                                <a href="#contacto" class="button-basic-1" style="width: 100%; text-align: center; display: block;">Cotizar</a>
+                            <div style="text-align: center; margin-top: 20px;">
+                                <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 600; margin-bottom: 8px;">Cabezas Móviles</h3>
+                                <p style="color: #aaa; font-size: 14px;">Tecnología de punta en iluminación</p>
                             </div>
                         </div>
 
-                        <!-- Producto 2: Pares LED -->
-                        <div class="product-card" data-aos="fade-up" data-aos-delay="200" style="background: rgba(255,255,255,0.03); border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,44,85,0.2); transition: all 0.3s ease;">
-                            <div style="position: relative; height: 250px; overflow: hidden; background: linear-gradient(135deg, rgba(0,240,255,0.1) 0%, rgba(157,78,221,0.1) 100%);">
-                                <img src="img/stage-lighting-equipment.jpg" alt="Pares LED" style="width: 100%; height: 100%; object-fit: cover;">
-                                <div style="position: absolute; top: 15px; right: 15px; background: linear-gradient(135deg, #00f0ff 0%, #9d4edd 100%); padding: 8px 16px; border-radius: 20px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #fff; font-weight: 700;">POPULAR</div>
+                        <!-- Video Demo 5 -->
+                        <div data-aos="fade-up" data-aos-delay="300">
+                            <div class="video-container" style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 20px 60px rgba(255,44,85,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                                <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, #ff2c55, #9d4edd, #00f0ff, #ff2c55); border-radius: 17px; z-index: -1; animation: borderRotate 3s linear infinite;"></div>
+                                <video controls style="width: 100%; display: block; background: #000;">
+                                    <source src="img/petal-video-2.mp4" type="video/mp4">
+                                    Tu navegador no soporta el elemento de video.
+                                </video>
                             </div>
-                            <div style="padding: 30px;">
-                                <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 700; margin-bottom: 10px;">Pares LED RGBW</h3>
-                                <p style="color: #aaa; font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Iluminación LED de alta intensidad con control de color RGBW. Perfectos para crear ambientes únicos.</p>
-                                <ul style="color: #aaa; font-size: 13px; margin-bottom: 25px; list-style: none; padding: 0;">
-                                    <li style="margin-bottom: 8px;">✓ LED RGBW 4 en 1</li>
-                                    <li style="margin-bottom: 8px;">✓ Alta Intensidad</li>
-                                    <li style="margin-bottom: 8px;">✓ Bajo Consumo</li>
-                                    <li style="margin-bottom: 8px;">✓ Sin Calor Excesivo</li>
-                                </ul>
-                                <a href="#contacto" class="button-basic-1" style="width: 100%; text-align: center; display: block;">Cotizar</a>
+                            <div style="text-align: center; margin-top: 20px;">
+                                <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 600; margin-bottom: 8px;">Efectos Dinámicos</h3>
+                                <p style="color: #aaa; font-size: 14px;">Crea ambientes únicos e inolvidables</p>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Producto 3: 420w (3 en 1) -->
-                        <div class="product-card" data-aos="fade-up" data-aos-delay="300" style="background: rgba(255,255,255,0.03); border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,44,85,0.2); transition: all 0.3s ease;">
-                            <div style="position: relative; height: 250px; overflow: hidden; background: linear-gradient(135deg, rgba(255,44,85,0.1) 0%, rgba(157,78,221,0.1) 100%);">
-                                <img src="img/stage-lighting-equipment.jpg" alt="420w (3 en 1)" style="width: 100%; height: 100%; object-fit: cover;">
-                                <div style="position: absolute; top: 15px; right: 15px; background: linear-gradient(135deg, #ff2c55 0%, #9d4edd 100%); padding: 8px 16px; border-radius: 20px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #fff; font-weight: 700;">PREMIUM</div>
+                    <style>
+                        @media (max-width: 768px) {
+                            .products-videos {
+                                padding: 60px 0 !important;
+                            }
+                            
+                            /* Ocultar grids en mobile */
+                            .products-videos > .container > div:nth-child(2),
+                            .products-videos > .container > div:nth-child(3) {
+                                display: none !important;
+                            }
+                            
+                            /* Mostrar galería mobile */
+                            .mobile-video-gallery {
+                                display: flex !important;
+                                flex-direction: column;
+                                gap: 40px;
+                                padding: 0 20px;
+                            }
+                            
+                            .mobile-video-item {
+                                background: linear-gradient(135deg, rgba(255,44,85,0.05) 0%, rgba(157,78,221,0.05) 100%);
+                                border-radius: 20px;
+                                padding: 20px;
+                                border: 1px solid rgba(255,44,85,0.2);
+                            }
+                            
+                            .mobile-video-item .video-container {
+                                border-radius: 15px;
+                                overflow: hidden;
+                                margin-bottom: 20px;
+                                box-shadow: 0 10px 30px rgba(255,44,85,0.3);
+                            }
+                            
+                            .mobile-video-item video {
+                                width: 100%;
+                                display: block;
+                                background: #000;
+                            }
+                            
+                            .mobile-video-item h3 {
+                                color: #fff;
+                                font-family: 'Montserrat', sans-serif;
+                                font-size: 20px;
+                                font-weight: 700;
+                                margin-bottom: 10px;
+                                text-align: center;
+                            }
+                            
+                            .mobile-video-item p {
+                                color: #aaa;
+                                font-size: 14px;
+                                text-align: center;
+                                line-height: 1.6;
+                            }
+                            
+                            .mobile-video-badge {
+                                display: inline-block;
+                                background: linear-gradient(135deg, #ff2c55 0%, #9d4edd 100%);
+                                color: #fff;
+                                padding: 6px 16px;
+                                border-radius: 20px;
+                                font-size: 11px;
+                                font-weight: 700;
+                                letter-spacing: 1px;
+                                text-transform: uppercase;
+                                margin-bottom: 15px;
+                            }
+                        }
+                        
+                        /* Ocultar galería mobile en desktop */
+                        @media (min-width: 769px) {
+                            .mobile-video-gallery {
+                                display: none !important;
+                            }
+                        }
+                    </style>
+                    
+                    <!-- Galería Mobile -->
+                    <div class="mobile-video-gallery" style="display: none;">
+                        <!-- Video 1 - Beam 295 W -->
+                        <div class="mobile-video-item" data-aos="fade-up">
+                            <div style="text-align: center;">
+                                <span class="mobile-video-badge">Beam 295 W</span>
                             </div>
-                            <div style="padding: 30px;">
-                                <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 700; margin-bottom: 10px;">420w (3 en 1)</h3>
-                                <p style="color: #aaa; font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Cabeza móvil 3 en 1 de 420W con beam, spot y wash. Versatilidad profesional para cualquier evento.</p>
-                                <ul style="color: #aaa; font-size: 13px; margin-bottom: 25px; list-style: none; padding: 0;">
-                                    <li style="margin-bottom: 8px;">✓ Beam, Spot y Wash</li>
-                                    <li style="margin-bottom: 8px;">✓ 420W de Potencia</li>
-                                    <li style="margin-bottom: 8px;">✓ Control DMX 512</li>
-                                    <li style="margin-bottom: 8px;">✓ Efectos Gobo y Prisma</li>
-                                </ul>
-                                <a href="#contacto" class="button-basic-1" style="width: 100%; text-align: center; display: block;">Cotizar</a>
+                            <div class="video-container">
+                                <video controls playsinline>
+                                    <source src="img/Video%20.mp4" type="video/mp4">
+                                    Tu navegador no soporta el elemento de video.
+                                </video>
                             </div>
+                            <h3>Iluminación Beam en Acción</h3>
+                            <p>Potencia y precisión en cada haz de luz</p>
                         </div>
-
-                        <!-- Producto 4: Máquinas de Humo -->
-                        <div class="product-card" data-aos="fade-up" data-aos-delay="100" style="background: rgba(255,255,255,0.03); border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,44,85,0.2); transition: all 0.3s ease;">
-                            <div style="position: relative; height: 250px; overflow: hidden; background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(100,100,100,0.1) 100%);">
-                                <img src="img/stage-lighting-equipment.jpg" alt="Máquinas de Humo" style="width: 100%; height: 100%; object-fit: cover;">
-                                <div style="position: absolute; top: 15px; right: 15px; background: linear-gradient(135deg, #666 0%, #333 100%); padding: 8px 16px; border-radius: 20px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #fff; font-weight: 700;">EFECTOS</div>
+                        
+                        <!-- Video 2 - 420 BSW -->
+                        <div class="mobile-video-item" data-aos="fade-up">
+                            <div style="text-align: center;">
+                                <span class="mobile-video-badge">420 BSW</span>
                             </div>
-                            <div style="padding: 30px;">
-                                <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 700; margin-bottom: 10px;">Máquinas de Humo</h3>
-                                <p style="color: #aaa; font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Efectos de humo profesional para realzar la iluminación. Alta capacidad y control remoto.</p>
-                                <ul style="color: #aaa; font-size: 13px; margin-bottom: 25px; list-style: none; padding: 0;">
-                                    <li style="margin-bottom: 8px;">✓ Alta Capacidad</li>
-                                    <li style="margin-bottom: 8px;">✓ Control Remoto DMX</li>
-                                    <li style="margin-bottom: 8px;">✓ Calentamiento Rápido</li>
-                                    <li style="margin-bottom: 8px;">✓ Fluido Profesional</li>
-                                </ul>
-                                <a href="#contacto" class="button-basic-1" style="width: 100%; text-align: center; display: block;">Cotizar</a>
+                            <div class="video-container">
+                                <video controls playsinline>
+                                    <source src="img/420%20BSW.mp4" type="video/mp4">
+                                    Tu navegador no soporta el elemento de video.
+                                </video>
                             </div>
+                            <h3>420 BSW en Acción</h3>
+                            <p>Beam, Spot y Wash profesional</p>
                         </div>
-
-                        <!-- Producto 5: Strobo LED -->
-                        <div class="product-card" data-aos="fade-up" data-aos-delay="200" style="background: rgba(255,255,255,0.03); border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,44,85,0.2); transition: all 0.3s ease;">
-                            <div style="position: relative; height: 250px; overflow: hidden; background: linear-gradient(135deg, rgba(255,255,0,0.1) 0%, rgba(255,255,255,0.1) 100%);">
-                                <img src="img/stage-lighting-equipment.jpg" alt="Strobo LED" style="width: 100%; height: 100%; object-fit: cover;">
-                                <div style="position: absolute; top: 15px; right: 15px; background: linear-gradient(135deg, #ffff00 0%, #ffffff 100%); padding: 8px 16px; border-radius: 20px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #000; font-weight: 700;">IMPACTO</div>
+                        
+                        <!-- Video 3 -->
+                        <div class="mobile-video-item" data-aos="fade-up">
+                            <div class="video-container">
+                                <video controls playsinline>
+                                    <source src="img/whatsapp-video-1.mp4" type="video/mp4">
+                                    Tu navegador no soporta el elemento de video.
+                                </video>
                             </div>
-                            <div style="padding: 30px;">
-                                <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 700; margin-bottom: 10px;">Strobo LED</h3>
-                                <p style="color: #aaa; font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Efectos estroboscópicos de alta intensidad. Perfectos para momentos de máxima energía.</p>
-                                <ul style="color: #aaa; font-size: 13px; margin-bottom: 25px; list-style: none; padding: 0;">
-                                    <li style="margin-bottom: 8px;">✓ LED de Alta Potencia</li>
-                                    <li style="margin-bottom: 8px;">✓ Velocidad Variable</li>
-                                    <li style="margin-bottom: 8px;">✓ Control DMX</li>
-                                    <li style="margin-bottom: 8px;">✓ Bajo Consumo</li>
-                                </ul>
-                                <a href="#contacto" class="button-basic-1" style="width: 100%; text-align: center; display: block;">Cotizar</a>
-                            </div>
+                            <h3>Iluminación Profesional</h3>
+                            <p>Efectos espectaculares para tu evento</p>
                         </div>
-
-                        <!-- Producto 6: Paquete Completo -->
-                        <div class="product-card" data-aos="fade-up" data-aos-delay="300" style="background: linear-gradient(135deg, rgba(255,44,85,0.1) 0%, rgba(157,78,221,0.1) 100%); border-radius: 20px; overflow: hidden; border: 2px solid rgba(255,44,85,0.5); transition: all 0.3s ease;">
-                            <div style="position: relative; height: 250px; overflow: hidden; background: linear-gradient(135deg, rgba(255,44,85,0.2) 0%, rgba(157,78,221,0.2) 100%);">
-                                <img src="img/stage-lighting-equipment.jpg" alt="Paquete Completo" style="width: 100%; height: 100%; object-fit: cover;">
-                                <div style="position: absolute; top: 15px; right: 15px; background: linear-gradient(135deg, #ff2c55 0%, #9d4edd 100%); padding: 8px 16px; border-radius: 20px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #fff; font-weight: 700;">BEST VALUE</div>
+                        
+                        <!-- Video 4 -->
+                        <div class="mobile-video-item" data-aos="fade-up">
+                            <div class="video-container">
+                                <video controls playsinline>
+                                    <source src="img/petal-video-1.mp4" type="video/mp4">
+                                    Tu navegador no soporta el elemento de video.
+                                </video>
                             </div>
-                            <div style="padding: 30px;">
-                                <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 700; margin-bottom: 10px;">Paquete Completo</h3>
-                                <p style="color: #aaa; font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Solución integral para tu evento. Incluye diseño, instalación y operación profesional.</p>
-                                <ul style="color: #aaa; font-size: 13px; margin-bottom: 25px; list-style: none; padding: 0;">
-                                    <li style="margin-bottom: 8px;">✓ Diseño Personalizado</li>
-                                    <li style="margin-bottom: 8px;">✓ Todos los Equipos</li>
-                                    <li style="margin-bottom: 8px;">✓ Instalación Incluida</li>
-                                    <li style="margin-bottom: 8px;">✓ Operador Profesional</li>
-                                </ul>
-                                <a href="#contacto" class="button-basic-1" style="width: 100%; text-align: center; display: block;">Cotizar Paquete</a>
-                            </div>
+                            <h3>Cabezas Móviles</h3>
+                            <p>Tecnología de punta en iluminación</p>
                         </div>
-
+                        
+                        <!-- Video 5 -->
+                        <div class="mobile-video-item" data-aos="fade-up">
+                            <div class="video-container">
+                                <video controls playsinline>
+                                    <source src="img/petal-video-2.mp4" type="video/mp4">
+                                    Tu navegador no soporta el elemento de video.
+                                </video>
+                            </div>
+                            <h3>Efectos Dinámicos</h3>
+                            <p>Crea ambientes únicos e inolvidables</p>
+                        </div>
                     </div>
                 </div>
-
-                <style>
-                    .product-card:hover {
-                        transform: translateY(-10px);
-                        border-color: rgba(255,44,85,0.6);
-                        box-shadow: 0 20px 40px rgba(255,44,85,0.3);
-                    }
-                    
-                    /* Centrar botones de productos perfectamente */
-                    .product-card .button-basic-1 {
-                        margin: 0 auto !important;
-                        padding-left: 0 !important;
-                        padding-right: 0 !important;
-                        text-align: center !important;
-                        display: block !important;
-                        width: 100% !important;
-                        box-sizing: border-box !important;
-                    }
-                    
-                    @media (max-width: 768px) {
-                        .products-catalog {
-                            padding: 60px 0 !important;
-                        }
-                        
-                        .product-card .button-basic-1 {
-                            margin: 0 auto !important;
-                            text-align: center !important;
-                        }
-                    }
-                </style>
             </div>
 
             <!-- VIDEO DEMOSTRACIÓN - Nuestro trabajo en acción -->
@@ -953,7 +1037,7 @@
             </div>
 
             <!-- TESTIMONIOS -->
-            <div class="testimonial-block" style="background: url('img/background%20.png') center/cover no-repeat; position: relative;">
+            <div class="testimonial-block" style="background: url('img/background%20.png') center/cover no-repeat; position: relative; display: none;">
                 <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7);"></div>
                 <div class="testimonial-wrap" style="position: relative; z-index: 2;">
                     <div class="the-title text-center">
@@ -1062,18 +1146,14 @@
                             </div>
 
                             <div class="foot-col column column-1 text-center clearfix">
-                                <div class="social-footer">
-                                    <ul>
-                                        <li class="soc-icon"><a href="https://instagram.com" target="_blank"><i class="icon icon-themify-17"></i>Instagram</a></li>
-                                        <li class="soc-icon"><a href="https://facebook.com" target="_blank"><i class="icon icon-themify-17"></i>Facebook</a></li>
-                                        <li class="soc-icon"><a href="https://tiktok.com" target="_blank"><i class="icon icon-themify-11"></i>TikTok</a></li>
-                                        <li class="soc-icon"><a href="https://wa.me/50612345678" target="_blank"><i class="icon icon-themify-11"></i>WhatsApp</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="foot-col column column-1 text-center clearfix">
                                 <div id="copyright" class="copyright-text">
                                     © 2026 Sky Visuals CR. Todos los derechos reservados.
+                                </div>
+                                <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1);">
+                                    <a href="https://manuportuguez.com" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; font-size: 12px; color: #888; text-decoration: none; transition: all 0.3s ease; font-family: 'Montserrat', sans-serif;">
+                                        <span style="opacity: 0.6;">Diseñado por</span>
+                                        <span style="font-weight: 600; background: linear-gradient(135deg, #ff2c55 0%, #9d4edd 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Manu Portuguez</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
