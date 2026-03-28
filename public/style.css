@@ -475,7 +475,7 @@ figure {
 }
 
 .head-title-1 {
-  color: #ffffff;
+  color: #ffffff !important;
   margin-top: 0px;
   margin-bottom: 20px;
 
@@ -941,7 +941,7 @@ header {
   font-size: 7rem;
   font-weight: 700;
   line-height: 1.2em;
-  color: #fff;
+  color: #fff !important;
   margin-top: 0px;
 }
 
