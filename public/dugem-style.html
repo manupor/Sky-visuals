@@ -55,23 +55,24 @@
                     <div class="header-clear clearfix">
                         <div class="header-content-left clearfix">
                             <div class="logo">
-                                <a href="#"><img id="navLogo" src="img/logo-blanco.png" alt="Sky Visuals CR" style="height: 40px; width: auto;"></a>
+                                <a href="#"><img id="navLogo" src="img/logo-blanco.png" alt="Sky Visuals CR" style="height: 350px; width: auto;"></a>
                             </div>
                             <style>
-                                /* Logo responsive - más grande en mobile */
+                                /* Logo extra grande y visible */
                                 #navLogo {
-                                    height: 40px !important;
+                                    height: 350px !important;
+                                    max-height: none !important;
                                 }
                                 
                                 @media (max-width: 768px) {
                                     #navLogo {
-                                        height: 35px !important;
+                                        height: 250px !important;
                                     }
                                 }
                                 
                                 @media (max-width: 480px) {
                                     #navLogo {
-                                        height: 32px !important;
+                                        height: 180px !important;
                                     }
                                 }
                             </style>
@@ -994,49 +995,7 @@
                 </div>
             </div>
 
-            <!-- VIDEO DEMOSTRACIÓN - Nuestro trabajo en acción -->
-            <div class="video-demo-section" style="position: relative; padding: 80px 0; background: linear-gradient(180deg, #0a0a0a 0%, #1a0a1a 50%, #0a0a0a 100%); overflow: hidden;">
-                <div class="background-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(ellipse at center, rgba(255,44,85,0.1) 0%, transparent 70%);"></div>
-                
-                <div class="container" style="position: relative; z-index: 2;">
-                    <div class="the-title text-center" data-aos="fade-up" style="margin-bottom: 60px;">
-                        <h5 class="head-title-2"> / CLIENTES </h5>
-                        <h2 class="head-title-1"> Nuestros Clientes
-                            <span class="title-end">.</span></h2>
-                        <p class="dugem-text" style="color: #aaa; margin-top: 15px;">Confianza de empresas líderes en Costa Rica</p>
-                    </div>
-                    
-                    <!-- Video Cliente -->
-                    <div style="max-width: 800px; margin: 0 auto;">
-                        <!-- Video - Repretel -->
-                        <div data-aos="fade-up" data-aos-delay="50">
-                            <div class="video-container" style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 20px 60px rgba(255,44,85,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                                <!-- Marco decorativo -->
-                                <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, #ff2c55, #9d4edd, #00f0ff, #ff2c55); border-radius: 17px; z-index: -1; animation: borderRotate 3s linear infinite;"></div>
-                                
-                                <!-- Etiqueta del equipo -->
-                                <div style="position: absolute; top: 15px; right: 15px; z-index: 10; background: linear-gradient(135deg, rgba(255,44,85,0.95) 0%, rgba(157,78,221,0.95) 100%); padding: 8px 20px; border-radius: 20px; font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #fff; font-weight: 700; box-shadow: 0 4px 15px rgba(255,44,85,0.5);">
-                                    Repretel
-                                </div>
-                                
-                                <video controls style="width: 100%; display: block; background: #000;">
-                                    <source src="img/video%202%20repretel.mp4" type="video/mp4">
-                                    Tu navegador no soporta el elemento de video.
-                                </video>
-                            </div>
-                            <div style="text-align: center; margin-top: 20px;">
-                                <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 600; margin-bottom: 8px;">Producción Profesional</h3>
-                                <p style="color: #aaa; font-size: 14px;">Iluminación de nivel televisivo</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="text-center" style="margin-top: 50px;" data-aos="fade-up">
-                        <a href="#contacto" class="button-basic-1">Quiero este efecto en mi evento</a>
-                    </div>
-                </div>
-                
-                <style>
+            <style>
                     @keyframes borderRotate {
                         0% { background-position: 0% 50%; }
                         50% { background-position: 100% 50%; }
@@ -1400,6 +1359,49 @@
                 </div>
             </div>
         </section>
+
+        <!-- NUESTROS CLIENTES -->
+        <div class="video-demo-section" style="position: relative; padding: 80px 0; background: linear-gradient(180deg, #0a0a0a 0%, #1a0a1a 50%, #0a0a0a 100%); overflow: hidden;">
+            <div class="background-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(ellipse at center, rgba(255,44,85,0.1) 0%, transparent 70%);"></div>
+            
+            <div class="container" style="position: relative; z-index: 2;">
+                <div class="the-title text-center" data-aos="fade-up" style="margin-bottom: 60px;">
+                    <h5 class="head-title-2"> / CLIENTES </h5>
+                    <h2 class="head-title-1"> Nuestros Clientes
+                        <span class="title-end">.</span></h2>
+                    <p class="dugem-text" style="color: #aaa; margin-top: 15px;">Confianza de empresas líderes en Costa Rica</p>
+                </div>
+                
+                <!-- Video Cliente -->
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <!-- Video - Repretel -->
+                    <div data-aos="fade-up" data-aos-delay="50">
+                        <div class="video-container" style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 20px 60px rgba(255,44,85,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                            <!-- Marco decorativo -->
+                            <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, #ff2c55, #9d4edd, #00f0ff, #ff2c55); border-radius: 17px; z-index: -1; animation: borderRotate 3s linear infinite;"></div>
+                            
+                            <!-- Etiqueta del equipo -->
+                            <div style="position: absolute; top: 15px; right: 15px; z-index: 10; background: linear-gradient(135deg, rgba(255,44,85,0.95) 0%, rgba(157,78,221,0.95) 100%); padding: 8px 20px; border-radius: 20px; font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #fff; font-weight: 700; box-shadow: 0 4px 15px rgba(255,44,85,0.5);">
+                                Repretel
+                            </div>
+                            
+                            <video controls style="width: 100%; display: block; background: #000;">
+                                <source src="img/video%202%20repretel.mp4" type="video/mp4">
+                                Tu navegador no soporta el elemento de video.
+                            </video>
+                        </div>
+                        <div style="text-align: center; margin-top: 20px;">
+                            <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 600; margin-bottom: 8px;">Producción Profesional</h3>
+                            <p style="color: #aaa; font-size: 14px;">Iluminación de nivel televisivo</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center" style="margin-top: 50px;" data-aos="fade-up">
+                    <a href="#contacto" class="button-basic-1">Quiero este efecto en mi evento</a>
+                </div>
+            </div>
+        </div>
 
         <!-- FOOTER -->
         <footer id="footer" class="footer clearfix">
