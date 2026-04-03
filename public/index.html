@@ -55,8 +55,26 @@
                     <div class="header-clear clearfix">
                         <div class="header-content-left clearfix">
                             <div class="logo">
-                                <a href="#"><img id="navLogo" src="img/logo-blanco.png" alt="Sky Visuals CR" style="height: 20px; width: auto;"></a>
+                                <a href="#"><img id="navLogo" src="img/logo-blanco.png" alt="Sky Visuals CR" style="height: 40px; width: auto;"></a>
                             </div>
+                            <style>
+                                /* Logo responsive - más grande en mobile */
+                                #navLogo {
+                                    height: 40px !important;
+                                }
+                                
+                                @media (max-width: 768px) {
+                                    #navLogo {
+                                        height: 35px !important;
+                                    }
+                                }
+                                
+                                @media (max-width: 480px) {
+                                    #navLogo {
+                                        height: 32px !important;
+                                    }
+                                }
+                            </style>
                         </div>
                         <div class="header-content-center clearfix">
                             <nav class="main-nav">
@@ -735,7 +753,7 @@
                 <div class="container">
                     <div class="the-title text-center" data-aos="fade-up" style="margin-bottom: 60px;">
                         <h5 class="head-title-2"> / PRODUCTOS </h5>
-                        <h2 class="head-title-1"> Nuestros Productos en Acción
+                        <h2 class="head-title-1"> Nuestros Productos de alquiler en Acción
                             <span class="title-end">.</span></h2>
                         <p class="dugem-text" style="color: #aaa; margin-top: 15px;">Equipos profesionales de iluminación para todo tipo de eventos</p>
                     </div>
@@ -1327,6 +1345,18 @@
                             .productos-venta-section > div > div:nth-child(2) {
                                 grid-template-columns: 1fr !important;
                                 gap: 40px !important;
+                                display: flex !important;
+                                flex-direction: column !important;
+                            }
+                            
+                            /* En mobile, el video (columna derecha) aparece primero */
+                            .productos-venta-section > div > div:nth-child(2) > div:nth-child(2) {
+                                order: -1;
+                            }
+                            
+                            /* Especificaciones (columna izquierda) aparecen después */
+                            .productos-venta-section > div > div:nth-child(2) > div:nth-child(1) {
+                                order: 1;
                             }
                         }
                     </style>
