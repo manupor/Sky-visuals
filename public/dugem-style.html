@@ -153,144 +153,86 @@
             <div class="container">
                 <div class="row clearfix">
                     <div class="header-clear clearfix">
-                        <div class="header-content-left clearfix" style="display:none !important;">
-                            <div class="logo"></div>
+                        <!-- Logo Izquierda -->
+                        <div class="header-content-left">
+                            <div class="logo">
+                                <a href="#hero"><img id="navLogo" src="img/logo-blanco.png" alt="Sky Visuals CR"></a>
+                            </div>
                         </div>
-                            <style>
-                                /* ── NAVBAR RESET TOTAL ── */
-                                #header, #header * { box-sizing: border-box !important; }
 
-                                #header {
-                                    height: 100px !important;
-                                    overflow: visible !important;
-                                }
-                                #header .container {
-                                    height: 100px !important;
-                                    display: flex !important;
-                                    align-items: center !important;
-                                    padding: 0 28px !important;
-                                    max-width: 100% !important;
-                                    margin: 0 auto !important;
-                                }
-                                #header .row {
-                                    width: 100% !important;
-                                    height: 100px !important;
-                                    display: flex !important;
-                                    align-items: center !important;
-                                    margin: 0 !important;
-                                    padding: 0 !important;
-                                }
-                                #header .header-clear {
-                                    width: 100% !important;
-                                    height: 100px !important;
-                                    display: flex !important;
-                                    align-items: center !important;
-                                    justify-content: space-between !important;
-                                    position: static !important;
-                                    padding: 0 !important;
-                                    margin: 0 !important;
-                                }
-                                #header .header-content-left {
-                                    display: flex !important;
-                                    align-items: center !important;
-                                    height: 100px !important;
-                                    flex: 0 0 auto !important;
-                                    padding: 0 !important;
-                                    margin: 0 !important;
-                                }
-                                #header .logo, #header .logo a {
-                                    display: flex !important;
-                                    align-items: center !important;
-                                    height: 100px !important;
-                                    padding: 0 !important;
-                                    margin: 0 !important;
-                                }
-                                #navLogo {
-                                    height: 88px !important;
-                                    width: auto !important;
-                                    display: block !important;
-                                }
-                                #header .header-content-center {
-                                    display: flex !important;
-                                    align-items: center !important;
-                                    justify-content: center !important;
-                                    flex: 1 !important;
-                                    height: 100px !important;
-                                    position: static !important;
-                                    transform: none !important;
-                                    left: auto !important;
-                                    top: auto !important;
-                                }
-                                #header .header-content-right {
-                                    display: flex !important;
-                                    align-items: center !important;
-                                    flex: 0 0 auto !important;
-                                    height: 100px !important;
-                                }
-                                #header .main-nav > ul,
-                                #header .main-nav ul#main-menu {
-                                    display: flex !important;
-                                    align-items: center !important;
-                                    flex-direction: row !important;
-                                    gap: 4px !important;
-                                    list-style: none !important;
-                                    margin: 0 !important;
-                                    padding: 0 !important;
-                                    height: 100px !important;
-                                }
-                                #header .main-nav ul li {
-                                    display: flex !important;
-                                    align-items: center !important;
-                                    height: 100px !important;
-                                    list-style: none !important;
-                                }
-                                #header .main-nav ul li a {
-                                    display: flex !important;
-                                    align-items: center !important;
-                                    height: 100px !important;
-                                    padding: 0 14px !important;
-                                    font-size: 14px !important;
-                                    font-weight: 600 !important;
-                                    letter-spacing: 0.3px !important;
-                                    color: rgba(255,255,255,0.82) !important;
-                                    text-decoration: none !important;
-                                    white-space: nowrap !important;
-                                }
-                                #header .main-nav ul li a:hover,
-                                #header .main-nav ul li a.active {
-                                    color: #ff2c55 !important;
-                                }
-                                /* hide hamburger on desktop */
-                                #header .main-menu-btn { display: none !important; }
-                                @media (max-width: 768px) {
-                                    #header, #header .container, #header .row,
-                                    #header .header-clear, #header .header-content-left,
-                                    #header .header-content-center, #header .logo, #header .logo a {
-                                        height: 72px !important;
-                                    }
-                                    #navLogo { height: 56px !important; }
-                                    #header .main-nav ul#main-menu { display: none !important; }
-                                    #header .main-menu-btn { display: flex !important; }
-                                }
-                            </style>
-                        </div>
-                        <div class="header-content-center clearfix">
+                        <!-- Menú Centro -->
+                        <div class="header-content-center">
                             <nav class="main-nav">
                                 <input id="main-menu-state" type="checkbox" />
                                 <label class="main-menu-btn sub-menu-trigger" for="main-menu-state">
                                     <span class="main-menu-btn-icon"></span> Toggle main menu visibility
                                 </label>
                                 <ul id="main-menu" class="sm sm-clean">
-                                    <li class="menu-item menu-logo-item"><a href="#hero" style="padding: 0 20px 0 0 !important;"><img id="navLogo" src="img/logo-blanco.png" alt="Sky Visuals CR" style="height: 88px; width: auto; display: block;"></a></li>
                                     <li class="menu-item"><a href="#servicios" class="menu-link">Servicios</a></li>
                                     <li class="menu-item"><a href="#eventos" class="menu-link">Eventos</a></li>
                                     <li class="menu-item"><a href="#contacto" class="menu-link">Contacto</a></li>
                                 </ul>
                             </nav>
                         </div>
+
+                        <!-- Div invisible derecha para centrar perfecto -->
+                        <div class="header-content-right" style="width: 140px;"></div>
                     </div>
                 </div>
             </div>
+            
+            <style>
+                /* ── NAVBAR CLEAN CSS ── */
+                #header, #header * { box-sizing: border-box !important; }
+                
+                #header { height: 100px !important; overflow: visible !important; }
+                #header .container { height: 100px !important; padding: 0 40px !important; max-width: 100% !important; }
+                
+                #header .header-clear {
+                    display: flex !important;
+                    align-items: center !important;
+                    justify-content: space-between !important;
+                    height: 100px !important;
+                    width: 100% !important;
+                }
+                
+                /* Izquierda (Logo) */
+                #header .header-content-left {
+                    display: flex !important; align-items: center !important;
+                    width: 140px !important; /* Fixed width */
+                    height: 100px !important;
+                }
+                #navLogo { height: 72px !important; width: auto !important; display: block !important; }
+                
+                /* Centro (Menu) */
+                #header .header-content-center {
+                    display: flex !important; justify-content: center !important; align-items: center !important;
+                    flex: 1 !important; height: 100px !important;
+                }
+                #header .main-nav > ul {
+                    display: flex !important; flex-direction: row !important; align-items: center !important;
+                    gap: 32px !important; margin: 0 !important; padding: 0 !important; list-style: none !important;
+                }
+                #header .main-nav ul li a {
+                    display: flex !important; align-items: center !important; height: 100px !important;
+                    font-size: 15px !important; font-weight: 600 !important; color: rgba(255,255,255,0.82) !important;
+                    text-decoration: none !important; transition: color 0.3s;
+                }
+                #header .main-nav ul li a:hover { color: #ff2c55 !important; }
+
+                #header .main-menu-btn { display: none !important; }
+                
+                /* Mobile */
+                @media (max-width: 768px) {
+                    #header, #header .container, #header .header-clear,
+                    #header .header-content-left, #header .header-content-center { height: 72px !important; }
+                    #header .container { padding: 0 20px !important; }
+                    #navLogo { height: 50px !important; }
+                    #header .main-nav > ul { display: none !important; }
+                    #header .main-menu-btn { display: flex !important; }
+                    #header .header-content-right { display: none !important; }
+                }
+            </style>
         </header>
 
         <!-- SECTION -->
