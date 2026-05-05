@@ -25,6 +25,106 @@
 </head>
 
 <body class="demo-1">
+    <style>
+        html, body { background-color: #000 !important; }
+        .main-wrapper, .main-content-area, .content,
+        .global-block, .global-block-wrap,
+        .book-table, .book-wrap,
+        .eventos-section, .paquetes-section, .products-videos,
+        .productos-venta-section, .video-demo-section,
+        footer#footer, .footer, .footer-wrap, .footer-bottom,
+        section { background: #000 !important; }
+    </style>
+
+    <style>
+        /* ===== VISUAL DEPTH — DUGEM ENHANCEMENTS ===== */
+
+        /* Ambient glow orbs behind each section */
+        .eventos-section::before,
+        .paquetes-section::before,
+        .products-videos::before,
+        .productos-venta-section::before,
+        .video-demo-section::before { content: ''; position: absolute; pointer-events: none; z-index: 0; }
+
+        .eventos-section::before {
+            top: 0; left: 50%; transform: translateX(-50%);
+            width: 100%; height: 65%;
+            background: radial-gradient(ellipse at 50% 0%, rgba(255,44,85,0.08) 0%, transparent 68%);
+        }
+        .paquetes-section::before {
+            top: 0; right: 0;
+            width: 65%; height: 85%;
+            background: radial-gradient(ellipse at 100% 0%, rgba(157,78,221,0.09) 0%, transparent 65%);
+        }
+        .products-videos::before {
+            top: 0; left: 0;
+            width: 55%; height: 65%;
+            background: radial-gradient(ellipse at 0% 0%, rgba(255,44,85,0.07) 0%, transparent 65%);
+        }
+        .productos-venta-section::before {
+            top: 0; right: 0;
+            width: 65%; height: 70%;
+            background: radial-gradient(ellipse at 100% 0%, rgba(157,78,221,0.07) 0%, transparent 65%);
+        }
+        .video-demo-section::before {
+            top: 0; left: 50%; transform: translateX(-50%);
+            width: 80%; height: 55%;
+            background: radial-gradient(ellipse at 50% 0%, rgba(255,44,85,0.06) 0%, transparent 65%);
+        }
+
+        /* Lift containers above glow orbs */
+        .eventos-section > .container,
+        .paquetes-section > .container,
+        .products-videos > .container,
+        .productos-venta-section > .container,
+        .video-demo-section > .container { position: relative; z-index: 1; }
+
+        /* Subtle section dividers */
+        .eventos-section, .paquetes-section, .products-videos,
+        .productos-venta-section, .video-demo-section {
+            border-top: 1px solid rgba(255,255,255,0.05) !important;
+        }
+
+        /* Section H2 accent underline */
+        .section-accent-line {
+            display: block; width: 40px; height: 2px;
+            background: linear-gradient(90deg, #ff2c55, #9d4edd);
+            border-radius: 2px; margin: 18px auto 0;
+        }
+
+        /* Ev-cards: subtle gradient bg + glow on hover */
+        .ev-card { background: linear-gradient(150deg, #141414 0%, #0f0f0f 100%) !important; }
+        .ev-card:hover {
+            box-shadow: 0 28px 60px rgba(0,0,0,0.8), 0 0 80px rgba(255,44,85,0.05) !important;
+            border-color: rgba(255,44,85,0.25) !important;
+        }
+
+        /* Pkg cards: subtle gradient bg */
+        .pkg-card-clean { background: linear-gradient(150deg, #141414 0%, #0f0f0f 100%) !important; }
+        .pkg-card-clean:hover { box-shadow: 0 28px 60px rgba(0,0,0,0.8) !important; }
+
+        /* Featured pkg card: gradient top accent bar */
+        .pkg-card-featured-clean {
+            background: linear-gradient(150deg, #181818 0%, #131313 100%) !important;
+            overflow: hidden;
+        }
+        .pkg-card-featured-clean::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+            background: linear-gradient(90deg, #ff2c55, #9d4edd);
+        }
+        .pkg-card-featured-clean:hover {
+            box-shadow: 0 28px 60px rgba(0,0,0,0.8), 0 0 80px rgba(255,44,85,0.09) !important;
+        }
+
+        /* LED info cards: subtle gradient */
+        .led-info-card { background: linear-gradient(150deg, #141414 0%, #0f0f0f 100%) !important; }
+        .led-chip { background: linear-gradient(150deg, #141414 0%, #0f0f0f 100%) !important; }
+
+        /* Bento video cards: deeper shadow on hover */
+        .bento-video-wrap:hover {
+            box-shadow: 0 36px 80px rgba(255,44,85,0.35), 0 0 0 1px rgba(255,44,85,0.12) !important;
+        }
+    </style>
     <div class="main-wrapper clearfix">
         <!-- BOTÓN WHATSAPP FIJO -->
         <a href="https://wa.me/50685128383" target="_blank" id="whatsappButton" style="position: fixed; right: 20px; bottom: 20px; z-index: 9998; width: 60px; height: 60px; background: linear-gradient(135deg, #25d366 0%, #128c7e 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 0 20px rgba(37,211,102,0.6), 0 0 40px rgba(37,211,102,0.4); animation: whatsappGlow 2s ease-in-out infinite; transition: all 0.3s ease;">
@@ -49,30 +149,87 @@
         </a>
 
         <!-- HEADER -->
-        <header id="header" class="header-style-1" style="position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(10,10,10,0.6); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,44,85,0.2);">
+        <header id="header" class="header-style-1" style="position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(10,10,10,0.6); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,44,85,0.2); height: 80px !important; overflow: hidden !important; padding: 0 !important;">
             <div class="container">
                 <div class="row clearfix">
                     <div class="header-clear clearfix">
                         <div class="header-content-left clearfix">
                             <div class="logo">
-                                <a href="#"><img id="navLogo" src="img/logo-blanco.png" alt="Sky Visuals CR" style="height: 350px; width: auto;"></a>
+                                <a href="#"><img id="navLogo" src="img/logo-blanco.png" alt="Sky Visuals CR" style="height: 40px; width: auto;"></a>
                             </div>
                             <style>
-                                /* Logo extra grande y visible */
-                                #navLogo {
-                                    height: 350px !important;
-                                    max-height: none !important;
+                                #header {
+                                    height: 80px !important;
+                                    overflow: hidden !important;
                                 }
-                                
+                                #header .container,
+                                #header .row,
+                                #header .header-clear,
+                                #header .header-content-left,
+                                #header .header-content-center,
+                                #header .header-content-right {
+                                    height: 80px !important;
+                                    display: flex !important;
+                                    align-items: center !important;
+                                    padding-top: 0 !important;
+                                    padding-bottom: 0 !important;
+                                    min-height: unset !important;
+                                }
+                                #header .header-clear {
+                                    display: grid !important;
+                                    grid-template-columns: 1fr auto 1fr !important;
+                                    align-items: center !important;
+                                    width: 100% !important;
+                                    position: static !important;
+                                }
+                                #header .header-content-left {
+                                    justify-content: flex-start !important;
+                                }
+                                #header .header-content-center {
+                                    position: static !important;
+                                    transform: none !important;
+                                    display: flex !important;
+                                    align-items: center !important;
+                                    justify-content: center !important;
+                                    height: 80px !important;
+                                }
+                                #header .header-content-right {
+                                    display: flex !important;
+                                    justify-content: flex-end !important;
+                                    align-items: center !important;
+                                }
+                                #header .main-nav ul {
+                                    display: flex !important;
+                                    align-items: center !important;
+                                    flex-direction: row !important;
+                                    gap: 8px !important;
+                                    margin: 0 !important;
+                                    padding: 0 !important;
+                                }
+                                #header .main-nav ul li a {
+                                    display: flex !important;
+                                    align-items: center !important;
+                                    height: 80px !important;
+                                }
+                                #navLogo {
+                                    height: 40px !important;
+                                    max-height: 40px !important;
+                                    width: auto !important;
+                                }
                                 @media (max-width: 768px) {
+                                    #header, #header .container, #header .row, #header .header-clear, #header .header-content-left {
+                                        height: 65px !important;
+                                    }
                                     #navLogo {
-                                        height: 250px !important;
+                                        height: 36px !important;
                                     }
                                 }
-                                
                                 @media (max-width: 480px) {
+                                    #header, #header .container, #header .row, #header .header-clear, #header .header-content-left {
+                                        height: 55px !important;
+                                    }
                                     #navLogo {
-                                        height: 180px !important;
+                                        height: 32px !important;
                                     }
                                 }
                             </style>
@@ -127,7 +284,7 @@
                 <div class="image-title" id="heroText" style="top: calc(75% + 60px) !important; position: absolute; z-index: 100;">
                     <p>Transformamos cada escenario en una</p>
                     <p>experiencia visual única</p>
-                    <a href="https://wa.me/50685128383?text=Hola!%20Me%20interesa%20cotizar%20iluminaci%C3%B3n%20para%20mi%20evento" target="_blank" class="button-basic-1" data-aos="fade-up" style="position: relative; z-index: 101; margin-top: 20px; display: inline-block;">Cotizar Ahora</a>
+                    <a href="https://wa.me/50685128383?text=Hola!%20Me%20interesa%20cotizar%20iluminaci%C3%B3n%20para%20mi%20evento" target="_blank" class="button-basic-1" data-aos="fade-up" style="position: relative; z-index: 101; margin-top: 40px; display: inline-block;">Cotizar Ahora</a>
                 </div>
                 
                 <style>
@@ -190,8 +347,8 @@
                     }
                     
                     .image-title p {
-                        font-size: clamp(1.1rem, 3vw, 1.5rem);
-                        line-height: 1.3;
+                        font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+                        line-height: 1.4;
                     }
                     
                     .image-title .button-basic-1 {
@@ -351,7 +508,7 @@
             </div>
 
             <!-- SECCIÓN EVENTOS - Estructura exacta como referencia -->
-            <div class="eventos-section" style="padding: 100px 0; background: #000000; position: relative; overflow: hidden; margin-top: 0;">
+            <div class="eventos-section" style="padding: 120px 0; background: #000; position: relative; overflow: hidden; margin-top: 0;">
                 <style>
                     @media (max-width: 768px) {
                         .eventos-section {
@@ -362,153 +519,148 @@
                 </style>
                 <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
                     
-                    <!-- Header: Título centrado -->
-                    <div data-aos="fade-up" style="text-align: center; margin-bottom: 60px;">
-                        <!-- Título principal centrado -->
-                        <h2 style="font-family: 'Montserrat', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #fff; margin: 0; line-height: 1.2; text-transform: uppercase;">
-                            Haz que tu evento<br>se vea como un SHOW
-                        </h2>
+                    <!-- Header -->
+                    <div data-aos="fade-up" style="text-align: center; margin-bottom: 72px;">
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #ff2c55; margin: 0 0 18px 0;">PARA CADA OCASIÓN</p>
+                        <h2 style="font-family: 'Montserrat', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #fff; margin: 0 0 18px 0; line-height: 1.15; text-transform: uppercase;">Haz que tu evento<br>se vea como un SHOW</h2>
+                        <span class="section-accent-line"></span>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #555; margin: 0 auto; max-width: 460px; line-height: 1.6;">Iluminación profesional para cualquier tipo de celebración o evento</p>
                     </div>
 
-                    <!-- Lista de eventos con íconos circulares -->
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; max-width: 900px; margin: 0 auto 50px auto;">
-                        <!-- Cumpleaños -->
-                        <div data-aos="fade-up" data-aos-delay="0" style="display: flex; align-items: flex-start; gap: 20px;">
-                            <div style="width: 60px; height: 60px; min-width: 60px; background: linear-gradient(135deg, #ff2c55 0%, #9d4edd 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(255,44,85,0.4);">
-                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="12" cy="7" r="4"></circle>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 style="font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 700; color: #fff; margin: 0 0 8px 0;">
-                                    Cumpleaños
-                                </h4>
-                                <p style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #aaa; margin: 0; line-height: 1.6;">
-                                    Transformamos tu celebración en una experiencia inolvidable con iluminación profesional para que crea el ambiente perfecto para cada momento.
-                                </p>
-                                <a href="https://wa.me/+50685128383?text=Hola!%20Me%20interesa%20iluminaci%C3%B3n%20para%20un%20cumplea%C3%B1os" target="_blank" style="color: #fff; text-decoration: none;">Más información</a>
-                            </div>
-                        </div>
-
-                        <!-- 15 Años -->
-                        <div data-aos="fade-up" data-aos-delay="50" style="display: flex; align-items: flex-start; gap: 20px;">
-                            <div style="width: 60px; height: 60px; min-width: 60px; background: linear-gradient(135deg, #9d4edd 0%, #00f0ff 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(157,78,221,0.4);">
-                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="12" cy="7" r="4"></circle>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 style="font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 700; color: #fff; margin: 0 0 8px 0;">
-                                    15 Años
-                                </h4>
-                                <p style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #aaa; margin: 0; line-height: 1.6;">
-                                    Momentos mágicos con efectos de iluminación diseñados especialmente para quinceañeras. Hacemos brillar tu noche especial.
-                                </p>
-                                <a href="https://wa.me/+50685128383?text=Hola!%20Me%20interesa%20iluminaci%C3%B3n%20para%20una%20quincea%C3%B1era" target="_blank" style="color: #fff; text-decoration: none;">Más información</a>
-                            </div>
-                        </div>
-
-                        <!-- Bodas -->
-                        <div data-aos="fade-up" data-aos-delay="100" style="display: flex; align-items: flex-start; gap: 20px;">
-                            <div style="width: 60px; height: 60px; min-width: 60px; background: linear-gradient(135deg, #ff2c55 0%, #9d4edd 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(255,44,85,0.4);">
-                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 style="font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 700; color: #fff; margin: 0 0 8px 0;">
-                                    Bodas
-                                </h4>
-                                <p style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #aaa; margin: 0; line-height: 1.6;">
-                                    Iluminación romántica y elegante para el día más importante. Creamos la atmósfera perfecta desde la ceremonia hasta la recepción.
-                                </p>
-                                <a href="https://wa.me/+50685128383?text=Hola!%20Me%20interesa%20iluminaci%C3%B3n%20para%20una%20boda" target="_blank" style="color: #fff; text-decoration: none;">Más información</a>
-                            </div>
-                        </div>
-
-                        <!-- Graduaciones -->
-                        <div data-aos="fade-up" data-aos-delay="150" style="display: flex; align-items: flex-start; gap: 20px;">
-                            <div style="width: 60px; height: 60px; min-width: 60px; background: linear-gradient(135deg, #00f0ff 0%, #ff2c55 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,240,255,0.4);">
-                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-                                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 style="font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 700; color: #fff; margin: 0 0 8px 0;">
-                                    Graduaciones
-                                </h4>
-                                <p style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #aaa; margin: 0; line-height: 1.6;">
-                                    Celebra tus logros con estilo. Iluminación profesional que hace brillar este momento especial de celebración y nuevos comienzos.
-                                </p>
-                                <a href="https://wa.me/+50685128383?text=Hola!%20Me%20interesa%20iluminaci%C3%B3n%20para%20una%20graduaci%C3%B3n" target="_blank" style="color: #fff; text-decoration: none;">Más información</a>
-                            </div>
-                        </div>
-
-                        <!-- Eventos Corporativos -->
-                        <div data-aos="fade-up" data-aos-delay="200" style="display: flex; align-items: flex-start; gap: 20px;">
-                            <div style="width: 60px; height: 60px; min-width: 60px; background: linear-gradient(135deg, #9d4edd 0%, #00f0ff 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(157,78,221,0.4);">
-                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 style="font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 700; color: #fff; margin: 0 0 8px 0;">
-                                    Eventos Corporativos
-                                </h4>
-                                <p style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #aaa; margin: 0; line-height: 1.6;">
-                                    Iluminación profesional para conferencias, lanzamientos de productos y eventos empresariales.
-                                </p>
-                                <a href="https://wa.me/+50685128383?text=Hola!%20Me%20interesa%20iluminaci%C3%B3n%20para%20un%20evento%20corporativo" target="_blank" style="color: #fff; text-decoration: none;">Más información</a>
-                            </div>
-                        </div>
-
-                        <!-- Conciertos -->
-                        <div data-aos="fade-up" data-aos-delay="250" style="display: flex; align-items: flex-start; gap: 20px;">
-                            <div style="width: 60px; height: 60px; min-width: 60px; background: linear-gradient(135deg, #ff2c55 0%, #00f0ff 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(255,44,85,0.4);">
-                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M9 18V5l12-2v13"></path>
-                                    <circle cx="6" cy="18" r="3"></circle>
-                                    <circle cx="18" cy="16" r="3"></circle>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 style="font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 700; color: #fff; margin: 0 0 8px 0;">
-                                    Conciertos
-                                </h4>
-                                <p style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #aaa; margin: 0; line-height: 1.6;">
-                                    Iluminación escénica de nivel profesional para conciertos y presentaciones en vivo.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Imagen grande al final -->
-                    <div data-aos="fade-up" data-aos-delay="150" style="border-radius: 20px; overflow: hidden; position: relative; background: #000;">
-                        <img src="img/event-one-img-1.jpg" alt="Iluminación de eventos" style="width: 100%; height: 600px; object-fit: contain;">
-                        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 40px; background: linear-gradient(transparent, rgba(0,0,0,0.8));">
-                            <p style="font-family: 'Montserrat', sans-serif; font-size: 18px; color: #fff; margin: 0; font-weight: 600;">
-                                Transformamos cualquier espacio con iluminación profesional
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Responsive -->
+                    <!-- Grid 3 columnas -->
                     <style>
-                        @media (max-width: 768px) {
-                            .eventos-section > div > div:nth-child(2) {
-                                grid-template-columns: 1fr !important;
-                            }
+                        .ev-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+                        .ev-card {
+                            background: #111;
+                            border: 1px solid rgba(255,255,255,0.07);
+                            border-radius: 16px;
+                            padding: 28px 26px;
+                            display: flex; flex-direction: column; gap: 14px;
+                            transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
                         }
+                        .ev-card:hover {
+                            border-color: rgba(255,44,85,0.22);
+                            transform: translateY(-4px);
+                            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+                        }
+                        .ev-icon { width: 42px; height: 42px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+                        .ev-title { font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700; color: #fff; margin: 0 0 7px 0; }
+                        .ev-desc { font-family: 'Montserrat', sans-serif; font-size: 13px; color: #5a5a5a; margin: 0; line-height: 1.7; }
+                        .ev-link { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; text-decoration: none; margin-top: 4px; letter-spacing: 0.3px; }
+                        @media (max-width: 900px) { .ev-grid { grid-template-columns: repeat(2, 1fr); } }
+                        @media (max-width: 560px) { .ev-grid { grid-template-columns: 1fr; } }
                     </style>
+
+                    <div class="ev-grid">
+                        <div class="ev-card" data-aos="fade-up" data-aos-delay="0">
+                            <div class="ev-icon" style="background: rgba(255,44,85,0.1);">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff2c55" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            </div>
+                            <div><h4 class="ev-title">Cumpleaños</h4><p class="ev-desc">Luces, efectos y ambiente garantizados. Tu fiesta se convierte en el evento del que todos hablarán.</p></div>
+                            <a href="https://wa.me/+50685128383?text=Hola!%20Me%20interesa%20iluminaci%C3%B3n%20para%20un%20cumplea%C3%B1os" target="_blank" class="ev-link" style="color:#ff2c55;">Cotizar ahora →</a>
+                        </div>
+
+                        <div class="ev-card" data-aos="fade-up" data-aos-delay="60">
+                            <div class="ev-icon" style="background: rgba(157,78,221,0.1);">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9d4edd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            </div>
+                            <div><h4 class="ev-title">15 Años</h4><p class="ev-desc">Tu noche más especial merece iluminación de ensueño. Creamos efectos únicos para el momento más importante de tu vida.</p></div>
+                            <a href="https://wa.me/+50685128383?text=Hola!%20Me%20interesa%20iluminaci%C3%B3n%20para%20una%20quincea%C3%B1era" target="_blank" class="ev-link" style="color:#9d4edd;">Cotizar ahora →</a>
+                        </div>
+
+                        <div class="ev-card" data-aos="fade-up" data-aos-delay="120">
+                            <div class="ev-icon" style="background: rgba(255,44,85,0.1);">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff2c55" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            </div>
+                            <div><h4 class="ev-title">Bodas</h4><p class="ev-desc">Desde la ceremonia hasta la última canción. Iluminación que crea momentos que tus invitados recordarán por siempre.</p></div>
+                            <a href="https://wa.me/+50685128383?text=Hola!%20Me%20interesa%20iluminaci%C3%B3n%20para%20una%20boda" target="_blank" class="ev-link" style="color:#ff2c55;">Cotizar ahora →</a>
+                        </div>
+
+                        <div class="ev-card" data-aos="fade-up" data-aos-delay="0">
+                            <div class="ev-icon" style="background: rgba(0,200,220,0.08);">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00c8dc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                            </div>
+                            <div><h4 class="ev-title">Graduaciones</h4><p class="ev-desc">Celebra el logro con el show que mereces. Una noche épica que marca el inicio de tu mejor etapa.</p></div>
+                            <a href="https://wa.me/+50685128383?text=Hola!%20Me%20interesa%20iluminaci%C3%B3n%20para%20una%20graduaci%C3%B3n" target="_blank" class="ev-link" style="color:#00c8dc;">Cotizar ahora →</a>
+                        </div>
+
+                        <div class="ev-card" data-aos="fade-up" data-aos-delay="60">
+                            <div class="ev-icon" style="background: rgba(157,78,221,0.1);">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9d4edd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                            </div>
+                            <div><h4 class="ev-title">Eventos Corporativos</h4><p class="ev-desc">Proyecta éxito y profesionalismo. Iluminación que eleva cualquier presentación, lanzamiento o gala empresarial.</p></div>
+                            <a href="https://wa.me/+50685128383?text=Hola!%20Me%20interesa%20iluminaci%C3%B3n%20para%20un%20evento%20corporativo" target="_blank" class="ev-link" style="color:#9d4edd;">Cotizar ahora →</a>
+                        </div>
+
+                        <div class="ev-card" data-aos="fade-up" data-aos-delay="120">
+                            <div class="ev-icon" style="background: rgba(255,44,85,0.1);">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff2c55" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                            </div>
+                            <div><h4 class="ev-title">Conciertos</h4><p class="ev-desc">Haz de tu escenario una experiencia visual que encienda al público desde el primer beat.</p></div>
+                            <a href="https://wa.me/+50685128383?text=Hola!%20Me%20interesa%20iluminaci%C3%B3n%20para%20un%20concierto" target="_blank" class="ev-link" style="color:#ff2c55;">Cotizar ahora →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GALERÍA DE FOTOS -->
+            <div id="galeria" style="padding: 90px 0 80px; background: #000; position: relative; overflow: hidden; border-top: 1px solid rgba(255,255,255,0.05);">
+                <style>
+                    .gal-swiper { width: 100%; padding-bottom: 54px !important; }
+                    .gal-swiper .swiper-slide {
+                        border-radius: 16px; overflow: hidden;
+                        height: 480px; opacity: 0.4;
+                        transform: scale(0.88);
+                        transition: opacity 0.4s ease, transform 0.4s ease;
+                    }
+                    .gal-swiper .swiper-slide-active { opacity: 1; transform: scale(1); }
+                    .gal-swiper .swiper-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+                    .gal-swiper .swiper-button-next, .gal-swiper .swiper-button-prev {
+                        color: #fff !important; background: rgba(255,44,85,0.9);
+                        width: 44px; height: 44px; border-radius: 50%;
+                    }
+                    .gal-swiper .swiper-button-next::after, .gal-swiper .swiper-button-prev::after { font-size: 14px !important; font-weight: 900; }
+                    .gal-swiper .swiper-pagination-bullet { background: #444; opacity: 1; width: 8px; height: 8px; }
+                    .gal-swiper .swiper-pagination-bullet-active { background: #ff2c55; width: 22px; border-radius: 4px; }
+                    @media (max-width: 768px) { .gal-swiper .swiper-slide { height: 240px; } }
+                </style>
+
+                <div style="position: relative; z-index: 1;">
+                    <div data-aos="fade-up" style="text-align: center; margin-bottom: 48px; padding: 0 20px;">
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #ff2c55; margin: 0 0 16px 0;">NUESTRA GALERÍA</p>
+                        <h2 style="font-family: 'Montserrat', sans-serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800; color: #fff; margin: 0 0 6px 0; line-height: 1.15; text-transform: uppercase;">Iluminación en Acción</h2>
+                        <span style="display: block; width: 40px; height: 2px; background: linear-gradient(90deg, #ff2c55, #9d4edd); border-radius: 2px; margin: 14px auto 18px;"></span>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #555; margin: 0 auto; max-width: 440px; line-height: 1.6;">Así transformamos cada escenario en una experiencia visual única</p>
+                    </div>
+
+                    <div class="swiper gal-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="img/rock-band-silhouettes-stage-concert.jpg" alt="Rock Band en Concierto"></div>
+                            <div class="swiper-slide"><img src="img/stage-lights(1).jpg" alt="Luces de Escenario"></div>
+                            <div class="swiper-slide"><img src="img/party-activities-celebrate-social-events-nightlife-pub-band-party-shadows-colorful.jpg" alt="Fiesta Colorida"></div>
+                            <div class="swiper-slide"><img src="img/stage-ceiling-light-bright-blue-spotlights.jpg" alt="Spotlights Azules"></div>
+                            <div class="swiper-slide"><img src="img/light-is-stage-concert.jpg" alt="Luz en Concierto"></div>
+                            <div class="swiper-slide"><img src="img/stage-lights.jpg" alt="Luces de Escenario"></div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+
+                    <div data-aos="fade-up" style="text-align: center; margin-top: 36px; padding: 0 20px;">
+                        <a href="https://wa.me/50685128383?text=Hola!%20Vi%20la%20galer%C3%ADa%20y%20me%20interesa%20iluminaci%C3%B3n%20para%20mi%20evento" target="_blank"
+                           style="display: inline-flex; align-items: center; gap: 10px; background: transparent; border: 1px solid rgba(255,255,255,0.12); color: #fff; padding: 13px 36px; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.3s ease;"
+                           onmouseenter="this.style.borderColor='rgba(255,44,85,0.45)';this.style.color='#ff2c55'"
+                           onmouseleave="this.style.borderColor='rgba(255,255,255,0.12)';this.style.color='#fff'">
+                            Quiero este efecto en mi evento
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
                 </div>
             </div>
 
             <!-- SECCIÓN COMBOS/PAQUETES -->
-            <div class="paquetes-section" style="padding: 100px 0; background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%); position: relative; overflow: hidden;">
+            <div class="paquetes-section" style="padding: 120px 0; background: #000; position: relative; overflow: hidden;">
                 <style>
                     @media (max-width: 768px) {
                         .paquetes-section {
@@ -522,176 +674,107 @@
                 <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
                     
                     <!-- Header -->
-                    <div data-aos="fade-up" style="text-align: center; margin-bottom: 60px;">
-                        <p style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 15px 0; background: linear-gradient(135deg, #ff2c55 0%, #9d4edd 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
-                            NUESTROS PAQUETES
-                        </p>
-                        <h2 style="font-family: 'Montserrat', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #fff; margin: 0 0 20px 0; line-height: 1.2; text-transform: uppercase;">
-                            Combos Especiales
-                        </h2>
-                        <p style="font-family: 'Montserrat', sans-serif; font-size: 18px; color: #aaa; margin: 0; max-width: 600px; margin: 0 auto;">
-                            Pregunte por nuestros paquetes personalizados diseñados para cada tipo de evento
-                        </p>
+                    <div data-aos="fade-up" style="text-align: center; margin-bottom: 72px;">
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #ff2c55; margin: 0 0 18px 0;">COMBOS DE ALQUILER</p>
+                        <h2 style="font-family: 'Montserrat', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #fff; margin: 0 0 18px 0; line-height: 1.15; text-transform: uppercase;">Paquetes Especiales</h2>
+                        <span class="section-accent-line"></span>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #555; margin: 0 auto; max-width: 460px; line-height: 1.6;">Todo incluido: equipo profesional + operador + montaje. Solo dínos el lugar y la hora.</p>
                     </div>
 
-                    <!-- Grid de Paquetes -->
-                    <div class="paquetes-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 40px;">
-                        
-                        <!-- Paquete Básico -->
-                        <div data-aos="fade-up" data-aos-delay="50" style="background: linear-gradient(135deg, rgba(255,44,85,0.1) 0%, rgba(157,78,221,0.1) 100%); border-radius: 20px; padding: 30px; border: 1px solid rgba(255,44,85,0.2); transition: all 0.3s ease; position: relative; overflow: hidden;">
-                            <div style="position: absolute; top: -50%; right: -50%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(255,44,85,0.2) 0%, transparent 70%); filter: blur(40px);"></div>
-                            
-                            <div style="position: relative; z-index: 1;">
-                                <h3 style="font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 700; color: #fff; margin: 0 0 10px 0;">
-                                    Paquete Básico
-                                </h3>
-                                <p style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #ff2c55; margin: 0 0 20px 0; font-weight: 600;">
-                                    Ideal para eventos pequeños
-                                </p>
-                                <ul style="list-style: none; padding: 0; margin: 0 0 25px 0;">
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #ccc; margin-bottom: 12px; padding-left: 25px; position: relative;">
-                                        <svg style="position: absolute; left: 0; top: 2px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff2c55" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                        4 Cabezas móviles
-                                    </li>
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #ccc; margin-bottom: 12px; padding-left: 25px; position: relative;">
-                                        <svg style="position: absolute; left: 0; top: 2px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff2c55" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                        2 Pares LED
-                                    </li>
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #ccc; margin-bottom: 12px; padding-left: 25px; position: relative;">
-                                        <svg style="position: absolute; left: 0; top: 2px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff2c55" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                        Máquina de humo
-                                    </li>
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #ccc; margin-bottom: 12px; padding-left: 25px; position: relative;">
-                                        <svg style="position: absolute; left: 0; top: 2px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff2c55" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                        Operador incluido
-                                    </li>
-                                </ul>
-                                <div style="display: flex; justify-content: center; width: 100%;">
-                                    <a href="https://wa.me/50685128383?text=Hola!%20Me%20interesa%20el%20Paquete%20B%C3%A1sico" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #ff2c55 0%, #9d4edd 100%); color: #fff; padding: 12px 30px; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.3s ease;">
-                                        Cotizar Ahora
-                                    </a>
-                                </div>
-                            </div>
+                    <!-- Grid de Paquetes - Clean Design -->
+                    <style>
+                        .pkg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
+                        .pkg-card-clean {
+                            background: #111;
+                            border: 1px solid rgba(255,255,255,0.07);
+                            border-radius: 18px;
+                            padding: 36px 30px;
+                            display: flex; flex-direction: column;
+                            transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+                        }
+                        .pkg-card-clean:hover {
+                            transform: translateY(-4px);
+                            box-shadow: 0 24px 48px rgba(0,0,0,0.5);
+                        }
+                        .pkg-card-featured-clean {
+                            border-color: rgba(255,44,85,0.3);
+                            background: #141414;
+                        }
+                        .pkg-card-featured-clean:hover { border-color: rgba(255,44,85,0.5); }
+                        .pkg-name-clean { font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 800; color: #fff; margin: 0 0 6px 0; }
+                        .pkg-subtitle-clean { font-family: 'Montserrat', sans-serif; font-size: 13px; color: #444; margin: 0 0 28px 0; }
+                        .pkg-divider-clean { height: 1px; background: rgba(255,255,255,0.06); margin: 0 0 24px 0; }
+                        .pkg-features-clean { list-style: none; padding: 0; margin: 0 0 32px 0; display: flex; flex-direction: column; gap: 13px; }
+                        .pkg-feat { font-family: 'Montserrat', sans-serif; font-size: 14px; color: #888; display: flex; align-items: center; gap: 10px; }
+                        .pkg-feat svg { flex-shrink: 0; }
+                        .pkg-btn-clean {
+                            display: flex; align-items: center; justify-content: center;
+                            padding: 13px 20px; border-radius: 50px;
+                            font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700;
+                            text-decoration: none; transition: all 0.25s ease;
+                            margin-top: auto;
+                        }
+                        .pkg-btn-primary { background: #ff2c55; color: #fff; }
+                        .pkg-btn-primary:hover { background: #e0193f; }
+                        .pkg-btn-outline { background: transparent; border: 1px solid rgba(255,255,255,0.12); color: #fff; }
+                        .pkg-btn-outline:hover { border-color: rgba(255,44,85,0.4); color: #ff2c55; }
+                        .pkg-popular-badge { display: inline-block; background: #ff2c55; color: #fff; font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 14px; }
+                        @media (max-width: 768px) { .pkg-grid { grid-template-columns: 1fr !important; } }
+                    </style>
+
+                    <div class="pkg-grid paquetes-grid">
+                        <!-- Básico -->
+                        <div class="pkg-card-clean" data-aos="fade-up" data-aos-delay="0">
+                            <h3 class="pkg-name-clean">Básico</h3>
+                            <p class="pkg-subtitle-clean">Ideal para eventos pequeños</p>
+                            <div class="pkg-divider-clean"></div>
+                            <ul class="pkg-features-clean">
+                                <li class="pkg-feat"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ff2c55" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>4 Cabezas móviles</li>
+                                <li class="pkg-feat"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ff2c55" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>2 Pares LED</li>
+                                <li class="pkg-feat"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ff2c55" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Máquina de humo</li>
+                                <li class="pkg-feat"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ff2c55" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Operador incluido</li>
+                            </ul>
+                            <a href="https://wa.me/50685128383?text=Hola!%20Me%20interesa%20el%20Paquete%20B%C3%A1sico" target="_blank" class="pkg-btn-clean pkg-btn-outline">Cotizar Ahora</a>
                         </div>
 
-                        <!-- Paquete Premium -->
-                        <div data-aos="fade-up" data-aos-delay="100" style="background: linear-gradient(135deg, rgba(157,78,221,0.15) 0%, rgba(0,240,255,0.15) 100%); border-radius: 20px; padding: 30px; border: 2px solid rgba(157,78,221,0.4); transition: all 0.3s ease; position: relative; overflow: hidden; transform: scale(1.05); box-shadow: 0 0 30px rgba(157,78,221,0.5), 0 0 60px rgba(157,78,221,0.3); animation: glowPulse 2s ease-in-out infinite;">
-                            <style>
-                                @keyframes glowPulse {
-                                    0%, 100% { box-shadow: 0 0 30px rgba(157,78,221,0.5), 0 0 60px rgba(157,78,221,0.3); }
-                                    50% { box-shadow: 0 0 40px rgba(157,78,221,0.7), 0 0 80px rgba(157,78,221,0.5), 0 0 120px rgba(157,78,221,0.3); }
-                                }
-                            </style>
-                            <div style="position: absolute; top: 10px; right: 10px; background: linear-gradient(135deg, #ff2c55 0%, #9d4edd 100%); color: #fff; padding: 5px 15px; border-radius: 20px; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700;">
-                                MÁS POPULAR
-                            </div>
-                            <div style="position: absolute; top: -50%; right: -50%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(157,78,221,0.3) 0%, transparent 70%); filter: blur(40px);"></div>
-                            
-                            <div style="position: relative; z-index: 1;">
-                                <h3 style="font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 700; color: #fff; margin: 0 0 10px 0;">
-                                    Paquete Premium
-                                </h3>
-                                <p style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #9d4edd; margin: 0 0 20px 0; font-weight: 600;">
-                                    Perfecto para eventos medianos
-                                </p>
-                                <ul style="list-style: none; padding: 0; margin: 0 0 25px 0;">
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #ccc; margin-bottom: 12px; padding-left: 25px; position: relative;">
-                                        <svg style="position: absolute; left: 0; top: 2px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9d4edd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                        8 Cabezas móviles
-                                    </li>
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #ccc; margin-bottom: 12px; padding-left: 25px; position: relative;">
-                                        <svg style="position: absolute; left: 0; top: 2px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9d4edd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                        4 Pares LED
-                                    </li>
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #ccc; margin-bottom: 12px; padding-left: 25px; position: relative;">
-                                        <svg style="position: absolute; left: 0; top: 2px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9d4edd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                        Máquina de humo + Haze
-                                    </li>
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #ccc; margin-bottom: 12px; padding-left: 25px; position: relative;">
-                                        <svg style="position: absolute; left: 0; top: 2px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9d4edd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                        Operador incluido
-                                    </li>
-                                </ul>
-                                <div style="display: flex; justify-content: center; width: 100%;">
-                                    <a href="https://wa.me/50685128383?text=Hola!%20Me%20interesa%20el%20Paquete%20Premium" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #9d4edd 0%, #00f0ff 100%); color: #fff; padding: 12px 30px; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.3s ease;">
-                                        Cotizar Ahora
-                                    </a>
-                                </div>
-                            </div>
+                        <!-- Premium - Featured -->
+                        <div class="pkg-card-clean pkg-card-featured-clean" data-aos="fade-up" data-aos-delay="70">
+                            <span class="pkg-popular-badge">Más Popular</span>
+                            <h3 class="pkg-name-clean">Premium</h3>
+                            <p class="pkg-subtitle-clean">Perfecto para eventos medianos</p>
+                            <div class="pkg-divider-clean"></div>
+                            <ul class="pkg-features-clean">
+                                <li class="pkg-feat"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ff2c55" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>8 Cabezas móviles</li>
+                                <li class="pkg-feat"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ff2c55" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>4 Pares LED</li>
+                                <li class="pkg-feat"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ff2c55" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Máquina de humo + Haze</li>
+                                <li class="pkg-feat"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ff2c55" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Operador incluido</li>
+                            </ul>
+                            <a href="https://wa.me/50685128383?text=Hola!%20Me%20interesa%20el%20Paquete%20Premium" target="_blank" class="pkg-btn-clean pkg-btn-primary">Cotizar Ahora</a>
                         </div>
 
-                        <!-- Paquete VIP -->
-                        <div data-aos="fade-up" data-aos-delay="150" style="background: linear-gradient(135deg, rgba(0,240,255,0.1) 0%, rgba(255,44,85,0.1) 100%); border-radius: 20px; padding: 30px; border: 1px solid rgba(0,240,255,0.2); transition: all 0.3s ease; position: relative; overflow: hidden;">
-                            <div style="position: absolute; top: -50%; right: -50%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(0,240,255,0.2) 0%, transparent 70%); filter: blur(40px);"></div>
-                            
-                            <div style="position: relative; z-index: 1;">
-                                <h3 style="font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 700; color: #fff; margin: 0 0 10px 0;">
-                                    Paquete VIP
-                                </h3>
-                                <p style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #00f0ff; margin: 0 0 20px 0; font-weight: 600;">
-                                    Para eventos grandes
-                                </p>
-                                <ul style="list-style: none; padding: 0; margin: 0 0 25px 0;">
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #ccc; margin-bottom: 12px; padding-left: 25px; position: relative;">
-                                        <svg style="position: absolute; left: 0; top: 2px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                        12+ Cabezas móviles
-                                    </li>
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #ccc; margin-bottom: 12px; padding-left: 25px; position: relative;">
-                                        <svg style="position: absolute; left: 0; top: 2px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                        8 Pares LED
-                                    </li>
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #ccc; margin-bottom: 12px; padding-left: 25px; position: relative;">
-                                        <svg style="position: absolute; left: 0; top: 2px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                        Sistema completo de humo
-                                    </li>
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #ccc; margin-bottom: 12px; padding-left: 25px; position: relative;">
-                                        <svg style="position: absolute; left: 0; top: 2px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                        Equipo técnico completo
-                                    </li>
-                                </ul>
-                                <div style="display: flex; justify-content: center; width: 100%;">
-                                    <a href="https://wa.me/50685128383?text=Hola!%20Me%20interesa%20el%20Paquete%20VIP" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #00f0ff 0%, #ff2c55 100%); color: #fff; padding: 12px 30px; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.3s ease;">
-                                        Cotizar Ahora
-                                    </a>
-                                </div>
-                            </div>
+                        <!-- VIP -->
+                        <div class="pkg-card-clean" data-aos="fade-up" data-aos-delay="140">
+                            <h3 class="pkg-name-clean">VIP</h3>
+                            <p class="pkg-subtitle-clean">Para eventos grandes</p>
+                            <div class="pkg-divider-clean"></div>
+                            <ul class="pkg-features-clean">
+                                <li class="pkg-feat"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ff2c55" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>12+ Cabezas móviles</li>
+                                <li class="pkg-feat"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ff2c55" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>8 Pares LED</li>
+                                <li class="pkg-feat"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ff2c55" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Sistema completo de humo</li>
+                                <li class="pkg-feat"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ff2c55" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Equipo técnico completo</li>
+                            </ul>
+                            <a href="https://wa.me/50685128383?text=Hola!%20Me%20interesa%20el%20Paquete%20VIP" target="_blank" class="pkg-btn-clean pkg-btn-outline">Cotizar Ahora</a>
                         </div>
                     </div>
 
                     <!-- CTA Final -->
-                    <div data-aos="fade-up" style="text-align: center; margin-top: 50px;">
-                        <p style="font-family: 'Montserrat', sans-serif; font-size: 16px; color: #aaa; margin: 0 0 20px 0;">
-                            ¿Necesitas algo personalizado? Contáctanos para crear el paquete perfecto para tu evento
+                    <div data-aos="fade-up" style="text-align: center; margin-top: 56px;">
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #444; margin: 0 0 20px 0;">
+                            ¿Ninguno se adapta a tu visión? Diseñamos el paquete exacto para tu evento y presupuesto.
                         </p>
-                        <a href="https://wa.me/50685128383?text=Hola!%20Quiero%20un%20paquete%20personalizado" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; background: transparent; border: 2px solid #ff2c55; color: #fff; padding: 15px 40px; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700; text-decoration: none; transition: all 0.3s ease;">
+                        <a href="https://wa.me/50685128383?text=Hola!%20Quiero%20un%20paquete%20personalizado" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; background: transparent; border: 1px solid rgba(255,255,255,0.12); color: #fff; padding: 13px 36px; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.3s ease;" onmouseenter="this.style.borderColor='rgba(255,44,85,0.4)';this.style.color='#ff2c55'" onmouseleave="this.style.borderColor='rgba(255,255,255,0.12)';this.style.color='#fff'">
                             Paquete Personalizado
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </a>
                     </div>
                 </div>
@@ -750,98 +833,156 @@
             </div>
 
             <!-- VIDEOS DE PRODUCTOS -->
-            <div class="products-videos" id="productos" style="padding: 100px 0; background: linear-gradient(180deg, #0a0a0a 0%, #1a0a1a 50%, #0a0a0a 100%); position: relative;">
+            <div class="products-videos" id="productos" style="padding: 120px 0; background: #000; position: relative;">
                 <div class="container">
-                    <div class="the-title text-center" data-aos="fade-up" style="margin-bottom: 60px;">
-                        <h5 class="head-title-2"> / PRODUCTOS </h5>
-                        <h2 class="head-title-1"> Nuestros Productos de alquiler en Acción
-                            <span class="title-end">.</span></h2>
-                        <p class="dugem-text" style="color: #aaa; margin-top: 15px;">Equipos profesionales de iluminación para todo tipo de eventos</p>
+                    <div data-aos="fade-up" style="text-align: center; margin-bottom: 72px;">
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #ff2c55; margin: 0 0 18px 0;">EQUIPO EN ACCIÓN</p>
+                        <h2 style="font-family: 'Montserrat', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #fff; margin: 0 0 18px 0; line-height: 1.15; text-transform: uppercase;">Nuestros Productos de Alquiler</h2>
+                        <span class="section-accent-line"></span>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #555; margin: 0 auto; max-width: 460px; line-height: 1.6;">Equipos profesionales de iluminación para todo tipo de eventos</p>
                     </div>
 
-                    <!-- Videos Demo de Productos -->
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; max-width: 1200px; margin: 0 auto 60px auto;">
-                        <!-- Video Demo 1 - Beam 295 W -->
-                        <div data-aos="fade-up" data-aos-delay="50">
-                            <div class="video-container" style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 20px 60px rgba(255,44,85,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                                <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, #ff2c55, #9d4edd, #00f0ff, #ff2c55); border-radius: 17px; z-index: -1; animation: borderRotate 3s linear infinite;"></div>
-                                <div style="position: absolute; top: 15px; right: 15px; z-index: 10; background: linear-gradient(135deg, rgba(255,44,85,0.95) 0%, rgba(157,78,221,0.95) 100%); padding: 8px 20px; border-radius: 20px; font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #fff; font-weight: 700; box-shadow: 0 4px 15px rgba(255,44,85,0.5);">
-                                    Beam 295 W
-                                </div>
+                    <!-- Bento Grid Unificado -->
+                    <style>
+                        .bento-grid {
+                            display: grid;
+                            grid-template-columns: repeat(3, 1fr);
+                            gap: 20px;
+                            max-width: 1400px;
+                            margin: 0 auto 60px auto;
+                        }
+                        .bento-featured { grid-column: 1 / 3; }
+                        .bento-card { display: flex; flex-direction: column; }
+                        .bento-video-wrap {
+                            position: relative;
+                            border-radius: 16px;
+                            overflow: hidden;
+                            background: #111;
+                            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+                            transition: transform 0.3s ease, box-shadow 0.3s ease;
+                            flex: 1;
+                        }
+                        .bento-video-wrap:hover {
+                            transform: translateY(-5px);
+                            box-shadow: 0 30px 70px rgba(255,44,85,0.4) !important;
+                        }
+                        .bento-video-wrap video { width: 100%; display: block; background: #000; }
+                        .bento-anim-border {
+                            position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px;
+                            background: linear-gradient(45deg, #ff2c55, #9d4edd, #00f0ff, #ff2c55);
+                            border-radius: 18px; z-index: -1;
+                            animation: borderRotate 3s linear infinite;
+                        }
+                        .bento-badge {
+                            display: inline-flex;
+                            align-items: center;
+                            background: linear-gradient(135deg, #ff2c55 0%, #9d4edd 100%);
+                            color: #fff;
+                            padding: 5px 14px;
+                            border-radius: 20px;
+                            font-family: 'Montserrat', sans-serif;
+                            font-size: 10px;
+                            letter-spacing: 2px;
+                            text-transform: uppercase;
+                            font-weight: 700;
+                            margin-bottom: 10px;
+                            width: fit-content;
+                        }
+                        .bento-meta { padding: 14px 2px 0; }
+                        .bento-meta h3 {
+                            color: #fff;
+                            font-family: 'Montserrat', sans-serif;
+                            font-size: 16px;
+                            font-weight: 700;
+                            margin: 0 0 4px 0;
+                        }
+                        .bento-meta p {
+                            color: #777;
+                            font-size: 13px;
+                            font-family: 'Montserrat', sans-serif;
+                            margin: 0;
+                        }
+                        @media (max-width: 768px) { .bento-grid { display: none !important; } }
+                    </style>
+
+                    <div class="bento-grid">
+                        <!-- Beam 295W — featured (2/3 ancho) -->
+                        <div class="bento-card bento-featured" data-aos="fade-up" data-aos-delay="0">
+                            <span class="bento-badge">Beam 295 W</span>
+                            <div class="bento-video-wrap">
+                                <div class="bento-anim-border"></div>
                                 <video controls style="width: 100%; display: block; background: #000;">
                                     <source src="img/Video%20.mp4" type="video/mp4">
                                     Tu navegador no soporta el elemento de video.
                                 </video>
                             </div>
-                            <div style="text-align: center; margin-top: 20px;">
-                                <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 600; margin-bottom: 8px;">Iluminación Beam en Acción</h3>
-                                <p style="color: #aaa; font-size: 14px;">Potencia y precisión en cada haz de luz</p>
+                            <div class="bento-meta">
+                                <h3>Iluminación Beam en Acción</h3>
+                                <p>Potencia y precisión en cada haz de luz</p>
                             </div>
                         </div>
-                        
-                        <!-- Video Demo 2 - 420 BSW -->
-                        <div data-aos="fade-up" data-aos-delay="100">
-                            <div class="video-container" style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 20px 60px rgba(255,44,85,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                                <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, #ff2c55, #9d4edd, #00f0ff, #ff2c55); border-radius: 17px; z-index: -1; animation: borderRotate 3s linear infinite;"></div>
-                                <div style="position: absolute; top: 15px; right: 15px; z-index: 10; background: linear-gradient(135deg, rgba(255,44,85,0.95) 0%, rgba(157,78,221,0.95) 100%); padding: 8px 20px; border-radius: 20px; font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #fff; font-weight: 700; box-shadow: 0 4px 15px rgba(255,44,85,0.5);">
-                                    420 BSW
-                                </div>
+
+                        <!-- 420 BSW — (1/3 ancho) -->
+                        <div class="bento-card" data-aos="fade-up" data-aos-delay="80">
+                            <span class="bento-badge">420 BSW</span>
+                            <div class="bento-video-wrap">
+                                <div class="bento-anim-border"></div>
                                 <video controls style="width: 100%; display: block; background: #000;">
                                     <source src="img/420%20BSW.mp4" type="video/mp4">
                                     Tu navegador no soporta el elemento de video.
                                 </video>
                             </div>
-                            <div style="text-align: center; margin-top: 20px;">
-                                <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 600; margin-bottom: 8px;">420 BSW en Acción</h3>
-                                <p style="color: #aaa; font-size: 14px;">Beam, Spot y Wash profesional</p>
+                            <div class="bento-meta">
+                                <h3>420 BSW en Acción</h3>
+                                <p>Beam, Spot y Wash profesional</p>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Videos Adicionales -->
-                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1400px; margin: 0 auto;">
-                        <!-- Video Demo 3 -->
-                        <div data-aos="fade-up" data-aos-delay="50">
-                            <div class="video-container" style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 20px 60px rgba(255,44,85,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                                <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, #ff2c55, #9d4edd, #00f0ff, #ff2c55); border-radius: 17px; z-index: -1; animation: borderRotate 3s linear infinite;"></div>
+                        <!-- 4 Eye COB -->
+                        <div class="bento-card" data-aos="fade-up" data-aos-delay="0">
+                            <span class="bento-badge">4 Eye COB 4×100</span>
+                            <div class="bento-video-wrap">
+                                <div class="bento-anim-border"></div>
                                 <video controls style="width: 100%; display: block; background: #000;">
                                     <source src="img/whatsapp-video-1.mp4" type="video/mp4">
                                     Tu navegador no soporta el elemento de video.
                                 </video>
                             </div>
-                            <div style="text-align: center; margin-top: 20px;">
-                                <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 600; margin-bottom: 8px;">4 Eye COB 4x100</h3>
-                                <p style="color: #aaa; font-size: 14px;">Efectos espectaculares para tu evento</p>
+                            <div class="bento-meta">
+                                <h3>4 Eye COB 4×100</h3>
+                                <p>Efectos espectaculares para tu evento</p>
                             </div>
                         </div>
-                        
-                        <!-- Video Demo 4 -->
-                        <div data-aos="fade-up" data-aos-delay="100">
-                            <div class="video-container" style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 20px 60px rgba(255,44,85,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                                <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, #ff2c55, #9d4edd, #00f0ff, #ff2c55); border-radius: 17px; z-index: -1; animation: borderRotate 3s linear infinite;"></div>
+
+                        <!-- Máquina de Humo -->
+                        <div class="bento-card" data-aos="fade-up" data-aos-delay="80">
+                            <span class="bento-badge">Efectos Especiales</span>
+                            <div class="bento-video-wrap">
+                                <div class="bento-anim-border"></div>
                                 <video controls style="width: 100%; display: block; background: #000;">
                                     <source src="img/petal-video-1.mp4" type="video/mp4">
                                     Tu navegador no soporta el elemento de video.
                                 </video>
                             </div>
-                            <div style="text-align: center; margin-top: 20px;">
-                                <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 600; margin-bottom: 8px;">Máquina de Humo</h3>
-                                <p style="color: #aaa; font-size: 14px;">Efectos de humo profesional</p>
+                            <div class="bento-meta">
+                                <h3>Máquina de Humo</h3>
+                                <p>Efectos de humo profesional</p>
                             </div>
                         </div>
 
-                        <!-- Video Demo 5 -->
-                        <div data-aos="fade-up" data-aos-delay="150">
-                            <div class="video-container" style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 20px 60px rgba(255,44,85,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                                <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, #ff2c55, #9d4edd, #00f0ff, #ff2c55); border-radius: 17px; z-index: -1; animation: borderRotate 3s linear infinite;"></div>
+                        <!-- Pares LED -->
+                        <div class="bento-card" data-aos="fade-up" data-aos-delay="160">
+                            <span class="bento-badge">Pares LED</span>
+                            <div class="bento-video-wrap">
+                                <div class="bento-anim-border"></div>
                                 <video controls style="width: 100%; display: block; background: #000;">
                                     <source src="img/petal-video-2.mp4" type="video/mp4">
                                     Tu navegador no soporta el elemento de video.
                                 </video>
                             </div>
-                            <div style="text-align: center; margin-top: 20px;">
-                                <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 600; margin-bottom: 8px;">Pares Led</h3>
-                                <p style="color: #aaa; font-size: 14px;">Crea ambientes únicos e inolvidables</p>
+                            <div class="bento-meta">
+                                <h3>Pares LED</h3>
+                                <p>Crea ambientes únicos e inolvidables</p>
                             </div>
                         </div>
                     </div>
@@ -852,8 +993,7 @@
                                 padding: 60px 0 !important;
                             }
                             
-                            /* Ocultar grids en mobile */
-                            .products-videos > .container > div:nth-child(2),
+                            /* Ocultar bento grid en mobile */
                             .products-videos > .container > div:nth-child(3) {
                                 display: none !important;
                             }
@@ -1017,308 +1157,142 @@
                 </style>
             </div>
 
-            <!-- TESTIMONIOS -->
-            <div class="testimonial-block" style="background: url('img/background%20.png') center/cover no-repeat; position: relative; display: none;">
-                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7);"></div>
-                <div class="testimonial-wrap" style="position: relative; z-index: 2;">
-                    <div class="the-title text-center">
-                        <h5 class="head-title-2"> / TESTIMONIOS </h5>
-                        <h2 class="head-title-1">
-                            Lo Que Dicen Nuestros Clientes
-                            <span class="title-end">.</span>
-                        </h2>
+
+            <!-- PRODUCTOS EN VENTA -->
+            <div class="productos-venta-section" id="venta" style="padding: 120px 0; background: #000; position: relative; overflow: hidden;">
+                <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+                    <!-- Header -->
+                    <div data-aos="fade-up" style="text-align: center; margin-bottom: 72px;">
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #ff2c55; margin: 0 0 18px 0;">PANTALLA LED EN VENTA</p>
+                        <h2 style="font-family: 'Montserrat', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #fff; margin: 0 0 18px 0; line-height: 1.15; text-transform: uppercase;">Pantalla LED P3.91 Outdoor</h2>
+                        <span class="section-accent-line"></span>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #555; margin: 0 auto; max-width: 480px; line-height: 1.6;">Calidad broadcast para tu evento. Visible a plena luz del día, ideal para interiores y exteriores.</p>
                     </div>
-                    <div class="testimonial-slide">
-                        <div class="swipper-button clearfix">
-                            <div class="swiper-button-next">
-                                <span>Prev</span>
-                                <div class="car-page-arrow-next"></div>
+
+                    <!-- 2-col grid -->
+                    <style>
+                        .led-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+                        .led-spec-row { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 13px 18px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+                        .led-spec-row:last-child { border-bottom: none; }
+                        .led-spec-row:nth-child(odd) { background: #0d0d0d; }
+                        .led-spec-row:nth-child(even) { background: #111; }
+                        .led-label { font-family: 'Montserrat', sans-serif; font-size: 12px; color: #444; flex-shrink: 0; }
+                        .led-value { font-family: 'Montserrat', sans-serif; font-size: 13px; color: #ddd; font-weight: 600; text-align: right; }
+                        .led-section-label { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #333; margin: 0 0 12px 0; }
+                        .led-chip { background: #111; border: 1px solid rgba(255,255,255,0.07); color: #666; font-family: 'Montserrat', sans-serif; font-size: 12px; padding: 5px 12px; border-radius: 20px; display: inline-block; }
+                        .led-info-card { background: #111; border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 22px 24px; margin-bottom: 14px; }
+                        .led-info-title { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #333; margin: 0 0 12px 0; }
+                        .led-info-text { font-family: 'Montserrat', sans-serif; font-size: 14px; color: #777; line-height: 1.7; margin: 0; }
+                        .led-info-text strong { color: #bbb; }
+                        .led-use-tag { font-family: 'Montserrat', sans-serif; font-size: 13px; color: #666; padding: 5px 0; display: block; border-bottom: 1px solid rgba(255,255,255,0.04); }
+                        .led-use-tag:last-child { border-bottom: none; }
+                        @media (max-width: 768px) { .led-grid { grid-template-columns: 1fr !important; } }
+                    </style>
+
+                    <div class="led-grid" data-aos="fade-up">
+
+                        <!-- Columna Izquierda -->
+                        <div>
+                            <p class="led-section-label">Especificaciones Técnicas</p>
+                            <div style="border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; overflow: hidden; margin-bottom: 36px;">
+                                <div class="led-spec-row"><span class="led-label">Tipo</span><span class="led-value">LED Full Color Outdoor</span></div>
+                                <div class="led-spec-row"><span class="led-label">Pitch</span><span class="led-value">P3.91 — alta definición</span></div>
+                                <div class="led-spec-row"><span class="led-label">Tamaño total</span><span class="led-value">2m × 3m</span></div>
+                                <div class="led-spec-row"><span class="led-label">Resolución</span><span class="led-value">1024 × 768 px</span></div>
+                                <div class="led-spec-row"><span class="led-label">Brillo</span><span class="led-value">≥ 5000 cd/m²</span></div>
+                                <div class="led-spec-row"><span class="led-label">Refresco</span><span class="led-value">3840 Hz</span></div>
+                                <div class="led-spec-row"><span class="led-label">Uso</span><span class="led-value">Interior y exterior</span></div>
                             </div>
-                            <div class="swiper-button-prev">
-                                <span>Next</span>
-                                <div class="car-page-arrow-prev"></div>
+
+                            <p class="led-section-label">Incluye</p>
+                            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                                <span class="led-chip">Sistema completo de pantalla LED</span>
+                                <span class="led-chip">Procesador NovaStar</span>
+                                <span class="led-chip">Tarjetas receptoras</span>
+                                <span class="led-chip">Fuentes de poder</span>
+                                <span class="led-chip">Software de control</span>
+                                <span class="led-chip">Cableado principal</span>
+                                <span class="led-chip">Estructura de montaje</span>
+                                <span class="led-chip">Flight cases</span>
+                                <span class="led-chip">Repuestos básicos</span>
                             </div>
                         </div>
-                        <div class="swiper-container">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="testi-content">
-                                        <div class="testimonial-text">
-                                            <p>"Sky Visuals CR transformó completamente nuestro evento. La iluminación profesional hizo que todo se viera espectacular."</p>
-                                        </div>
-                                        <div class="testimonial-detail-inner">
-                                            <div class="testimonial-image">
-                                                <img src="img/testimonial-profile-1.png" alt="Cliente 1">
-                                            </div>
-                                            <div class="test-info">
-                                                <h5 class="testi-author">María González</h5>
-                                                <cite class="testi-job">Organizadora de Eventos</cite>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="testi-content">
-                                        <div class="testimonial-text">
-                                            <p>"Excelente servicio y equipo de última generación. Recomendados 100% para cualquier tipo de evento."</p>
-                                        </div>
-                                        <div class="testimonial-detail-inner">
-                                            <div class="testimonial-image">
-                                                <img src="img/testimonial-profile-2.png" alt="Cliente 2">
-                                            </div>
-                                            <div class="test-info">
-                                                <h5 class="testi-author">Carlos Ramírez</h5>
-                                                <cite class="testi-job">DJ Profesional</cite>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
+                        <!-- Columna Derecha -->
+                        <div>
+                            <!-- Video -->
+                            <div style="border-radius: 16px; overflow: hidden; margin-bottom: 24px; box-shadow: 0 24px 60px rgba(0,0,0,0.7);" data-aos="fade-up">
+                                <video controls style="width: 100%; display: block; background: #000;">
+                                    <source src="img/pantalla-venta.mp4" type="video/mp4">
+                                    Tu navegador no soporta el elemento de video.
+                                </video>
+                            </div>
+
+                            <!-- Gabinetes -->
+                            <div class="led-info-card">
+                                <p class="led-info-title">Gabinetes</p>
+                                <p class="led-info-text">
+                                    <strong>24 unidades</strong> (500mm × 1000mm) &nbsp;·&nbsp;
+                                    <strong>Aluminio die-cast</strong> &nbsp;·&nbsp;
+                                    Locking profesional rápido
+                                </p>
+                            </div>
+
+                            <!-- Ideal Para -->
+                            <div class="led-info-card">
+                                <p class="led-info-title">Ideal Para</p>
+                                <span class="led-use-tag">Conciertos y festivales</span>
+                                <span class="led-use-tag">Eventos corporativos</span>
+                                <span class="led-use-tag">Bodas y celebraciones</span>
+                                <span class="led-use-tag">Instalaciones permanentes</span>
+                                <span class="led-use-tag">Alquiler profesional</span>
+                            </div>
+
+                            <!-- CTA -->
+                            <div style="background: #111; border: 1px solid rgba(255,44,85,0.18); border-radius: 14px; padding: 28px 24px; text-align: center;">
+                                <p style="font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700; color: #fff; margin: 0 0 6px 0;">¿Interesado en este producto?</p>
+                                <p style="font-family: 'Montserrat', sans-serif; font-size: 13px; color: #444; margin: 0 0 22px 0; line-height: 1.6;">Precio, disponibilidad y opciones de financiamiento</p>
+                                <a href="https://wa.me/50685128383?text=Hola!%20Me%20interesa%20la%20Pantalla%20LED%20P3.91%20Outdoor%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: #ff2c55; color: #fff; padding: 13px 30px; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; transition: background 0.25s ease;">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                                    Solicitar Cotización
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- PRODUCTOS EN VENTA -->
-            <div class="productos-venta-section" id="venta" style="padding: 100px 0; background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2a 50%, #0a0a1a 100%); position: relative; overflow: hidden;">
-                <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-                    <div class="the-title text-center" data-aos="fade-up" style="margin-bottom: 60px;">
-                        <h5 class="head-title-2"> / PRODUCTOS EN VENTA </h5>
-                        <h2 class="head-title-1"> Pantalla LED P3.91 Outdoor
-                            <span class="title-end">.</span></h2>
-                        <p class="dugem-text" style="color: #aaa; margin-top: 15px;">Sistema completo de pantalla LED Full Color para eventos profesionales</p>
+            <!-- NUESTROS CLIENTES -->
+            <div class="video-demo-section" style="position: relative; padding: 100px 0 120px; background: #000; overflow: hidden; border-top: 1px solid rgba(255,255,255,0.04);">
+                <div class="background-overlay" style="display:none;"></div>
+                <div class="container" style="position: relative; z-index: 2;">
+                    <div data-aos="fade-up" style="text-align: center; margin-bottom: 60px;">
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #ff2c55; margin: 0 0 18px 0;">NUESTROS CLIENTES</p>
+                        <h2 style="font-family: 'Montserrat', sans-serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; color: #fff; margin: 0 0 18px 0; line-height: 1.15; text-transform: uppercase;">Ya confían en nosotros</h2>
+                        <span class="section-accent-line"></span>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #555; margin: 0 auto; max-width: 460px; line-height: 1.6;">Empresas líderes en Costa Rica eligen Sky Visuals CR</p>
                     </div>
-
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;" data-aos="fade-up">
-                        <!-- Columna Izquierda: Especificaciones -->
-                        <div>
-                            <h3 style="font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 30px; text-transform: uppercase; background: linear-gradient(135deg, #ff2c55 0%, #9d4edd 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                                Especificaciones Principales
-                            </h3>
-                            
-                            <div style="background: rgba(255,255,255,0.05); border-radius: 15px; padding: 30px; border: 1px solid rgba(255,44,85,0.2);">
-                                <ul style="list-style: none; padding: 0; margin: 0;">
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #fff; margin-bottom: 15px; padding-left: 30px; position: relative;">
-                                        <svg style="position: absolute; left: 0; top: 2px;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff2c55" stroke-width="2">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                        <strong>Tipo:</strong> Pantalla LED Full Color Outdoor
-                                    </li>
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #fff; margin-bottom: 15px; padding-left: 30px; position: relative;">
-                                        <svg style="position: absolute; left: 0; top: 2px;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff2c55" stroke-width="2">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                        <strong>Pitch:</strong> P3.91 (alta definición para eventos)
-                                    </li>
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #fff; margin-bottom: 15px; padding-left: 30px; position: relative;">
-                                        <svg style="position: absolute; left: 0; top: 2px;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff2c55" stroke-width="2">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                        <strong>Tamaño total:</strong> 2m x 3m
-                                    </li>
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #fff; margin-bottom: 15px; padding-left: 30px; position: relative;">
-                                        <svg style="position: absolute; left: 0; top: 2px;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff2c55" stroke-width="2">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                        <strong>Resolución:</strong> 1024 x 768 px
-                                    </li>
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #fff; margin-bottom: 15px; padding-left: 30px; position: relative;">
-                                        <svg style="position: absolute; left: 0; top: 2px;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff2c55" stroke-width="2">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                        <strong>Brillo:</strong> ≥ 5000 cd/m² (visible a plena luz del día)
-                                    </li>
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #fff; margin-bottom: 15px; padding-left: 30px; position: relative;">
-                                        <svg style="position: absolute; left: 0; top: 2px;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff2c55" stroke-width="2">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                        <strong>Frecuencia de refresco:</strong> 3840Hz (imagen fluida para video profesional)
-                                    </li>
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #fff; padding-left: 30px; position: relative;">
-                                        <svg style="position: absolute; left: 0; top: 2px;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff2c55" stroke-width="2">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                        <strong>Uso:</strong> Interior y exterior
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <h3 style="font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 700; color: #fff; margin: 40px 0 30px 0; text-transform: uppercase; background: linear-gradient(135deg, #9d4edd 0%, #00f0ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                                Componentes Incluidos
-                            </h3>
-                            
-                            <div style="background: rgba(255,255,255,0.05); border-radius: 15px; padding: 30px; border: 1px solid rgba(157,78,221,0.2);">
-                                <ul style="list-style: none; padding: 0; margin: 0;">
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #fff; margin-bottom: 12px; padding-left: 30px; position: relative;">
-                                        <svg style="position: absolute; left: 0; top: 2px;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9d4edd" stroke-width="2">
-                                            <circle cx="12" cy="12" r="10"></circle>
-                                            <line x1="12" y1="8" x2="12" y2="12"></line>
-                                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                                        </svg>
-                                        Sistema completo de pantalla LED
-                                    </li>
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #fff; margin-bottom: 12px; padding-left: 30px; position: relative;">
-                                        <svg style="position: absolute; left: 0; top: 2px;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9d4edd" stroke-width="2">
-                                            <circle cx="12" cy="12" r="10"></circle>
-                                            <line x1="12" y1="8" x2="12" y2="12"></line>
-                                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                                        </svg>
-                                        Procesador de video (NovaStar)
-                                    </li>
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #fff; margin-bottom: 12px; padding-left: 30px; position: relative;">
-                                        <svg style="position: absolute; left: 0; top: 2px;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9d4edd" stroke-width="2">
-                                            <circle cx="12" cy="12" r="10"></circle>
-                                            <line x1="12" y1="8" x2="12" y2="12"></line>
-                                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                                        </svg>
-                                        Tarjetas receptoras
-                                    </li>
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #fff; margin-bottom: 12px; padding-left: 30px; position: relative;">
-                                        <svg style="position: absolute; left: 0; top: 2px;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9d4edd" stroke-width="2">
-                                            <circle cx="12" cy="12" r="10"></circle>
-                                            <line x1="12" y1="8" x2="12" y2="12"></line>
-                                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                                        </svg>
-                                        Fuentes de poder
-                                    </li>
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #fff; margin-bottom: 12px; padding-left: 30px; position: relative;">
-                                        <svg style="position: absolute; left: 0; top: 2px;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9d4edd" stroke-width="2">
-                                            <circle cx="12" cy="12" r="10"></circle>
-                                            <line x1="12" y1="8" x2="12" y2="12"></line>
-                                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                                        </svg>
-                                        Software de control
-                                    </li>
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #fff; margin-bottom: 12px; padding-left: 30px; position: relative;">
-                                        <svg style="position: absolute; left: 0; top: 2px;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9d4edd" stroke-width="2">
-                                            <circle cx="12" cy="12" r="10"></circle>
-                                            <line x1="12" y1="8" x2="12" y2="12"></line>
-                                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                                        </svg>
-                                        Cableado principal (señal y corriente)
-                                    </li>
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #fff; margin-bottom: 12px; padding-left: 30px; position: relative;">
-                                        <svg style="position: absolute; left: 0; top: 2px;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9d4edd" stroke-width="2">
-                                            <circle cx="12" cy="12" r="10"></circle>
-                                            <line x1="12" y1="8" x2="12" y2="12"></line>
-                                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                                        </svg>
-                                        Estructura de montaje básica
-                                    </li>
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #fff; margin-bottom: 12px; padding-left: 30px; position: relative;">
-                                        <svg style="position: absolute; left: 0; top: 2px;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9d4edd" stroke-width="2">
-                                            <circle cx="12" cy="12" r="10"></circle>
-                                            <line x1="12" y1="8" x2="12" y2="12"></line>
-                                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                                        </svg>
-                                        Flight cases para transporte
-                                    </li>
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #fff; padding-left: 30px; position: relative;">
-                                        <svg style="position: absolute; left: 0; top: 2px;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9d4edd" stroke-width="2">
-                                            <circle cx="12" cy="12" r="10"></circle>
-                                            <line x1="12" y1="8" x2="12" y2="12"></line>
-                                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                                        </svg>
-                                        Repuestos básicos incluidos
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Columna Derecha: Video y Configuración del Sistema -->
-                        <div>
-                            <!-- Video de la pantalla -->
-                            <div style="margin-bottom: 40px;" data-aos="fade-up">
-                                <div style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 20px 60px rgba(255,44,85,0.3);">
-                                    <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, #ff2c55, #9d4edd, #00f0ff, #ff2c55); border-radius: 17px; z-index: -1;"></div>
-                                    <video controls style="width: 100%; display: block; background: #000; border-radius: 15px;">
-                                        <source src="img/pantalla-venta.mp4" type="video/mp4">
-                                        Tu navegador no soporta el elemento de video.
-                                    </video>
+                    <div style="max-width: 800px; margin: 0 auto;">
+                        <div data-aos="fade-up" data-aos-delay="50">
+                            <div class="video-container" style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 20px 60px rgba(255,44,85,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                                <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, #ff2c55, #9d4edd, #00f0ff, #ff2c55); border-radius: 17px; z-index: -1; animation: borderRotate 3s linear infinite;"></div>
+                                <div style="position: absolute; top: 15px; right: 15px; z-index: 10; background: linear-gradient(135deg, rgba(255,44,85,0.95) 0%, rgba(157,78,221,0.95) 100%); padding: 8px 20px; border-radius: 20px; font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #fff; font-weight: 700; box-shadow: 0 4px 15px rgba(255,44,85,0.5);">
+                                    Repretel
                                 </div>
+                                <video controls style="width: 100%; display: block; background: #000;">
+                                    <source src="img/video%202%20repretel.mp4" type="video/mp4">
+                                    Tu navegador no soporta el elemento de video.
+                                </video>
                             </div>
-
-                            <h3 style="font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 30px; text-transform: uppercase; background: linear-gradient(135deg, #00f0ff 0%, #ff2c55 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                                Configuración del Sistema
-                            </h3>
-                            
-                            <div style="background: rgba(255,255,255,0.05); border-radius: 15px; padding: 30px; border: 1px solid rgba(0,240,255,0.2); margin-bottom: 30px;">
-                                <h4 style="font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 600; color: #00f0ff; margin-bottom: 20px;">
-                                    Gabinetes
-                                </h4>
-                                <p style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #ccc; line-height: 1.8;">
-                                    <strong style="color: #fff;">24 unidades</strong> (500mm x 1000mm)<br>
-                                    <strong style="color: #fff;">Material:</strong> Aluminio die-cast (ligero y resistente)<br>
-                                    <strong style="color: #fff;">Sistema de unión:</strong> Locking profesional rápido
-                                </p>
-                            </div>
-
-                            <div style="background: rgba(255,255,255,0.05); border-radius: 15px; padding: 30px; border: 1px solid rgba(0,240,255,0.2); margin-bottom: 30px;">
-                                <h4 style="font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 600; color: #00f0ff; margin-bottom: 20px;">
-                                    Ideal Para
-                                </h4>
-                                <ul style="list-style: none; padding: 0; margin: 0;">
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #ccc; margin-bottom: 10px; padding-left: 25px; position: relative;">
-                                        <span style="position: absolute; left: 0; color: #00f0ff;">→</span>
-                                        Conciertos y festivales
-                                    </li>
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #ccc; margin-bottom: 10px; padding-left: 25px; position: relative;">
-                                        <span style="position: absolute; left: 0; color: #00f0ff;">→</span>
-                                        Eventos corporativos
-                                    </li>
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #ccc; margin-bottom: 10px; padding-left: 25px; position: relative;">
-                                        <span style="position: absolute; left: 0; color: #00f0ff;">→</span>
-                                        Bodas y celebraciones
-                                    </li>
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #ccc; margin-bottom: 10px; padding-left: 25px; position: relative;">
-                                        <span style="position: absolute; left: 0; color: #00f0ff;">→</span>
-                                        Instalaciones permanentes
-                                    </li>
-                                    <li style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #ccc; padding-left: 25px; position: relative;">
-                                        <span style="position: absolute; left: 0; color: #00f0ff;">→</span>
-                                        Alquiler profesional
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div style="background: linear-gradient(135deg, rgba(255,44,85,0.2) 0%, rgba(157,78,221,0.2) 100%); border-radius: 15px; padding: 40px; border: 2px solid rgba(255,44,85,0.3); text-align: center;">
-                                <p style="font-family: 'Montserrat', sans-serif; font-size: 16px; color: #fff; margin-bottom: 25px; line-height: 1.6;">
-                                    <strong style="font-size: 20px; display: block; margin-bottom: 15px; background: linear-gradient(135deg, #ff2c55 0%, #9d4edd 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                                        ¿Interesado en este producto?
-                                    </strong>
-                                    Contáctanos para más información sobre precio, disponibilidad y opciones de financiamiento
-                                </p>
-                                <a href="https://wa.me/50685128383?text=Hola!%20Me%20interesa%20la%20Pantalla%20LED%20P3.91%20Outdoor%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n" target="_blank" class="button-basic-1" style="display: inline-flex; align-items: center; gap: 10px; font-size: 16px; padding: 15px 35px;">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                                    </svg>
-                                    Solicita Tu Cotización
-                                </a>
+                            <div style="text-align: center; margin-top: 20px;">
+                                <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 600; margin-bottom: 8px;">Producción Profesional para Repretel</h3>
+                                <p style="color: #aaa; font-size: 14px;">Iluminación de nivel televisivo</p>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Responsive -->
-                    <style>
-                        @media (max-width: 768px) {
-                            .productos-venta-section > div > div:nth-child(2) {
-                                grid-template-columns: 1fr !important;
-                                gap: 40px !important;
-                                display: flex !important;
-                                flex-direction: column !important;
-                            }
-                            
-                            /* En mobile, el video (columna derecha) aparece primero */
-                            .productos-venta-section > div > div:nth-child(2) > div:nth-child(2) {
-                                order: -1;
-                            }
-                            
-                            /* Especificaciones (columna izquierda) aparecen después */
-                            .productos-venta-section > div > div:nth-child(2) > div:nth-child(1) {
-                                order: 1;
-                            }
-                        }
-                    </style>
+                    <div class="text-center" style="margin-top: 50px;" data-aos="fade-up">
+                        <a href="#contacto" class="button-basic-1">Quiero este efecto en mi evento</a>
+                    </div>
                 </div>
             </div>
 
@@ -1360,45 +1334,96 @@
             </div>
         </section>
 
-        <!-- NUESTROS CLIENTES -->
-        <div class="video-demo-section" style="position: relative; padding: 80px 0; background: linear-gradient(180deg, #0a0a0a 0%, #1a0a1a 50%, #0a0a0a 100%); overflow: hidden;">
-            <div class="background-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(ellipse at center, rgba(255,44,85,0.1) 0%, transparent 70%);"></div>
-            
-            <div class="container" style="position: relative; z-index: 2;">
-                <div class="the-title text-center" data-aos="fade-up" style="margin-bottom: 60px;">
-                    <h5 class="head-title-2"> / CLIENTES </h5>
-                    <h2 class="head-title-1"> Nuestros Clientes
-                        <span class="title-end">.</span></h2>
-                    <p class="dugem-text" style="color: #aaa; margin-top: 15px;">Confianza de empresas líderes en Costa Rica</p>
+
+        <!-- GALERÍA (reemplazada por slider arriba) -->
+        <div id="galeria-old" style="display:none;">
+
+            <style>
+                .gallery-grid {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 12px;
+                }
+                .gallery-item {
+                    position: relative;
+                    border-radius: 14px;
+                    overflow: hidden;
+                    cursor: pointer;
+                }
+                .gallery-item img {
+                    width: 100%; height: 100%;
+                    object-fit: cover; display: block;
+                    transition: transform 0.55s ease;
+                }
+                .gallery-item:hover img { transform: scale(1.06); }
+                .gallery-item::after {
+                    content: ''; position: absolute; inset: 0;
+                    background: linear-gradient(to top, rgba(255,44,85,0.25) 0%, rgba(0,0,0,0.15) 40%, transparent 65%);
+                    opacity: 0; transition: opacity 0.35s ease;
+                }
+                .gallery-item:hover::after { opacity: 1; }
+                .g-wide { grid-column: span 2; }
+                .g-tall { height: 390px; }
+                .g-mid  { height: 270px; }
+                @media (max-width: 900px) {
+                    .gallery-grid { grid-template-columns: 1fr 1fr !important; }
+                    .g-wide { grid-column: span 2; }
+                    .g-tall, .g-mid { height: 210px; }
+                }
+                @media (max-width: 560px) {
+                    .gallery-grid { grid-template-columns: 1fr !important; }
+                    .g-wide { grid-column: span 1; }
+                    .g-tall, .g-mid { height: 230px; }
+                }
+            </style>
+
+            <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1;">
+
+                <!-- Header -->
+                <div data-aos="fade-up" style="text-align: center; margin-bottom: 56px;">
+                    <p style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #ff2c55; margin: 0 0 18px 0;">NUESTRA GALERÍA</p>
+                    <h2 style="font-family: 'Montserrat', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #fff; margin: 0 0 8px 0; line-height: 1.15; text-transform: uppercase;">Iluminación en Acción</h2>
+                    <span style="display: block; width: 40px; height: 2px; background: linear-gradient(90deg, #ff2c55, #9d4edd); border-radius: 2px; margin: 16px auto 20px;"></span>
+                    <p style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #555; margin: 0 auto; max-width: 460px; line-height: 1.6;">Así transformamos cada escenario en una experiencia visual única</p>
                 </div>
-                
-                <!-- Video Cliente -->
-                <div style="max-width: 800px; margin: 0 auto;">
-                    <!-- Video - Repretel -->
-                    <div data-aos="fade-up" data-aos-delay="50">
-                        <div class="video-container" style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 20px 60px rgba(255,44,85,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                            <!-- Marco decorativo -->
-                            <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, #ff2c55, #9d4edd, #00f0ff, #ff2c55); border-radius: 17px; z-index: -1; animation: borderRotate 3s linear infinite;"></div>
-                            
-                            <!-- Etiqueta del equipo -->
-                            <div style="position: absolute; top: 15px; right: 15px; z-index: 10; background: linear-gradient(135deg, rgba(255,44,85,0.95) 0%, rgba(157,78,221,0.95) 100%); padding: 8px 20px; border-radius: 20px; font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #fff; font-weight: 700; box-shadow: 0 4px 15px rgba(255,44,85,0.5);">
-                                Repretel
-                            </div>
-                            
-                            <video controls style="width: 100%; display: block; background: #000;">
-                                <source src="img/video%202%20repretel.mp4" type="video/mp4">
-                                Tu navegador no soporta el elemento de video.
-                            </video>
-                        </div>
-                        <div style="text-align: center; margin-top: 20px;">
-                            <h3 style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 600; margin-bottom: 8px;">Producción Profesional</h3>
-                            <p style="color: #aaa; font-size: 14px;">Iluminación de nivel televisivo</p>
-                        </div>
+
+                <!-- Grid -->
+                <div class="gallery-grid" data-aos="fade-up">
+
+                    <!-- Fila 1: Rock Band (2 cols) + Stage Lights (1 col) -->
+                    <div class="gallery-item g-wide g-tall">
+                        <img src="img/rock-band-silhouettes-stage-concert.jpg" alt="Rock Band en Concierto" loading="lazy">
+                    </div>
+                    <div class="gallery-item g-tall">
+                        <img src="img/stage-lights(1).jpg" alt="Luces de Escenario" loading="lazy">
+                    </div>
+
+                    <!-- Fila 2: Party (1 col) + Stage Ceiling (2 cols) -->
+                    <div class="gallery-item g-mid">
+                        <img src="img/party-activities-celebrate-social-events-nightlife-pub-band-party-shadows-colorful.jpg" alt="Fiesta Colorida" loading="lazy">
+                    </div>
+                    <div class="gallery-item g-wide g-mid">
+                        <img src="img/stage-ceiling-light-bright-blue-spotlights.jpg" alt="Spotlights Azules" loading="lazy">
+                    </div>
+
+                    <!-- Fila 3: Light Concert (1 col) + Stage Lights (2 cols) -->
+                    <div class="gallery-item g-mid">
+                        <img src="img/light-is-stage-concert.jpg" alt="Luz en Concierto" loading="lazy">
+                    </div>
+                    <div class="gallery-item g-wide g-mid">
+                        <img src="img/stage-lights.jpg" alt="Luces de Escenario" loading="lazy">
                     </div>
                 </div>
-                
-                <div class="text-center" style="margin-top: 50px;" data-aos="fade-up">
-                    <a href="#contacto" class="button-basic-1">Quiero este efecto en mi evento</a>
+
+                <!-- CTA -->
+                <div data-aos="fade-up" style="text-align: center; margin-top: 52px;">
+                    <a href="https://wa.me/50685128383?text=Hola!%20Vi%20la%20galer%C3%ADa%20y%20me%20interesa%20iluminaci%C3%B3n%20para%20mi%20evento" target="_blank"
+                       style="display: inline-flex; align-items: center; gap: 10px; background: transparent; border: 1px solid rgba(255,255,255,0.12); color: #fff; padding: 13px 36px; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.3s ease;"
+                       onmouseenter="this.style.borderColor='rgba(255,44,85,0.45)';this.style.color='#ff2c55'"
+                       onmouseleave="this.style.borderColor='rgba(255,255,255,0.12)';this.style.color='#fff'">
+                        Quiero este efecto en mi evento
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
                 </div>
             </div>
         </div>
@@ -1446,6 +1471,23 @@
             duration: 400,
             easing: 'ease-in-out',
             once: true
+        });
+
+        new Swiper('.gal-swiper', {
+            loop: true,
+            centeredSlides: true,
+            slidesPerView: 1.12,
+            spaceBetween: 16,
+            observer: true,
+            observeParents: true,
+            autoplay: { delay: 3500, disableOnInteraction: false },
+            navigation: { nextEl: '.gal-swiper .swiper-button-next', prevEl: '.gal-swiper .swiper-button-prev' },
+            pagination: { el: '.gal-swiper .swiper-pagination', clickable: true },
+            breakpoints: {
+                768:  { slidesPerView: 1.3, spaceBetween: 20 },
+                1024: { slidesPerView: 1.55, spaceBetween: 28 },
+                1280: { slidesPerView: 1.7,  spaceBetween: 32 }
+            }
         });
         
         // Funcionalidad de búsqueda
