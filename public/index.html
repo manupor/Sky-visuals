@@ -155,159 +155,203 @@
         </a>
 
         <!-- HEADER -->
-        <header id="header" class="header-style-1" style="position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(10,10,10,0.72); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-bottom: 1px solid rgba(255,44,85,0.18); height: 100px; overflow: visible; padding: 0;">
-            <div class="container">
-                <div class="row clearfix">
-                    <div class="header-clear clearfix">
-                        <!-- Logo Izquierda -->
-                        <div class="header-content-left">
-                            <div class="logo">
-                                <a href="#hero"><img id="navLogo" src="img/logo-blanco.png" alt="Sky Visuals CR"></a>
-                            </div>
-                        </div>
-
-                        <!-- Menú Centro -->
-                        <div class="header-content-center">
-                            <nav class="main-nav">
-                                <input id="main-menu-state" type="checkbox" />
-                                <label class="main-menu-btn" for="main-menu-state">
-                                    <span class="main-menu-btn-icon"></span> Toggle main menu visibility
-                                </label>
-                                <ul id="main-menu" class="custom-mobile-menu">
-                                    <li class="menu-item"><a href="#servicios" class="menu-link">Servicios</a></li>
-                                    <li class="menu-item"><a href="#eventos" class="menu-link">Eventos</a></li>
-                                    <li class="menu-item"><a href="#contacto" class="menu-link">Contacto</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-
-                        <!-- Div invisible derecha para centrar perfecto -->
-                        <div class="header-content-right" style="width: 160px;"></div>
-                    </div>
+        <header id="header" class="site-header">
+            <div class="header-container">
+                <!-- Logo Izquierda -->
+                <div class="header-logo">
+                    <a href="#hero" aria-label="Ir a inicio">
+                        <img id="navLogo" src="img/logo-blanco.png" alt="Sky Visuals CR">
+                    </a>
                 </div>
+
+                <!-- Menú Derecha (y centro en desktop) -->
+                <nav class="main-nav" aria-label="Menú principal">
+                    <input id="main-menu-state" type="checkbox" aria-hidden="true" />
+                    
+                    <label class="main-menu-btn" for="main-menu-state" aria-label="Abrir menú" role="button" tabindex="0">
+                        <span class="main-menu-btn-icon"></span>
+                    </label>
+                    
+                    <ul id="main-menu" class="nav-links">
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#eventos">Eventos</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
             </div>
             
             <style>
                 /* ── NAVBAR CLEAN CSS ── */
-                #header, #header * { box-sizing: border-box !important; }
-                
-                #header { height: 100px !important; overflow: visible !important; }
-                #header .container { height: 100px !important; padding: 0 40px !important; max-width: 100% !important; }
-                
-                #header .header-clear {
-                    display: flex !important;
-                    align-items: center !important;
-                    justify-content: space-between !important;
-                    height: 100px !important;
-                    width: 100% !important;
+                .site-header {
+                    position: fixed;
+                    top: 0; left: 0; right: 0;
+                    z-index: 1000;
+                    background: rgba(10,10,10,0.72);
+                    backdrop-filter: blur(18px);
+                    -webkit-backdrop-filter: blur(18px);
+                    border-bottom: 1px solid rgba(255,44,85,0.18);
+                    height: 100px;
+                    transition: height 0.3s ease;
                 }
                 
-                /* Izquierda (Logo) */
-                #header .header-content-left {
-                    display: flex !important; align-items: center !important;
-                    width: 160px !important; /* Fixed width slightly larger for bigger logo */
-                    height: 100px !important;
+                .header-container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    height: 100%;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    padding: 0 40px;
                 }
-                #navLogo { height: 84px !important; width: auto !important; display: block !important; }
                 
-                /* Centro (Menu) */
-                #header .header-content-center {
-                    display: flex !important; justify-content: center !important; align-items: center !important;
-                    flex: 1 !important; height: 100px !important;
+                .header-logo {
+                    display: flex;
+                    align-items: center;
                 }
-                #header .main-nav > ul {
-                    display: flex !important; flex-direction: row !important; align-items: center !important;
-                    gap: 32px !important; margin: 0 !important; padding: 0 !important; list-style: none !important;
-                }
-                #header .main-nav ul li a {
-                    display: flex !important; align-items: center !important; height: 100px !important;
-                    font-size: 15px !important; font-weight: 600 !important; color: rgba(255,255,255,0.82) !important;
-                    text-decoration: none !important; transition: color 0.3s;
-                }
-                #header .main-nav ul li a:hover { color: #ff2c55 !important; }
-
-                #header .main-menu-btn { display: none !important; }
                 
-                /* Mobile */
+                .header-logo img {
+                    height: 84px;
+                    width: auto;
+                    display: block;
+                }
+                
+                .main-nav {
+                    display: flex;
+                    align-items: center;
+                }
+                
+                .nav-links {
+                    display: flex;
+                    gap: 32px;
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                }
+                
+                .nav-links a {
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 15px;
+                    font-weight: 600;
+                    color: rgba(255,255,255,0.82);
+                    text-decoration: none;
+                    transition: color 0.3s;
+                }
+                
+                .nav-links a:hover {
+                    color: #ff2c55;
+                }
+                
+                /* Hide checkbox and hamburger on desktop */
+                #main-menu-state, .main-menu-btn {
+                    display: none;
+                }
+                
+                /* =========================================
+                   MOBILE LAYOUT (max-width: 768px)
+                   ========================================= */
                 @media (max-width: 768px) {
-                    #header { height: 72px !important; }
-                    #header .container { height: 72px !important; padding: 0 20px !important; }
-                    #header .header-clear { height: 72px !important; }
-                    
-                    /* Logo */
-                    #header .header-content-left { height: 72px !important; width: auto !important; }
-                    #navLogo { height: 50px !important; }
-                    
-                    /* Right side completely hidden */
-                    #header .header-content-right { display: none !important; }
-                    
-                    /* Center container expands to right side */
-                    #header .header-content-center {
-                        height: 72px !important;
-                        justify-content: flex-end !important;
-                        position: static !important;
+                    .site-header {
+                        height: 72px;
                     }
                     
-                    /* Menu Wrapper */
-                    #header .main-nav { display: flex !important; justify-content: flex-end !important; align-items: center !important; }
+                    .header-container {
+                        padding: 0 20px;
+                    }
                     
-                    /* Hamburger toggle */
-                    #main-menu-state { display: none !important; }
+                    .header-logo img {
+                        height: auto;
+                        max-width: 140px; /* Constrain width on mobile */
+                        max-height: 50px;
+                    }
                     
-                    #header .main-menu-btn {
-                        display: flex !important;
+                    /* Hamburger Button - 44x44px tap target */
+                    .main-menu-btn {
+                        display: flex;
                         align-items: center;
-                        position: relative;
-                        width: 30px; height: 30px;
+                        justify-content: center;
+                        width: 44px;
+                        height: 44px;
                         cursor: pointer;
                         z-index: 2000;
-                        margin: 0; padding: 0;
-                        color: transparent;
-                        overflow: hidden;
+                        position: relative;
+                        /* Reset default label styles if any */
+                        margin: 0;
+                        padding: 0;
                     }
                     
-                    .main-menu-btn-icon, .main-menu-btn-icon:before, .main-menu-btn-icon:after {
-                        position: absolute;
-                        width: 30px; height: 2px;
+                    .main-menu-btn-icon {
+                        position: relative;
+                        width: 28px;
+                        height: 2px;
                         background: #fff;
-                        transition: all 0.3s ease;
+                        transition: background 0.3s ease;
+                    }
+                    
+                    .main-menu-btn-icon::before,
+                    .main-menu-btn-icon::after {
+                        content: '';
+                        position: absolute;
                         left: 0;
+                        width: 28px;
+                        height: 2px;
+                        background: #fff;
+                        transition: transform 0.3s ease, top 0.3s ease;
                     }
-                    .main-menu-btn-icon { top: 14px; }
-                    .main-menu-btn-icon:before { content: ''; top: -8px; }
-                    .main-menu-btn-icon:after { content: ''; top: 8px; }
                     
-                    /* Dropdown */
-                    #header .main-nav > ul {
-                        display: none !important; /* Hidden by default */
-                        flex-direction: column !important;
+                    .main-menu-btn-icon::before { top: -8px; }
+                    .main-menu-btn-icon::after { top: 8px; }
+                    
+                    /* Drawer Menu */
+                    .nav-links {
+                        display: flex;
+                        flex-direction: column;
                         position: fixed;
-                        top: 72px; left: 0;
-                        background: rgba(0,0,0,0.98);
+                        top: 72px;
+                        left: 0;
+                        width: 100%;
+                        background: rgba(10,10,10,0.98);
                         border-bottom: 1px solid rgba(255,44,85,0.3);
-                        padding: 10px 0 20px 0 !important;
-                        height: auto !important;
-                        width: 100% !important;
-                        margin: 0 !important;
-                        z-index: 1500;
-                        box-sizing: border-box !important;
+                        padding: 20px 0;
+                        gap: 0;
+                        
+                        /* Animation state: closed */
+                        visibility: hidden;
+                        opacity: 0;
+                        transform: translateY(-10px);
+                        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
                     }
                     
-                    #header .main-nav ul li { height: auto !important; width: 100% !important; justify-content: center !important; }
-                    #header .main-nav ul li a {
-                        height: 50px !important;
-                        width: 100% !important;
-                        justify-content: center !important;
-                        font-size: 16px !important;
+                    .nav-links li {
+                        width: 100%;
+                        text-align: center;
                     }
                     
-                    /* When Checked */
-                    #main-menu-state:checked ~ ul#main-menu {
-                        display: flex !important;
+                    .nav-links a {
+                        display: block;
+                        padding: 16px 20px;
+                        font-size: 16px;
                     }
-                    #main-menu-state:checked ~ .main-menu-btn .main-menu-btn-icon { background: transparent; }
-                    #main-menu-state:checked ~ .main-menu-btn .main-menu-btn-icon:before { transform: rotate(45deg); top: 0; }
-                    #main-menu-state:checked ~ .main-menu-btn .main-menu-btn-icon:after { transform: rotate(-45deg); top: 0; }
+                    
+                    /* Toggled State */
+                    #main-menu-state:checked ~ .nav-links {
+                        visibility: visible;
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                    
+                    #main-menu-state:checked ~ .main-menu-btn .main-menu-btn-icon {
+                        background: transparent;
+                    }
+                    
+                    #main-menu-state:checked ~ .main-menu-btn .main-menu-btn-icon::before {
+                        top: 0;
+                        transform: rotate(45deg);
+                    }
+                    
+                    #main-menu-state:checked ~ .main-menu-btn .main-menu-btn-icon::after {
+                        top: 0;
+                        transform: rotate(-45deg);
+                    }
                 }
             </style>
         </header>
