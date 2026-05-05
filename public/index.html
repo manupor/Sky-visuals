@@ -276,13 +276,14 @@
                     
                     .header-logo img {
                         display: block !important;
-                        width: 120px !important; /* Tighter width */
-                        max-height: 32px !important;
-                        height: auto !important;
+                        width: auto !important; /* Let width adapt proportionally to height */
+                        height: 64px !important; /* Doubled height for exact proportion */
+                        max-width: 240px !important; /* Increased safe limit for larger logo */
                         margin: 0 !important;
                         padding: 0 !important;
                         transform: none !important;
                         position: static !important;
+                        object-fit: contain !important;
                     }
                     
                     .main-nav {
