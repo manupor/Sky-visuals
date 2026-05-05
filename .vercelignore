@@ -10,6 +10,10 @@ package-lock.json
 tailwind.config.ts
 tsconfig.json
 next.config.ts
+next.config.mjs
+next-env.d.ts
+postcss.config.mjs
+netlify.toml
 postcss.config.mjs
 README.md
 .gitignore
