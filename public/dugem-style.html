@@ -251,73 +251,80 @@
                    ========================================= */
                 @media (max-width: 768px) {
                     .site-header {
-                        height: 72px !important;
-                        min-height: 72px !important;
+                        height: 64px !important; /* Tighter header */
+                        min-height: 64px !important;
                     }
                     
                     .header-container {
-                        padding: 0 16px !important; /* Consistent horizontal padding */
+                        padding: 0 16px !important;
                         height: 100% !important;
                         display: flex !important;
                         align-items: center !important;
                         justify-content: space-between !important;
                     }
                     
-                    .header-logo {
+                    /* Both Logo and Link must be flex items matching the container height */
+                    .header-logo, .header-logo a {
                         display: flex !important;
                         align-items: center !important;
+                        justify-content: flex-start !important;
+                        height: 100% !important;
                         margin: 0 !important;
                         padding: 0 !important;
-                        height: 100% !important;
+                        transform: none !important;
                     }
                     
                     .header-logo img {
-                        height: auto !important;
-                        width: 130px !important; /* Perfect visual balance with button */
-                        max-height: 40px !important;
                         display: block !important;
+                        width: 120px !important; /* Tighter width */
+                        max-height: 32px !important;
+                        height: auto !important;
                         margin: 0 !important;
                         padding: 0 !important;
+                        transform: none !important;
+                        position: static !important;
                     }
                     
                     .main-nav {
                         display: flex !important;
                         align-items: center !important;
+                        justify-content: flex-end !important;
                         height: 100% !important;
                         margin: 0 !important;
                         padding: 0 !important;
+                        transform: none !important;
                     }
                     
-                    /* Hamburger Button - 44x44px tap target */
+                    /* Hamburger Button */
                     .main-menu-btn {
                         display: flex !important;
                         align-items: center !important;
                         justify-content: center !important;
                         width: 44px !important;
                         height: 44px !important;
-                        cursor: pointer !important;
-                        z-index: 2000 !important;
-                        position: relative !important;
-                        /* Kill any global theme label margins/paddings causing it to shift up */
                         margin: 0 !important;
                         padding: 0 !important;
-                        top: 0 !important;
-                        bottom: 0 !important;
-                        left: 0 !important;
-                        right: 0 !important;
-                        line-height: 0 !important;
-                        border: none !important;
                         background: transparent !important;
+                        border: none !important;
+                        cursor: pointer !important;
+                        z-index: 2000 !important;
+                        position: static !important; /* No absolute/relative shifting */
+                        transform: none !important;
                     }
                     
+                    /* Icon box (wrapper for the 3 lines) */
                     .main-menu-btn-icon {
-                        position: relative !important;
+                        position: relative !important; /* Only relative to hold before/after absolute lines */
                         display: block !important;
-                        width: 22px !important;
+                        width: 24px !important;
                         height: 2px !important;
                         background: #fff !important;
                         transition: background 0.3s ease !important;
                         margin: 0 !important;
+                        padding: 0 !important;
+                        top: 0 !important;
+                        left: 0 !important;
+                        transform: none !important;
                     }
                     
                     .main-menu-btn-icon::before,
@@ -325,21 +332,23 @@
                         content: '' !important;
                         position: absolute !important;
                         left: 0 !important;
-                        width: 22px !important;
+                        width: 24px !important;
                         height: 2px !important;
                         background: #fff !important;
                         transition: transform 0.3s ease, top 0.3s ease !important;
+                        margin: 0 !important;
+                        padding: 0 !important;
                     }
                     
-                    .main-menu-btn-icon::before { top: -7px !important; }
-                    .main-menu-btn-icon::after { top: 7px !important; }
+                    .main-menu-btn-icon::before { top: -8px !important; transform: none !important; }
+                    .main-menu-btn-icon::after { top: 8px !important; transform: none !important; }
                     
                     /* Drawer Menu */
                     .nav-links {
                         display: flex !important;
                         flex-direction: column !important;
                         position: fixed !important;
-                        top: 72px !important;
+                        top: 64px !important;
                         left: 0 !important;
                         width: 100% !important;
                         background: rgba(10,10,10,0.98) !important;
@@ -348,7 +357,6 @@
                         gap: 0 !important;
                         margin: 0 !important;
                         
-                        /* Animation state: closed */
                         visibility: hidden;
                         opacity: 0;
                         transform: translateY(-10px);
