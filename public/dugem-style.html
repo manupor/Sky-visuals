@@ -251,74 +251,108 @@
                    ========================================= */
                 @media (max-width: 768px) {
                     .site-header {
-                        height: 72px;
+                        height: 72px !important;
+                        min-height: 72px !important;
                     }
                     
                     .header-container {
-                        padding: 0 20px;
+                        padding: 0 16px !important; /* Consistent horizontal padding */
+                        height: 100% !important;
+                        display: flex !important;
+                        align-items: center !important;
+                        justify-content: space-between !important;
+                    }
+                    
+                    .header-logo {
+                        display: flex !important;
+                        align-items: center !important;
+                        margin: 0 !important;
+                        padding: 0 !important;
+                        height: 100% !important;
                     }
                     
                     .header-logo img {
-                        height: auto;
-                        max-width: 140px; /* Constrain width on mobile */
-                        max-height: 50px;
+                        height: auto !important;
+                        width: 130px !important; /* Perfect visual balance with button */
+                        max-height: 40px !important;
+                        display: block !important;
+                        margin: 0 !important;
+                        padding: 0 !important;
+                    }
+                    
+                    .main-nav {
+                        display: flex !important;
+                        align-items: center !important;
+                        height: 100% !important;
+                        margin: 0 !important;
+                        padding: 0 !important;
                     }
                     
                     /* Hamburger Button - 44x44px tap target */
                     .main-menu-btn {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        width: 44px;
-                        height: 44px;
-                        cursor: pointer;
-                        z-index: 2000;
-                        position: relative;
-                        /* Reset default label styles if any */
-                        margin: 0;
-                        padding: 0;
+                        display: flex !important;
+                        align-items: center !important;
+                        justify-content: center !important;
+                        width: 44px !important;
+                        height: 44px !important;
+                        cursor: pointer !important;
+                        z-index: 2000 !important;
+                        position: relative !important;
+                        /* Kill any global theme label margins/paddings causing it to shift up */
+                        margin: 0 !important;
+                        padding: 0 !important;
+                        top: 0 !important;
+                        bottom: 0 !important;
+                        left: 0 !important;
+                        right: 0 !important;
+                        line-height: 0 !important;
+                        border: none !important;
+                        background: transparent !important;
                     }
                     
                     .main-menu-btn-icon {
-                        position: relative;
-                        width: 28px;
-                        height: 2px;
-                        background: #fff;
-                        transition: background 0.3s ease;
+                        position: relative !important;
+                        display: block !important;
+                        width: 22px !important;
+                        height: 2px !important;
+                        background: #fff !important;
+                        transition: background 0.3s ease !important;
+                        margin: 0 !important;
                     }
                     
                     .main-menu-btn-icon::before,
                     .main-menu-btn-icon::after {
-                        content: '';
-                        position: absolute;
-                        left: 0;
-                        width: 28px;
-                        height: 2px;
-                        background: #fff;
-                        transition: transform 0.3s ease, top 0.3s ease;
+                        content: '' !important;
+                        position: absolute !important;
+                        left: 0 !important;
+                        width: 22px !important;
+                        height: 2px !important;
+                        background: #fff !important;
+                        transition: transform 0.3s ease, top 0.3s ease !important;
                     }
                     
-                    .main-menu-btn-icon::before { top: -8px; }
-                    .main-menu-btn-icon::after { top: 8px; }
+                    .main-menu-btn-icon::before { top: -7px !important; }
+                    .main-menu-btn-icon::after { top: 7px !important; }
                     
                     /* Drawer Menu */
                     .nav-links {
-                        display: flex;
-                        flex-direction: column;
-                        position: fixed;
-                        top: 72px;
-                        left: 0;
-                        width: 100%;
-                        background: rgba(10,10,10,0.98);
-                        border-bottom: 1px solid rgba(255,44,85,0.3);
-                        padding: 20px 0;
-                        gap: 0;
+                        display: flex !important;
+                        flex-direction: column !important;
+                        position: fixed !important;
+                        top: 72px !important;
+                        left: 0 !important;
+                        width: 100% !important;
+                        background: rgba(10,10,10,0.98) !important;
+                        border-bottom: 1px solid rgba(255,44,85,0.3) !important;
+                        padding: 20px 0 !important;
+                        gap: 0 !important;
+                        margin: 0 !important;
                         
                         /* Animation state: closed */
                         visibility: hidden;
                         opacity: 0;
                         transform: translateY(-10px);
-                        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+                        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s !important;
                     }
                     
                     .nav-links li {
