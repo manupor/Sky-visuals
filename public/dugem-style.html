@@ -35,6 +35,11 @@
         .productos-venta-section, .video-demo-section,
         footer#footer, .footer, .footer-wrap, .footer-bottom,
         section { background: #000 !important; }
+        
+        /* Remove legacy diagonal shape that breaks layout */
+        .global-block::before, .global-block::after,
+        .book-table::before, .book-table::after,
+        .video-demo-section::before, .video-demo-section::after { display: none !important; border: none !important; width: 0 !important; }
     </style>
 
     <style>
