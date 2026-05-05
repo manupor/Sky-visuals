@@ -224,68 +224,91 @@
                 
                 /* Mobile */
                 @media (max-width: 768px) {
-                    #header, #header .container, #header .header-clear,
-                    #header .header-content-left { height: 72px !important; }
+                    #header { height: 72px !important; }
+                    #header .container { height: 72px !important; padding: 0 20px !important; }
+                    #header .header-clear { height: 72px !important; }
                     
-                    #header .header-content-center {
-                        height: auto !important;
-                        justify-content: flex-end !important;
-                    }
-                    
-                    #header .container { padding: 0 20px !important; }
+                    /* Logo */
+                    #header .header-content-left { height: 72px !important; width: auto !important; }
                     #navLogo { height: 50px !important; }
                     
-                    #header .main-nav { width: 100%; display: flex; justify-content: flex-end; }
+                    /* Right side completely hidden */
+                    #header .header-content-right { display: none !important; }
                     
-                    /* Hamburger button */
+                    /* Center container expands to right side */
+                    #header .header-content-center {
+                        height: 72px !important;
+                        justify-content: flex-end !important;
+                        position: static !important;
+                    }
+                    
+                    /* Menu Wrapper */
+                    #header .main-nav { display: flex !important; justify-content: flex-end !important; align-items: center !important; }
+                    
+                    /* Hamburger toggle */
+                    #main-menu-state { display: none !important; }
+                    
                     #header .main-menu-btn {
-                        display: block !important;
+                        display: flex !important;
+                        align-items: center;
                         position: relative;
-                        width: 28px; height: 28px;
+                        width: 30px; height: 30px;
                         cursor: pointer;
-                        z-index: 1001;
-                        margin-top: 22px; /* Align with 72px header */
+                        z-index: 2000;
+                        margin: 0; padding: 0;
+                        color: transparent;
+                        overflow: hidden;
                     }
+                    
                     .main-menu-btn-icon, .main-menu-btn-icon:before, .main-menu-btn-icon:after {
-                        position: absolute; top: 50%; left: 0;
-                        width: 28px; height: 2px;
-                        background: #fff; transition: all 0.3s;
+                        position: absolute;
+                        width: 30px; height: 2px;
+                        background: #fff;
+                        transition: all 0.3s ease;
+                        left: 0;
                     }
+                    .main-menu-btn-icon { top: 14px; }
                     .main-menu-btn-icon:before { content: ''; top: -8px; }
                     .main-menu-btn-icon:after { content: ''; top: 8px; }
                     
-                    /* Dropdown menu */
+                    /* Dropdown */
                     #header .main-nav > ul {
                         display: flex !important;
                         flex-direction: column !important;
-                        position: fixed;
+                        position: absolute;
                         top: 72px; left: 0; right: 0;
-                        background: rgba(10,10,10,0.95);
-                        backdrop-filter: blur(20px);
-                        padding: 20px; gap: 0 !important;
+                        background: rgba(0,0,0,0.98);
+                        border-bottom: 1px solid rgba(255,44,85,0.3);
+                        padding: 10px 0 20px 0 !important;
                         height: auto !important;
-                        border-bottom: 1px solid rgba(255,44,85,0.2);
-                        transform: translateY(-150%);
+                        width: 100vw !important;
+                        margin: 0 !important;
+                        
+                        /* Hidden by default */
+                        visibility: hidden;
                         opacity: 0;
-                        transition: all 0.4s ease;
-                        z-index: 1000;
+                        transform: translateY(-20px);
+                        transition: all 0.3s ease;
+                        z-index: 1500;
                     }
                     
-                    #header .main-nav ul li { height: auto !important; width: 100%; justify-content: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
-                    #header .main-nav ul li:last-child { border-bottom: none; }
-                    #header .main-nav ul li a { height: 60px !important; width: 100%; justify-content: center; font-size: 16px !important; }
+                    #header .main-nav ul li { height: auto !important; width: 100% !important; justify-content: center !important; }
+                    #header .main-nav ul li a {
+                        height: 50px !important;
+                        width: 100% !important;
+                        justify-content: center !important;
+                        font-size: 16px !important;
+                    }
                     
-                    /* Checkbox hack logic */
-                    #main-menu-state { display: none; }
+                    /* When Checked */
                     #main-menu-state:checked ~ ul#main-menu {
-                        transform: translateY(0);
+                        visibility: visible;
                         opacity: 1;
+                        transform: translateY(0);
                     }
                     #main-menu-state:checked ~ .main-menu-btn .main-menu-btn-icon { background: transparent; }
                     #main-menu-state:checked ~ .main-menu-btn .main-menu-btn-icon:before { transform: rotate(45deg); top: 0; }
                     #main-menu-state:checked ~ .main-menu-btn .main-menu-btn-icon:after { transform: rotate(-45deg); top: 0; }
-                    
-                    #header .header-content-right { display: none !important; }
                 }
             </style>
         </header>
