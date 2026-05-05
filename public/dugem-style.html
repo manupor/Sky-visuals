@@ -273,9 +273,9 @@
                     
                     /* Dropdown */
                     #header .main-nav > ul {
-                        display: flex !important;
+                        display: none !important; /* Hidden by default */
                         flex-direction: column !important;
-                        position: absolute;
+                        position: fixed;
                         top: 72px; left: 0; right: 0;
                         background: rgba(0,0,0,0.98);
                         border-bottom: 1px solid rgba(255,44,85,0.3);
@@ -283,12 +283,6 @@
                         height: auto !important;
                         width: 100vw !important;
                         margin: 0 !important;
-                        
-                        /* Hidden by default */
-                        visibility: hidden;
-                        opacity: 0;
-                        transform: translateY(-20px);
-                        transition: all 0.3s ease;
                         z-index: 1500;
                     }
                     
@@ -302,9 +296,7 @@
                     
                     /* When Checked */
                     #main-menu-state:checked ~ ul#main-menu {
-                        visibility: visible;
-                        opacity: 1;
-                        transform: translateY(0);
+                        display: flex !important;
                     }
                     #main-menu-state:checked ~ .main-menu-btn .main-menu-btn-icon { background: transparent; }
                     #main-menu-state:checked ~ .main-menu-btn .main-menu-btn-icon:before { transform: rotate(45deg); top: 0; }
