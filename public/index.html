@@ -26,7 +26,7 @@
 
 <body class="demo-1">
     <style>
-        html, body { background-color: #000 !important; }
+        html, body { background-color: #000 !important; width: 100vw !important; overflow-x: hidden !important; }
         .main-wrapper, .main-content-area, .content,
         .global-block, .global-block-wrap,
         .book-table, .book-wrap,
@@ -1243,11 +1243,15 @@
                         .led-info-text strong { color: #bbb; }
                         .led-use-tag { font-family: 'Montserrat', sans-serif; font-size: 13px; color: #666; padding: 5px 0; display: block; border-bottom: 1px solid rgba(255,255,255,0.04); }
                         .led-use-tag:last-child { border-bottom: none; }
-                        @media (max-width: 768px) { .led-grid { grid-template-columns: 1fr !important; } }
+                        @media (max-width: 768px) { 
+                            .led-grid { grid-template-columns: 1fr !important; }
+                            .led-row-1 { grid-template-columns: 1fr !important; }
+                            .led-row-3 { grid-template-columns: 1fr !important; }
+                        }
                     </style>
 
                     <!-- ROW 1: Specs + Video side by side -->
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start; margin-bottom:56px;" data-aos="fade-up">
+                    <div class="led-row-1" style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start; margin-bottom:56px;" data-aos="fade-up">
                         <div>
                             <p class="led-section-label">Especificaciones Técnicas</p>
                             <div style="border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; overflow: hidden;">
@@ -1285,7 +1289,7 @@
                     </div>
 
                     <!-- ROW 3: Cards centradas (Gabinetes + Ideal Para + CTA) -->
-                    <div data-aos="fade-up" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; max-width:960px; margin:0 auto;">
+                    <div class="led-row-3" data-aos="fade-up" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; max-width:960px; margin:0 auto;">
                         <!-- Gabinetes -->
                         <div class="led-info-card" style="margin-bottom:0;">
                             <p class="led-info-title">Gabinetes</p>
