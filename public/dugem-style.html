@@ -633,7 +633,7 @@
                         <p style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #555; margin: 0 auto; max-width: 440px; line-height: 1.6;">Así transformamos cada escenario en una experiencia visual única</p>
                     </div>
 
-                    <div class="swiper gal-swiper" data-aos="fade-up">
+                    <div class="swiper gal-swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide"><img src="img/rock-band-silhouettes-stage-concert.jpg" alt="Rock Band en Concierto"></div>
                             <div class="swiper-slide"><img src="img/stage-lights(1).jpg" alt="Luces de Escenario"></div>
@@ -1478,6 +1478,8 @@
             centeredSlides: true,
             slidesPerView: 1.12,
             spaceBetween: 16,
+            observer: true,
+            observeParents: true,
             autoplay: { delay: 3500, disableOnInteraction: false },
             navigation: { nextEl: '.gal-swiper .swiper-button-next', prevEl: '.gal-swiper .swiper-button-prev' },
             pagination: { el: '.gal-swiper .swiper-pagination', clickable: true },
