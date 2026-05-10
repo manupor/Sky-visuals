@@ -1,0 +1,45 @@
+/* Mobile Navigation Fix - Sky Visuals CR */
+
+@media only screen and (max-width: 768px) {
+
+    /* 1. Forzar el contenedor principal a ser flexible */
+    .header-style-1 .header-clear {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+        padding: 10px 0 !important; /* Ajuste de padding */
+    }
+
+    /* 2. Asegurar que el logo (contenedor izquierdo) sea visible y no ocupe espacio extra */
+    .header-style-1 .header-content-left {
+        float: none !important;
+        width: auto !important;
+        display: block !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* 3. Asegurar que el menú (contenedor central) sea visible y no ocupe espacio extra */
+    .header-style-1 .header-content-center {
+        float: none !important;
+        width: auto !important;
+        display: block !important;
+        text-align: right !important;
+        margin: 0 !important;
+    }
+
+    /* 4. Estilos del logo */
+    #navLogo {
+        width: 140px !important;
+        height: auto !important;
+        display: block !important;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #navLogo {
+        width: 120px !important; /* Un poco más pequeño para móviles muy chicos */
+    }
+}
+

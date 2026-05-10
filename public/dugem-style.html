@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/fontawesome.min.css" type="text/css" />
     <link rel="stylesheet" href="style.css?v=6" type="text/css" />
     <link rel="stylesheet" href="css/responsive.css" type="text/css" />
+    <link rel="stylesheet" href="mobile-fixes.css?v=2" type="text/css" />
     <!-- Preload imagen hero para carga rápida -->
     <link rel="preload" href="img/we-can-dance-forever2.png" as="image">
     <script>
@@ -55,24 +56,65 @@
                     <div class="header-clear clearfix">
                         <div class="header-content-left clearfix">
                             <div class="logo">
-                                <a href="#"><img id="navLogo" src="img/logo-blanco.png" alt="Sky Visuals CR" style="height: 350px; width: auto;"></a>
+                                <a href="#"><img id="navLogo" src="img/logo-sky-visuals.png" alt="Sky Visuals CR"></a>
                             </div>
                             <style>
-                                /* Logo extra grande y visible */
+                                /* Logo tamaño según imagen de referencia */
                                 #navLogo {
-                                    height: 350px !important;
-                                    max-height: none !important;
+                                    width: 150px;
+                                    height: auto;
                                 }
                                 
+                                /* Mobile UX: Logo izquierda, Menú hamburguesa derecha */
                                 @media (max-width: 768px) {
                                     #navLogo {
-                                        height: 250px !important;
+                                        width: 140px;
+                                    }
+                                    
+                                    /* Container del header */
+                                    .header-style-1 .container {
+                                        padding-left: 20px !important;
+                                        padding-right: 20px !important;
+                                    }
+                                    
+                                    /* Flexbox layout para mobile */
+                                    .header-style-1 .header-clear {
+                                        display: flex !important;
+                                        justify-content: space-between !important;
+                                        align-items: center !important;
+                                        width: 100% !important;
+                                        padding: 15px 0 !important;
+                                    }
+                                    
+                                    /* Logo a la izquierda */
+                                    .header-style-1 .header-content-left {
+                                        float: none !important;
+                                        width: auto !important;
+                                        position: static !important;
+                                        padding: 0 !important;
+                                        margin: 0 !important;
+                                        order: 1 !important;
+                                    }
+                                    
+                                    .header-style-1 .logo {
+                                        display: block !important;
+                                        margin: 0 !important;
+                                    }
+                                    
+                                    /* Menú hamburguesa a la derecha */
+                                    .header-style-1 .header-content-center {
+                                        float: none !important;
+                                        width: auto !important;
+                                        text-align: right !important;
+                                        margin: 0 !important;
+                                        padding: 0 !important;
+                                        order: 2 !important;
                                     }
                                 }
                                 
                                 @media (max-width: 480px) {
                                     #navLogo {
-                                        height: 180px !important;
+                                        width: 130px;
                                     }
                                 }
                             </style>
